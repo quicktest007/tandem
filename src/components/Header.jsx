@@ -7,10 +7,11 @@ function Header() {
     { href: '#how-it-works', label: 'How it works' },
     { href: '#why-tandem', label: 'Why Tandem' },
     { href: '#privacy', label: 'Privacy' },
+    { href: '#use-cases', label: 'Use cases' },
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-off-white/90 backdrop-blur-sm border-b border-navy/5">
+    <header className="sticky top-0 z-50 bg-off-white/95 backdrop-blur-sm border-b border-navy/5">
       <div className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5 transition-opacity hover:opacity-80" aria-label="Tandem home">
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy">
@@ -43,8 +44,8 @@ function Header() {
             </a>
           ))}
           <a
-            href="#"
-            className="text-sm font-medium text-navy bg-navy/5 hover:bg-navy/10 px-4 py-2 rounded-lg transition-colors"
+            href="#join-waitlist"
+            className="text-sm font-semibold text-white bg-navy hover:bg-navy-dark px-5 py-2.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-navy/20"
           >
             Join the Waitlist
           </a>
@@ -85,9 +86,9 @@ function Header() {
             </a>
           ))}
           <a
-            href="#"
+            href="#join-waitlist"
             onClick={() => setMenuOpen(false)}
-            className="text-sm font-medium text-navy bg-navy/5 hover:bg-navy/10 px-4 py-2 rounded-lg w-fit transition-colors"
+            className="text-sm font-semibold text-white bg-navy hover:bg-navy-dark px-5 py-2.5 rounded-xl w-fit transition-colors"
           >
             Join the Waitlist
           </a>
