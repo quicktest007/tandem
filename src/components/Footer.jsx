@@ -10,7 +10,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <a href={import.meta.env.BASE_URL} className="footer-logo">
+        <a href="#" className="footer-logo">
           <span className="logo-icon"><LogoIcon /></span>
           Tandem
         </a>

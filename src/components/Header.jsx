@@ -21,7 +21,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header-inner">
-        <a href={import.meta.env.BASE_URL} className="header-logo" aria-label="Tandem home">
+        <a href="#" className="header-logo" aria-label="Tandem home">
           <span className="logo-icon"><LogoIcon /></span>
           <span>Tandem</span>
         </a>
