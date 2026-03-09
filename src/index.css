@@ -436,6 +436,8 @@ body {
 .highlight-box p:first-child { font-size: 1.125rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
 .highlight-box p:last-child { color: var(--muted); max-width: 36rem; margin: 0 auto; }
 
+.privacy-list { margin-top: 0; }
+
 .privacy-item {
   display: flex;
   gap: 1rem;
