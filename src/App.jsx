@@ -1,7 +1,6 @@
-// Minimal version – confirms render. Swap to full by importing components below.
 function App() {
   return (
-    <div style={{ minHeight: '100vh', padding: '2rem' }} className="texture-overlay">
+    <div style={{ minHeight: '100vh', padding: '2rem' }}>
       <header style={{ marginBottom: '2rem' }}>
         <span style={{ fontSize: '1.25rem', fontWeight: 600, color: '#1a2744' }}>Tandem</span>
       </header>
