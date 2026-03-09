@@ -1,32 +1,31 @@
+import Header from './components/Header'
+import Hero from './components/Hero'
+import ProblemSection from './components/ProblemSection'
+import SolutionSection from './components/SolutionSection'
+import HowItWorks from './components/HowItWorks'
+import WhyDifferent from './components/WhyDifferent'
+import PrivacySection from './components/PrivacySection'
+import UseCases from './components/UseCases'
+import CTASection from './components/CTASection'
+import Footer from './components/Footer'
+import CookieBanner from './components/CookieBanner'
+
 function App() {
   return (
-    <div style={{ minHeight: '100vh', padding: '2rem' }}>
-      <header style={{ marginBottom: '2rem' }}>
-        <span style={{ fontSize: '1.25rem', fontWeight: 600, color: '#1a2744' }}>Tandem</span>
-      </header>
-      <main style={{ textAlign: 'center', maxWidth: '36rem', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#1a2744', lineHeight: 1.2, margin: 0 }}>
-          Achieve your goals, with a friend.
-        </h1>
-        <p style={{ fontSize: '1.125rem', color: '#6b7280', marginTop: '1.5rem', lineHeight: 1.6 }}>
-          Tandem is a privacy-first accountability platform that helps two people stay consistent through simple check-ins and real human support.
-        </p>
-        <a
-          href="#"
-          style={{
-            display: 'inline-block',
-            marginTop: '2rem',
-            padding: '1rem 2rem',
-            backgroundColor: '#1a2744',
-            color: 'white',
-            fontWeight: 600,
-            borderRadius: '0.75rem',
-            textDecoration: 'none',
-          }}
-        >
-          Join the Waitlist
-        </a>
+    <div className="app">
+      <Header />
+      <main>
+        <Hero />
+        <ProblemSection />
+        <SolutionSection />
+        <HowItWorks />
+        <WhyDifferent />
+        <PrivacySection />
+        <UseCases />
+        <CTASection />
       </main>
+      <Footer />
+      <CookieBanner />
     </div>
   )
 }
