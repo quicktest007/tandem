@@ -4,19 +4,27 @@ function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    const consented = localStorage.getItem('tandem-cookie-consent')
-    if (!consented) {
+    try {
+      const consented = localStorage.getItem('tandem-cookie-consent')
+      if (!consented) {
+        setIsVisible(true)
+      }
+    } catch {
       setIsVisible(true)
     }
   }, [])
 
   const handleAccept = () => {
-    localStorage.setItem('tandem-cookie-consent', 'accepted')
+    try {
+      localStorage.setItem('tandem-cookie-consent', 'accepted')
+    } catch {}
     setIsVisible(false)
   }
 
   const handleDecline = () => {
-    localStorage.setItem('tandem-cookie-consent', 'declined')
+    try {
+      localStorage.setItem('tandem-cookie-consent', 'declined')
+    } catch {}
     setIsVisible(false)
   }
 
