@@ -9,8 +9,23 @@ function Hero() {
 
   return (
     <section className="hero" aria-labelledby="hero-heading">
+      <div className="hero-bg-shapes">
+        <div className="hero-shape hero-shape-1" aria-hidden="true" />
+        <div className="hero-shape hero-shape-2" aria-hidden="true" />
+        <div className="hero-shape hero-shape-3" aria-hidden="true" />
+      </div>
+
       <div className="hero-inner">
-        <h1 id="hero-heading">Achieve your goals, with a friend.</h1>
+        <div className="hero-connection">
+          <span className="hero-connection-dot" />
+          <span className="hero-connection-line" />
+          <span className="hero-connection-dot" />
+          <span className="hero-connection-label" style={{ marginLeft: '0.5rem' }}>Two people. One goal.</span>
+        </div>
+
+        <h1 id="hero-heading">
+          Achieve your goals, <span className="gradient-text">with a friend.</span>
+        </h1>
         <p className="hero-sub">
           Tandem is a privacy-first accountability platform that helps two people stay consistent through simple check-ins and real human support—no scheduling headaches, no performative feeds.
         </p>
