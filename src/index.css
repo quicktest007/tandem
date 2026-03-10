@@ -93,16 +93,10 @@ body::before {
   color: var(--color-teal);
 }
 
-.header__logo-mark {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-teal);
-  color: white;
-  border-radius: 6px;
-  font-size: 0.875rem;
+.header__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .header__nav {
@@ -431,10 +425,19 @@ body::before {
 }
 
 .footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 600;
   color: var(--color-navy);
   text-decoration: none;
   transition: color 0.2s ease;
+}
+
+.footer__logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .footer__logo:hover {

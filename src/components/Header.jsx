@@ -3,7 +3,7 @@ function Header() {
     <header className="header">
       <div className="header__inner">
         <a href="#" className="header__logo">
-          <span className="header__logo-mark">T</span>
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Tandem" className="header__logo-img" />
           <span className="header__logo-text">Tandem</span>
         </a>
         <nav className="header__nav">
