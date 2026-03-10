@@ -17,7 +17,7 @@ function HowItWorks() {
   return (
     <section id="how-it-works" className="how-it-works">
       <div className="how-it-works__inner">
-        <h2 className="how-it-works__title">How Tandem Works</h2>
+        <h2 className="how-it-works__title reveal">How Tandem Works</h2>
         <div className="how-it-works__grid">
           <div className="how-it-works__steps">
             {steps.map((step) => (

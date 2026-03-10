@@ -1,7 +1,7 @@
 function CTA() {
   return (
     <section id="waitlist" className="cta">
-      <div className="cta__inner">
+      <div className="cta__inner reveal">
         <h2 className="cta__headline">Join the waitlist.</h2>
         <a href="#" className="cta__button">Join the Waitlist</a>
       </div>

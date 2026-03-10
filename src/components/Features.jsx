@@ -45,10 +45,10 @@ function Features() {
   return (
     <section className="features">
       <div className="features__inner">
-        <h2 className="features__title">
+        <h2 className="features__title reveal">
           Accountability, Simplified for Busy Lives
         </h2>
-        <p className="features__subtitle">
+        <p className="features__subtitle reveal reveal-delay-1">
           Tandem makes it easy to stay on track with your goals. No stress, no
           oversharing, and no complicated scheduling.
         </p>
