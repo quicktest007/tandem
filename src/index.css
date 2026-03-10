@@ -350,20 +350,20 @@ body {
   position: relative;
   width: 280px;
   margin: 0 auto;
-  background: linear-gradient(145deg, #0f1215 0%, #080a0c 100%);
+  background: linear-gradient(145deg, #2a3038 0%, #1a1e24 100%);
   border-radius: 36px;
   padding: 12px;
-  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.12);
   animation: floatDevice 6s ease-in-out infinite;
   transform-style: preserve-3d;
 }
 
 .hero__mockup-screen {
-  background: #060809;
+  background: #0d0f12;
   border-radius: 28px;
   overflow: hidden;
   aspect-ratio: 9 / 19;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .hero__mockup-img {
@@ -531,18 +531,18 @@ body {
 .phone-mockup {
   position: relative;
   width: 260px;
-  background: linear-gradient(145deg, #0f1215 0%, #080a0c 100%);
+  background: linear-gradient(145deg, #2a3038 0%, #1a1e24 100%);
   border-radius: 40px;
   padding: 14px;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .phone-mockup__screen {
-  background: #060809;
+  background: #0d0f12;
   border-radius: 30px;
   overflow: hidden;
   aspect-ratio: 9/19;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .phone-mockup__img {
