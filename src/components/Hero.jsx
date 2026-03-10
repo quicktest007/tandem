@@ -68,24 +68,11 @@ export default function Hero() {
         <div className="hero__mockup-glow" aria-hidden="true" />
         <div className="hero__mockup">
           <div className="hero__mockup-screen">
-            <div className="hero-mockup__ui">
-              <div className="hero-mockup__bar" />
-              <div className="hero-mockup__card hero-mockup__card--main">
-                <div className="hero-mockup__card-header">
-                  <div className="hero-mockup__dot" />
-                  <div className="hero-mockup__line" />
-                </div>
-                <div className="hero-mockup__card-row" />
-                <div className="hero-mockup__card-row hero-mockup__card-row--short" />
-              </div>
-              <div className="hero-mockup__card">
-                <div className="hero-mockup__card-row" />
-                <div className="hero-mockup__card-row hero-mockup__card-row--short" />
-              </div>
-              <div className="hero-mockup__card">
-                <div className="hero-mockup__card-row hero-mockup__card-row--short" />
-              </div>
-            </div>
+            <img
+              src={`${import.meta.env.BASE_URL}phone-screen.png`}
+              alt="Tandem app — set your goal"
+              className="hero__mockup-img"
+            />
           </div>
         </div>
       </motion.div>

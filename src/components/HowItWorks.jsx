@@ -58,12 +58,11 @@ export default function HowItWorks() {
               transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
             >
               <div className="phone-mockup__screen">
-                <div className="phone-mockup__content">
-                  <div className="phone-mockup__header" />
-                  <div className="phone-mockup__card" />
-                  <div className="phone-mockup__card" />
-                  <div className="phone-mockup__card" />
-                </div>
+                <img
+                  src={`${import.meta.env.BASE_URL}phone-screen.png`}
+                  alt="Tandem app"
+                  className="phone-mockup__img"
+                />
               </div>
             </motion.div>
           </div>
