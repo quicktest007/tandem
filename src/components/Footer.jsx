@@ -7,6 +7,8 @@ function Footer() {
           <span>Tandem</span>
         </a>
         <div className="footer__links">
+          <a href="#how-it-works" className="footer__link">How it works</a>
+          <a href="#use-cases" className="footer__link">Use cases</a>
           <a href="#privacy" className="footer__link">Privacy</a>
           <a href="#" className="footer__link">Terms</a>
           <a href="#" className="footer__link">Contact</a>

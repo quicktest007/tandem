@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header className="header header--dark">
+    <header className="header">
       <div className="header__inner">
         <a href="#" className="header__logo">
           <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Tandem" className="header__logo-img" />
