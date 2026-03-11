@@ -237,7 +237,7 @@ body {
   width: clamp(420px, 72vw, 700px);
   height: auto;
   color: var(--color-warm);
-  opacity: 0.28;
+  opacity: 1;
   pointer-events: none;
   z-index: 0;
 }
@@ -246,7 +246,7 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 0 24px rgba(245, 158, 11, 0.5)) drop-shadow(0 0 48px rgba(245, 158, 11, 0.35)) drop-shadow(0 0 72px rgba(245, 158, 11, 0.2));
+  filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.8)) drop-shadow(0 0 32px rgba(245, 158, 11, 0.5)) drop-shadow(0 0 56px rgba(245, 158, 11, 0.35));
 }
 
 .hero__glow {
