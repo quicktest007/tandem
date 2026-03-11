@@ -13,6 +13,23 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero__bg-word" aria-hidden="true">TANDEM</div>
+      <div className="hero__bike" aria-hidden="true">
+        <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="hero__bike-svg">
+          {/* Back wheel */}
+          <circle cx="45" cy="75" r="28" stroke="currentColor" strokeWidth="3" opacity="0.5" />
+          <circle cx="45" cy="75" r="22" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+          {/* Front wheel */}
+          <circle cx="155" cy="75" r="28" stroke="currentColor" strokeWidth="3" opacity="0.5" />
+          <circle cx="155" cy="75" r="22" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
+          {/* Frame */}
+          <path d="M 45 75 L 75 45 L 125 45 L 155 75" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" opacity="0.45" />
+          <path d="M 75 45 L 75 75 L 45 75" stroke="currentColor" strokeWidth="3" strokeLinecap="round" opacity="0.4" />
+          <path d="M 125 45 L 125 75 L 155 75" stroke="currentColor" strokeWidth="3" strokeLinecap="round" opacity="0.4" />
+          {/* Riders */}
+          <circle cx="65" cy="38" r="10" fill="currentColor" opacity="0.35" />
+          <circle cx="115" cy="38" r="10" fill="currentColor" opacity="0.35" />
+        </svg>
+      </div>
       <div className="hero__glow hero__glow--left" aria-hidden="true" />
       <div className="hero__glow hero__glow--right" aria-hidden="true" />
 
