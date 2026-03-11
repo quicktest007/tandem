@@ -237,7 +237,7 @@ body {
   width: clamp(420px, 72vw, 700px);
   height: auto;
   color: var(--color-warm);
-  opacity: 1;
+  opacity: 0.85;
   pointer-events: none;
   z-index: 0;
 }
