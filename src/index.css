@@ -236,8 +236,8 @@ body {
   transform: translate(-50%, -48%);
   width: clamp(420px, 72vw, 700px);
   height: auto;
-  color: var(--color-teal);
-  opacity: 0.12;
+  color: var(--color-warm);
+  opacity: 0.28;
   pointer-events: none;
   z-index: 0;
 }
@@ -246,7 +246,7 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 0 20px rgba(47, 168, 163, 0.55)) drop-shadow(0 0 40px rgba(47, 168, 163, 0.35)) drop-shadow(0 0 60px rgba(47, 168, 163, 0.2));
+  filter: drop-shadow(0 0 24px rgba(245, 158, 11, 0.5)) drop-shadow(0 0 48px rgba(245, 158, 11, 0.35)) drop-shadow(0 0 72px rgba(245, 158, 11, 0.2));
 }
 
 .hero__glow {
