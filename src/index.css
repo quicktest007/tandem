@@ -219,7 +219,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: clamp(8rem, 22vw, 16rem);
+  font-size: clamp(10rem, 30vw, 22rem);
   font-weight: 700;
   letter-spacing: -0.04em;
   color: var(--cinema-text);
@@ -234,7 +234,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -48%);
-  width: clamp(320px, 55vw, 520px);
+  width: clamp(420px, 72vw, 700px);
   height: auto;
   color: var(--color-teal);
   opacity: 0.12;
@@ -858,7 +858,11 @@ body {
   }
 
   .hero__bg-word {
-    font-size: clamp(5rem, 18vw, 10rem);
+    font-size: clamp(6rem, 22vw, 14rem);
+  }
+
+  .hero__bike {
+    width: clamp(340px, 85vw, 520px);
   }
 
   .hero__mockup {
