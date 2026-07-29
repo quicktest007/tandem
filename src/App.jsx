@@ -15,9 +15,10 @@ import CookieBanner from './components/CookieBanner'
 
 function App() {
   return (
-    <div className="app">
+    <div className="app" id="top">
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <ProblemSection />
         <HowItWorks />

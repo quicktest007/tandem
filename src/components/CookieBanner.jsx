@@ -26,7 +26,7 @@ export default function CookieBanner() {
 
   return (
     <div
-      role="dialog"
+      role="region"
       aria-labelledby="cookie-banner-heading"
       aria-describedby="cookie-banner-desc"
       className="cookie-banner"

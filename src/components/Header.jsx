@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Logo from './Logo'
 
 const navLinks = [
@@ -11,6 +11,7 @@ const navLinks = [
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const menuBtnRef = useRef(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -24,17 +25,29 @@ export default function Header() {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
+  useEffect(() => {
+    if (!menuOpen) return undefined
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setMenuOpen(false)
+        menuBtnRef.current?.focus()
+      }
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [menuOpen])
+
   const close = () => setMenuOpen(false)
 
   return (
     <header className={`header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="header-inner">
-        <a href="#" className="header-logo" aria-label="Tandem home">
+        <a href="#top" className="header-logo" aria-label="Tandem home">
           <Logo />
           <span>Tandem</span>
         </a>
 
-        <nav className="header-nav" aria-label="Main navigation">
+        <nav className="header-nav" aria-label="Main">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href}>{link.label}</a>
           ))}
@@ -44,6 +57,7 @@ export default function Header() {
 
         <button
           type="button"
+          ref={menuBtnRef}
           className="mobile-menu-btn"
           onClick={() => setMenuOpen((v) => !v)}
           aria-expanded={menuOpen}
@@ -63,7 +77,7 @@ export default function Header() {
       <nav
         id="mobile-nav"
         className={`mobile-nav ${menuOpen ? 'is-open' : ''}`}
-        aria-label="Mobile navigation"
+        aria-label="Mobile"
         hidden={!menuOpen}
       >
         {navLinks.map((link) => (

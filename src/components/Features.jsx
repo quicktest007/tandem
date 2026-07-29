@@ -60,7 +60,7 @@ function FeatureVisual({ type }) {
       <div className="feature-ui" aria-hidden="true">
         <div className="mini-checkin">
           <p>“Walked after dinner. Felt good to move.”</p>
-          <button type="button" tabIndex={-1}>Send check-in</button>
+          <span className="fake-btn">Send check-in</span>
         </div>
       </div>
     )

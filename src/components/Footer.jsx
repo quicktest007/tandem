@@ -18,7 +18,7 @@ export default function Footer() {
     <footer className="footer" id="privacy">
       <div className="footer-inner">
         <div className="footer-brand">
-          <a href="#" className="footer-logo" aria-label="Tandem home">
+          <a href="#top" className="footer-logo" aria-label="Tandem home">
             <Logo />
             <span>Tandem</span>
           </a>
@@ -29,33 +29,43 @@ export default function Footer() {
 
         <div className="footer-cols">
           <div>
-            <p className="footer-heading">Product</p>
-            <ul>
+            <p className="footer-heading" id="footer-product">Product</p>
+            <ul aria-labelledby="footer-product">
               {productLinks.map((l) => (
                 <li key={l.href}><a href={l.href}>{l.label}</a></li>
               ))}
             </ul>
           </div>
           <div>
-            <p className="footer-heading">Company</p>
-            <ul>
+            <p className="footer-heading" id="footer-company">Company</p>
+            <ul aria-labelledby="footer-company">
               {legalLinks.map((l) => (
                 <li key={l.href}><a href={l.href}>{l.label}</a></li>
               ))}
             </ul>
           </div>
           <div>
-            <p className="footer-heading">Social</p>
-            <ul>
-              <li><a href="https://instagram.com" rel="noopener noreferrer" target="_blank">Instagram</a></li>
-              <li><a href="https://linkedin.com" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+            <p className="footer-heading" id="footer-social">Social</p>
+            <ul aria-labelledby="footer-social">
+              <li>
+                <a href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+                  Instagram
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+                  LinkedIn
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-      <div id="terms" className="sr-only">Terms of service coming soon.</div>
-      <div id="contact" className="sr-only">Contact: hello@tandem.app</div>
-      <div id="sign-in" className="sr-only">Sign in coming soon.</div>
+      <div id="terms" className="sr-only" tabIndex={-1}>Terms of service coming soon.</div>
+      <div id="contact" className="sr-only" tabIndex={-1}>Contact: hello@tandem.app</div>
+      <div id="sign-in" className="sr-only" tabIndex={-1}>Sign in coming soon.</div>
       <p className="footer-copy">© {new Date().getFullYear()} Tandem. Stay connected. Keep going.</p>
     </footer>
   )

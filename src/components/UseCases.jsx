@@ -46,15 +46,36 @@ const cases = [
 export default function UseCases() {
   const ref = useReveal()
 
+  const onKeyDown = (e) => {
+    const el = e.currentTarget
+    if (e.key === 'ArrowRight') {
+      e.preventDefault()
+      el.scrollBy({ left: 280, behavior: 'smooth' })
+    }
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault()
+      el.scrollBy({ left: -280, behavior: 'smooth' })
+    }
+  }
+
   return (
     <section id="use-cases" className="section usecases-section" aria-labelledby="usecases-heading">
       <div className="container">
         <div className="section-intro reveal" ref={ref}>
           <p className="eyebrow">Use cases</p>
           <h2 id="usecases-heading">Whatever you’re working toward, don’t go it alone.</h2>
+          <p className="sr-only">
+            Horizontal list of examples. When focused, use the left and right arrow keys to scroll.
+          </p>
         </div>
 
-        <div className="usecase-scroll" tabIndex={0} aria-label="Use case examples">
+        <div
+          className="usecase-scroll"
+          tabIndex={0}
+          role="region"
+          aria-label="Use case examples. Use left and right arrow keys to scroll."
+          onKeyDown={onKeyDown}
+        >
           {cases.map((c) => (
             <article key={c.title} className="usecase-card">
               <h3>{c.title}</h3>

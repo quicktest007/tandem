@@ -34,19 +34,19 @@
     <link rel="stylesheet" href="./src/index.css" />
   </head>
   <body>
-    <!-- Static fallback for branch-based Pages; React replaces #root when the Vite bundle loads. -->
     <div id="root">
-      <div class="app">
+      <div class="app" id="top">
+        <a class="skip-link" href="#main-content">Skip to main content</a>
         <header class="header">
           <div class="header-inner">
-            <a href="#" class="header-logo" aria-label="Tandem home">
+            <a href="#top" class="header-logo" aria-label="Tandem home">
               <span class="logo-mark" aria-hidden="true">
                 <img src="./logo.png" alt="" width="36" height="36" />
               </span>
               <span>Tandem</span>
             </a>
 
-            <nav class="header-nav" aria-label="Main navigation">
+            <nav class="header-nav" aria-label="Main">
               <a href="#how-it-works">How It Works</a>
               <a href="#features">Features</a>
               <a href="#use-cases">Use Cases</a>
@@ -86,7 +86,7 @@
           </nav>
         </header>
 
-        <main>
+        <main id="main-content">
           <section class="hero" aria-labelledby="hero-heading">
             <div class="hero-bg" aria-hidden="true">
               <span class="hero-orb hero-orb-a"></span>
@@ -292,7 +292,7 @@
                   <div class="feature-ui" aria-hidden="true">
                     <div class="mini-checkin">
                       <p>“Walked after dinner. Felt good to move.”</p>
-                      <button type="button" tabindex="-1">Send check-in</button>
+                      <span class="fake-btn">Send check-in</span>
                     </div>
                   </div>
                 </article>
@@ -398,7 +398,12 @@
                 <h2 id="usecases-heading">Whatever you’re working toward, don’t go it alone.</h2>
               </div>
 
-              <div class="usecase-scroll" tabindex="0" aria-label="Use case examples">
+              <div
+                class="usecase-scroll"
+                tabindex="0"
+                role="region"
+                aria-label="Use case examples. Use left and right arrow keys to scroll."
+              >
                 <article class="usecase-card">
                   <h3>Read more consistently</h3>
                   <p>Set a weekly reading goal and share what you’re learning with a friend.</p>
@@ -727,7 +732,7 @@
         <footer class="footer" id="privacy">
           <div class="footer-inner">
             <div class="footer-brand">
-              <a href="#" class="footer-logo" aria-label="Tandem home">
+              <a href="#top" class="footer-logo" aria-label="Tandem home">
                 <span class="logo-mark" aria-hidden="true">
                   <img src="./logo.png" alt="" width="36" height="36" />
                 </span>
@@ -759,8 +764,18 @@
               <div>
                 <p class="footer-heading">Social</p>
                 <ul>
-                  <li><a href="https://instagram.com" rel="noopener noreferrer" target="_blank">Instagram</a></li>
-                  <li><a href="https://linkedin.com" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+                  <li>
+                    <a href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+                      Instagram
+                      <span class="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+                      LinkedIn
+                      <span class="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -773,7 +788,7 @@
 
         <div
           id="cookie-banner"
-          role="dialog"
+          role="region"
           aria-labelledby="cookie-banner-heading"
           aria-describedby="cookie-banner-desc"
           class="cookie-banner"
@@ -831,6 +846,26 @@
           });
           mobileNav.querySelectorAll('a').forEach(function (link) {
             link.addEventListener('click', function () { setMenuOpen(false); });
+          });
+          window.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+              setMenuOpen(false);
+              menuBtn.focus();
+            }
+          });
+        }
+
+        var useCaseScroll = document.querySelector('.usecase-scroll');
+        if (useCaseScroll) {
+          useCaseScroll.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowRight') {
+              e.preventDefault();
+              useCaseScroll.scrollBy({ left: 280, behavior: 'smooth' });
+            }
+            if (e.key === 'ArrowLeft') {
+              e.preventDefault();
+              useCaseScroll.scrollBy({ left: -280, behavior: 'smooth' });
+            }
           });
         }
 
