@@ -1,29 +1,68 @@
-function UseCases() {
-  const cases = [
-    { emoji: '🏃', title: 'Working out regularly', body: "Stay consistent with running, gym, or any fitness routine. A partner who checks in makes the difference between another skipped day and showing up." },
-    { emoji: '📚', title: 'Studying for exams', body: "Preparing for a big test? A study partner who checks in keeps you accountable to your schedule when motivation runs low." },
-    { emoji: '✍️', title: 'Writing consistently', body: "Blog, book, or journal—creative work needs rhythm. A partner who asks how the writing went keeps you coming back to the page." },
-    { emoji: '✓', title: 'Building a habit', body: "Meditation, reading, learning a language—habits are built through repetition. Accountability turns intention into routine." },
-    { emoji: '🎯', title: 'Staying on track with personal goals', body: "Whatever you're working toward—career change, side project, personal growth—a partner helps you stay honest and consistent." },
-  ]
+import { useReveal } from '../hooks/useReveal'
+
+const cases = [
+  {
+    title: 'Read more consistently',
+    body: 'Set a weekly reading goal and share what you’re learning with a friend.',
+  },
+  {
+    title: 'Spend less time scrolling',
+    body: 'Create healthier phone habits with someone pursuing the same change.',
+  },
+  {
+    title: 'Finish the project',
+    body: 'Keep making progress on the idea that has been sitting in your notes for months.',
+  },
+  {
+    title: 'Move your body',
+    body: 'Build a fitness rhythm—walks, workouts, or recovery—with someone cheering you on.',
+  },
+  {
+    title: 'Protect your mornings',
+    body: 'Stick with a morning or evening routine that sets the tone for the rest of your day.',
+  },
+  {
+    title: 'Grow in your career',
+    body: 'Ship portfolio pieces, practice interviews, or learn a skill with a trusted partner.',
+  },
+  {
+    title: 'Build financial habits',
+    body: 'Stay consistent with saving, budgeting, or debt paydown without turning it into a spectacle.',
+  },
+  {
+    title: 'Make space for faith',
+    body: 'Keep a gentle rhythm of reflection, prayer, or study with someone who understands why it matters.',
+  },
+  {
+    title: 'Strengthen a relationship',
+    body: 'Set shared intentions for connection—date nights, check-ins, or simply showing up.',
+  },
+  {
+    title: 'Rewrite everyday routines',
+    body: 'Build or break the small daily patterns that quietly shape how you feel.',
+  },
+]
+
+export default function UseCases() {
+  const ref = useReveal()
 
   return (
-    <section id="use-cases" className="section section-alt" aria-labelledby="use-cases-heading">
-      <div className="container container-narrow">
-        <h2 id="use-cases-heading" className="section-title">Who Tandem is for</h2>
-        <p className="section-desc">People who want to build consistency—without the noise.</p>
-        <div className="usecase-grid">
-          {cases.map((c, i) => (
-            <div key={i} className="usecase-card">
-              <span className="usecase-icon">{c.emoji}</span>
+    <section id="use-cases" className="section usecases-section" aria-labelledby="usecases-heading">
+      <div className="container">
+        <div className="section-intro reveal" ref={ref}>
+          <p className="eyebrow">Use cases</p>
+          <h2 id="usecases-heading">Whatever you’re working toward, don’t go it alone.</h2>
+        </div>
+
+        <div className="usecase-scroll" tabIndex={0} aria-label="Use case examples">
+          {cases.map((c) => (
+            <article key={c.title} className="usecase-card">
               <h3>{c.title}</h3>
               <p>{c.body}</p>
-            </div>
+            </article>
           ))}
         </div>
       </div>
     </section>
   )
 }
-
-export default UseCases

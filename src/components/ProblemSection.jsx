@@ -1,27 +1,45 @@
-function ProblemSection() {
-  const pains = [
-    { headline: 'Going it alone is exhausting', body: "It's hard to stay consistent when no one's watching. Motivation fades. Accountability to yourself only gets you so far." },
-    { headline: 'Habit trackers are easy to ignore', body: "Apps can remind you—but they can't understand, encourage, or hold you accountable. You'll swipe away another notification." },
-    { headline: 'Group accountability gets noisy', body: "Big communities and group chats drown you in updates. You need focused support from one person who actually gets your goals." },
-    { headline: 'Scheduling becomes a burden', body: "Constant meetings and check-ins add friction to your life. You need accountability without the calendar Tetris." },
-  ]
+import { useReveal } from '../hooks/useReveal'
+
+export default function ProblemSection() {
+  const ref = useReveal()
 
   return (
-    <section id="problem" className="section section-alt" aria-labelledby="problem-heading">
-      <div className="container container-narrow">
-        <h2 id="problem-heading" className="section-title">Staying consistent shouldn't be this hard</h2>
-        <p className="section-desc">You know what you want to achieve. The gap is between intention and follow-through.</p>
-        <div className="pain-grid">
-          {pains.map((pain, i) => (
-            <div key={i} className="pain-card">
-              <h3>{pain.headline}</h3>
-              <p>{pain.body}</p>
+    <section id="problem" className="section problem-section" aria-labelledby="problem-heading">
+      <div className="container reveal" ref={ref}>
+        <div className="problem-copy">
+          <h2 id="problem-heading">Starting isn’t usually the hard part. Staying consistent is.</h2>
+          <p>
+            People set goals with good intentions. They download another app, create a plan, and feel motivated for a few days. Then life gets busy, momentum fades, and the goal quietly disappears.
+          </p>
+          <p>
+            Tandem creates a simple rhythm that helps people keep going. Not through pressure, competition, or public performance—but through shared progress with someone they trust.
+          </p>
+        </div>
+
+        <div className="problem-visual" aria-hidden="true">
+          <div className="alone-card">
+            <p className="visual-label">Going alone</p>
+            <div className="path-solo">
+              <span className="solo-avatar">You</span>
+              <span className="fade-trail" />
             </div>
-          ))}
+            <p className="visual-caption">Motivation fades. Progress gets quiet.</p>
+          </div>
+          <div className="together-card">
+            <p className="visual-label">With Tandem</p>
+            <div className="path-pair">
+              <span className="pair-avatar pair-a sm">You</span>
+              <span className="shared-trail">
+                <span />
+                <span />
+                <span />
+              </span>
+              <span className="pair-avatar pair-b sm">Partner</span>
+            </div>
+            <p className="visual-caption">Two paths. Shared momentum.</p>
+          </div>
         </div>
       </div>
     </section>
   )
 }
-
-export default ProblemSection

@@ -1,15 +1,16 @@
-function CTASection() {
+import { useReveal } from '../hooks/useReveal'
+
+export default function CTASection() {
+  const ref = useReveal()
+
   return (
-    <section id="join-waitlist" className="section cta-section" aria-labelledby="cta-heading">
-      <div className="cta-inner">
-        <h2 id="cta-heading">Two people. One goal. Real accountability.</h2>
-        <p>Join the waitlist and be first to try Tandem—privacy-first accountability that actually works.</p>
-        <div className="btn-wrap">
-          <a href="#" className="btn-primary">Join the Waitlist</a>
-        </div>
+    <section id="start" className="section cta-section" aria-labelledby="cta-heading">
+      <div className="cta-inner reveal" ref={ref}>
+        <h2 id="cta-heading">Your next goal needs a partner.</h2>
+        <p>Start small, build momentum, and make progress with someone beside you.</p>
+        <a href="#start" className="btn-primary btn-lg">Start Your Tandem</a>
+        <p className="cta-sub">Better habits. Meaningful goals. Shared progress.</p>
       </div>
     </section>
   )
 }
-
-export default CTASection

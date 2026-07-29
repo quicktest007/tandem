@@ -1,28 +1,36 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Logo from './Logo'
 
-function Header() {
+const navLinks = [
+  { href: '#how-it-works', label: 'How It Works' },
+  { href: '#features', label: 'Features' },
+  { href: '#use-cases', label: 'Use Cases' },
+  { href: '#about', label: 'About' },
+]
+
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
-  const navLinks = [
-    { href: '#how-it-works', label: 'How it works' },
-    { href: '#why-tandem', label: 'Why Tandem' },
-    { href: '#privacy', label: 'Privacy' },
-    { href: '#use-cases', label: 'Use cases' },
-  ]
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
-  const LogoIcon = () => (
-    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-      <circle cx="9" cy="12" r="1.5" fill="currentColor" />
-      <circle cx="15" cy="12" r="1.5" fill="currentColor" />
-      <path d="M8 15h8" strokeWidth="1.5" />
-    </svg>
-  )
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
+  const close = () => setMenuOpen(false)
 
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="header-inner">
         <a href="#" className="header-logo" aria-label="Tandem home">
-          <span className="logo-icon"><LogoIcon /></span>
+          <Logo />
           <span>Tandem</span>
         </a>
 
@@ -30,17 +38,19 @@ function Header() {
           {navLinks.map((link) => (
             <a key={link.href} href={link.href}>{link.label}</a>
           ))}
-          <a href="#join-waitlist" className="header-cta">Join the Waitlist</a>
+          <a href="#sign-in" className="header-signin">Sign In</a>
+          <a href="#start" className="btn-primary btn-sm">Start Your Tandem</a>
         </nav>
 
         <button
           type="button"
           className="mobile-menu-btn"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen((v) => !v)}
           aria-expanded={menuOpen}
-          aria-label="Toggle menu"
+          aria-controls="mobile-nav"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
         >
-          <svg className="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="icon-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             {menuOpen ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -50,16 +60,18 @@ function Header() {
         </button>
       </div>
 
-      {menuOpen && (
-        <nav className="mobile-nav" aria-label="Mobile navigation">
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>{link.label}</a>
-          ))}
-          <a href="#join-waitlist" className="header-cta" onClick={() => setMenuOpen(false)}>Join the Waitlist</a>
-        </nav>
-      )}
+      <nav
+        id="mobile-nav"
+        className={`mobile-nav ${menuOpen ? 'is-open' : ''}`}
+        aria-label="Mobile navigation"
+        hidden={!menuOpen}
+      >
+        {navLinks.map((link) => (
+          <a key={link.href} href={link.href} onClick={close}>{link.label}</a>
+        ))}
+        <a href="#sign-in" onClick={close}>Sign In</a>
+        <a href="#start" className="btn-primary" onClick={close}>Start Your Tandem</a>
+      </nav>
     </header>
   )
 }
-
-export default Header

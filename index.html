@@ -3,447 +3,907 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tandem — Build Better Habits Together</title>
     <meta
       name="description"
-      content="Tandem – A privacy-first accountability tool that helps you stay consistent with your goals through genuine human connection."
+      content="Tandem helps you build better habits, reach meaningful goals, and stay consistent through private shared progress with someone you trust."
     />
-    <meta name="theme-color" content="#F5F4F1" />
+    <meta name="theme-color" content="#F7F5F1" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Tandem – Achieve your goals, with a friend." />
+    <meta property="og:title" content="Tandem — Build Better Habits Together" />
     <meta
       property="og:description"
-      content="A privacy-first accountability platform that helps two people stay consistent through simple check-ins and real human support."
+      content="Tandem helps you build better habits, reach meaningful goals, and stay consistent through private shared progress with someone you trust."
     />
     <meta property="og:site_name" content="Tandem" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Tandem – Achieve your goals, with a friend." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tandem — Build Better Habits Together" />
     <meta
       name="twitter:description"
-      content="A privacy-first accountability platform that helps two people stay consistent through simple check-ins and real human support."
+      content="Tandem helps you build better habits, reach meaningful goals, and stay consistent through private shared progress with someone you trust."
     />
-    <title>Tandem – Achieve your goals, with a friend.</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/index.css" />
   </head>
-  <body style="margin:0;background:#F5F4F1;color:#142C2E;font-family:'Outfit',system-ui,sans-serif">
-    <!--
-      Static markup inside #root is a fallback for GitHub Pages when the
-      Vite build is not deployed. React replaces this content when the app boots.
-    -->
+  <body>
+    <!-- Static fallback for branch-based Pages; React replaces #root when the Vite bundle loads. -->
     <div id="root">
       <div class="app">
         <header class="header">
           <div class="header-inner">
             <a href="#" class="header-logo" aria-label="Tandem home">
-              <span class="logo-icon" aria-hidden="true">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <circle cx="9" cy="12" r="1.5" fill="currentColor" />
-                  <circle cx="15" cy="12" r="1.5" fill="currentColor" />
-                  <path d="M8 15h8" stroke-width="1.5" />
+              <span class="logo-mark" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none">
+                  <rect width="32" height="32" rx="9" fill="currentColor" class="logo-mark-bg" />
+                  <circle cx="12" cy="16" r="2.25" fill="var(--bg)" />
+                  <circle cx="20" cy="16" r="2.25" fill="var(--bg)" />
+                  <path d="M11 21h10" stroke="var(--bg)" stroke-width="1.75" stroke-linecap="round" />
                 </svg>
               </span>
               <span>Tandem</span>
             </a>
 
             <nav class="header-nav" aria-label="Main navigation">
-              <a href="#how-it-works">How it works</a>
-              <a href="#why-tandem">Why Tandem</a>
-              <a href="#privacy">Privacy</a>
-              <a href="#use-cases">Use cases</a>
-              <a href="#join-waitlist" class="header-cta">Join the Waitlist</a>
+              <a href="#how-it-works">How It Works</a>
+              <a href="#features">Features</a>
+              <a href="#use-cases">Use Cases</a>
+              <a href="#about">About</a>
+              <a href="#sign-in" class="header-signin">Sign In</a>
+              <a href="#start" class="btn-primary btn-sm">Start Your Tandem</a>
             </nav>
 
             <button
               type="button"
               class="mobile-menu-btn"
-              id="mobile-menu-btn"
               aria-expanded="false"
-              aria-label="Toggle menu"
+              aria-controls="mobile-nav"
+              aria-label="Open menu"
             >
-              <svg class="icon-lg" id="menu-icon-open" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg class="icon-lg icon-menu" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
-              <svg class="icon-lg" id="menu-icon-close" fill="none" viewBox="0 0 24 24" stroke="currentColor" hidden>
+              <svg class="icon-lg icon-close" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" hidden>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
 
-          <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
-            <a href="#how-it-works">How it works</a>
-            <a href="#why-tandem">Why Tandem</a>
-            <a href="#privacy">Privacy</a>
-            <a href="#use-cases">Use cases</a>
-            <a href="#join-waitlist" class="header-cta">Join the Waitlist</a>
+          <nav
+            id="mobile-nav"
+            class="mobile-nav"
+            aria-label="Mobile navigation"
+            hidden
+          >
+            <a href="#how-it-works">How It Works</a>
+            <a href="#features">Features</a>
+            <a href="#use-cases">Use Cases</a>
+            <a href="#about">About</a>
+            <a href="#sign-in">Sign In</a>
+            <a href="#start" class="btn-primary">Start Your Tandem</a>
           </nav>
         </header>
 
         <main>
           <section class="hero" aria-labelledby="hero-heading">
-            <div class="hero-inner">
-              <div class="hero-connection">
-                <span class="hero-connection-dot"></span>
-                <span class="hero-connection-line"></span>
-                <span class="hero-connection-dot"></span>
-                <span class="hero-connection-label" style="margin-left:0.5rem">Two people. One goal.</span>
-              </div>
+            <div class="hero-bg" aria-hidden="true">
+              <span class="hero-orb hero-orb-a"></span>
+              <span class="hero-orb hero-orb-b"></span>
+              <span class="hero-path-line"></span>
+            </div>
 
-              <h1 id="hero-heading">
-                Achieve your goals, with a <span class="accent-text">friend.</span>
-              </h1>
+            <div class="hero-inner reveal is-visible">
+              <p class="eyebrow">Habits · Goals · Shared progress</p>
+              <h1 id="hero-heading">Consistency is easier together.</h1>
               <p class="hero-sub">
-                Tandem is a privacy-first accountability platform that helps two people stay consistent through simple check-ins and real human support—no scheduling headaches, no performative feeds.
+                Build better habits, reach meaningful goals, and keep moving forward with someone beside you.
               </p>
               <div class="hero-ctas">
-                <a href="#join-waitlist" class="btn-primary">Join the Waitlist</a>
-                <a href="#how-it-works" class="btn-secondary">See how it works</a>
+                <a href="#start" class="btn-primary">Start Your Tandem</a>
+                <a href="#how-it-works" class="btn-secondary">See How It Works</a>
+              </div>
+              <p class="hero-note">Private by design. No public feed. No follower counts.</p>
+
+              <div class="product-mockup" aria-hidden="true">
+                <div class="product-mockup-glow"></div>
+                <div class="product-card">
+                  <div class="product-card-top">
+                    <div class="product-pair">
+                      <span class="pair-avatar pair-a">A</span>
+                      <span class="pair-path">
+                        <span class="pair-path-dot"></span>
+                        <span class="pair-path-line"></span>
+                        <span class="pair-path-dot"></span>
+                      </span>
+                      <span class="pair-avatar pair-b">J</span>
+                    </div>
+                    <div class="product-pair-meta">
+                      <p class="product-goal-label">This week</p>
+                      <p class="product-goal-title">Walk 30 minutes · 3 times</p>
+                    </div>
+                  </div>
+
+                  <div class="product-progress">
+                    <div class="progress-track">
+                      <span class="progress-fill" style="width: 66%"></span>
+                    </div>
+                    <div class="progress-meta">
+                      <span>2 of 3 walks</span>
+                      <span class="progress-streak">3-week streak</span>
+                    </div>
+                  </div>
+
+                  <div class="product-feed">
+                    <div class="feed-item feed-checkin">
+                      <span class="pair-avatar pair-a sm">A</span>
+                      <div>
+                        <p class="feed-title">Alex checked in</p>
+                        <p class="feed-body">First walk done. Almost skipped it.</p>
+                        <p class="feed-time">Wed · 7:14 AM</p>
+                      </div>
+                      <span class="feed-react">Nice</span>
+                    </div>
+                    <div class="feed-item feed-nudge">
+                      <span class="pair-avatar pair-b sm">J</span>
+                      <div>
+                        <p class="feed-title">Jordan sent encouragement</p>
+                        <p class="feed-body">One more and you’ve got it.</p>
+                        <p class="feed-time">Fri · 6:02 PM</p>
+                      </div>
+                    </div>
+                    <div class="feed-item feed-milestone">
+                      <div class="milestone-badge">Milestone</div>
+                      <p class="feed-title">Shared week complete last Sunday</p>
+                      <p class="feed-body">Small steps. Lasting change.</p>
+                    </div>
+                  </div>
+
+                  <div class="product-reminder">
+                    <span class="reminder-dot"></span>
+                    Gentle reminder · Evening check-in with Jordan
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="problem" class="section problem-section" aria-labelledby="problem-heading">
+            <div class="container reveal is-visible">
+              <div class="problem-copy">
+                <h2 id="problem-heading">Starting isn’t usually the hard part. Staying consistent is.</h2>
+                <p>
+                  People set goals with good intentions. They download another app, create a plan, and feel motivated for a few days. Then life gets busy, momentum fades, and the goal quietly disappears.
+                </p>
+                <p>
+                  Tandem creates a simple rhythm that helps people keep going. Not through pressure, competition, or public performance—but through shared progress with someone they trust.
+                </p>
               </div>
 
-              <div class="hero-mockup">
-                <div class="mockup-card">
-                  <div class="mockup-header">
-                    <span class="logo-icon" aria-hidden="true">
-                      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <circle cx="9" cy="12" r="1.5" fill="currentColor" />
-                        <circle cx="15" cy="12" r="1.5" fill="currentColor" />
-                        <path d="M8 15h8" stroke-width="1.5" />
-                      </svg>
+              <div class="problem-visual" aria-hidden="true">
+                <div class="alone-card">
+                  <p class="visual-label">Going alone</p>
+                  <div class="path-solo">
+                    <span class="solo-avatar">You</span>
+                    <span class="fade-trail"></span>
+                  </div>
+                  <p class="visual-caption">Motivation fades. Progress gets quiet.</p>
+                </div>
+                <div class="together-card">
+                  <p class="visual-label">With Tandem</p>
+                  <div class="path-pair">
+                    <span class="pair-avatar pair-a sm">You</span>
+                    <span class="shared-trail">
+                      <span></span>
+                      <span></span>
+                      <span></span>
                     </span>
-                    <span class="mockup-title">Tandem</span>
+                    <span class="pair-avatar pair-b sm">Partner</span>
                   </div>
-                  <p class="text-muted" style="margin-bottom:1rem;font-size:0.875rem">Check-in with Sarah</p>
-                  <div class="mockup-item checkin">
-                    <span class="avatar avatar-accent">S</span>
-                    <div>
-                      <p style="font-size:0.875rem;font-weight:600;color:var(--navy);margin:0">Sarah checked in</p>
-                      <p class="text-muted" style="font-size:0.75rem;margin:0">Ran 3 miles · 2 hours ago</p>
+                  <p class="visual-caption">Two paths. Shared momentum.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="how-it-works" class="section how-section" aria-labelledby="how-heading">
+            <div class="container reveal is-visible">
+              <div class="section-intro">
+                <p class="eyebrow">How it works</p>
+                <h2 id="how-heading">A simple rhythm for lasting progress.</h2>
+              </div>
+
+              <ol class="timeline">
+                <li class="timeline-step">
+                  <div class="timeline-rail" aria-hidden="true">
+                    <span class="timeline-node">01</span>
+                    <span class="timeline-connector"></span>
+                  </div>
+                  <div class="timeline-content">
+                    <h3>Choose what matters</h3>
+                    <p>Create a habit or goal around health, learning, creativity, work, relationships, digital wellness, or personal growth.</p>
+                  </div>
+                </li>
+                <li class="timeline-step">
+                  <div class="timeline-rail" aria-hidden="true">
+                    <span class="timeline-node">02</span>
+                    <span class="timeline-connector"></span>
+                  </div>
+                  <div class="timeline-content">
+                    <h3>Invite your person</h3>
+                    <p>Build your Tandem with a friend, spouse, coworker, coach, family member, or someone who shares your goal.</p>
+                  </div>
+                </li>
+                <li class="timeline-step">
+                  <div class="timeline-rail" aria-hidden="true">
+                    <span class="timeline-node">03</span>
+                    <span class="timeline-connector"></span>
+                  </div>
+                  <div class="timeline-content">
+                    <h3>Check in</h3>
+                    <p>Share quick updates, reflect on progress, celebrate wins, and be honest when the week does not go as planned.</p>
+                  </div>
+                </li>
+                <li class="timeline-step">
+                  <div class="timeline-rail" aria-hidden="true">
+                    <span class="timeline-node">04</span>
+                  </div>
+                  <div class="timeline-content">
+                    <h3>Keep moving</h3>
+                    <p>Receive gentle nudges, encouragement, and reminders that help small actions become lasting routines.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </section>
+
+          <section id="features" class="section features-section" aria-labelledby="features-heading">
+            <div class="container">
+              <div class="section-intro reveal is-visible">
+                <p class="eyebrow">Features</p>
+                <h2 id="features-heading">Everything you need to keep going. Nothing you don’t.</h2>
+              </div>
+
+              <div class="feature-list">
+                <article id="shared-progress" class="feature-row reveal is-visible">
+                  <div class="feature-copy">
+                    <h3>Shared Progress</h3>
+                    <p>See how you and your partner are moving toward your goals without turning progress into a competition.</p>
+                  </div>
+                  <div class="feature-ui" aria-hidden="true">
+                    <div class="feature-ui-row">
+                      <span class="pair-avatar pair-a sm">A</span>
+                      <div class="mini-bars">
+                        <span style="width: 80%"></span>
+                        <span style="width: 55%"></span>
+                      </div>
+                      <span class="pair-avatar pair-b sm">J</span>
+                    </div>
+                    <p class="feature-ui-caption">Side by side — not head to head</p>
+                  </div>
+                </article>
+
+                <article id="quick-checkins" class="feature-row is-reverse reveal is-visible">
+                  <div class="feature-copy">
+                    <h3>Quick Check-Ins</h3>
+                    <p>Share a simple update in seconds. Check-ins should feel lightweight enough to become part of everyday life.</p>
+                  </div>
+                  <div class="feature-ui" aria-hidden="true">
+                    <div class="mini-checkin">
+                      <p>“Walked after dinner. Felt good to move.”</p>
+                      <button type="button" tabindex="-1">Send check-in</button>
                     </div>
                   </div>
-                  <div class="mockup-item yours">
-                    <span class="avatar avatar-navy">Y</span>
-                    <div>
-                      <p class="text-muted" style="font-size:0.875rem;margin:0">Your turn to check in</p>
-                      <p style="font-size:0.75rem;font-weight:500;color:var(--navy);margin:0">How did it go this week?</p>
+                </article>
+
+                <article id="gentle-nudges" class="feature-row reveal is-visible">
+                  <div class="feature-copy">
+                    <h3>Gentle Nudges</h3>
+                    <p>Get thoughtful reminders when it is time to take action, reconnect, or reflect.</p>
+                  </div>
+                  <div class="feature-ui" aria-hidden="true">
+                    <div class="mini-nudge">
+                      <span class="reminder-dot"></span>
+                      <div>
+                        <p class="feed-title">Evening nudge</p>
+                        <p class="feed-body">Time for a quick check-in with Jordan?</p>
+                      </div>
                     </div>
                   </div>
-                  <p class="text-muted" style="margin-top:1rem;font-size:0.75rem;text-align:center">Lightweight. Private. Human.</p>
+                </article>
+
+                <article id="encouragement" class="feature-row is-reverse reveal is-visible">
+                  <div class="feature-copy">
+                    <h3>Encouragement</h3>
+                    <p>Celebrate milestones, send reactions, and remind each other that progress matters.</p>
+                  </div>
+                  <div class="feature-ui" aria-hidden="true">
+                    <div class="mini-reacts">
+                      <span>Nice work</span>
+                      <span>Proud of you</span>
+                      <span>Keep going</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article id="flexible-goals" class="feature-row reveal is-visible">
+                  <div class="feature-copy">
+                    <h3>Flexible Goals</h3>
+                    <p>Use Tandem for recurring habits, weekly goals, personal challenges, or longer-term milestones.</p>
+                  </div>
+                  <div class="feature-ui" aria-hidden="true">
+                    <ul class="mini-goals">
+                      <li>Daily reading</li>
+                      <li>Weekly project sprint</li>
+                      <li>90-day milestone</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article id="private-by-design" class="feature-row is-reverse reveal is-visible">
+                  <div class="feature-copy">
+                    <h3>Private by Design</h3>
+                    <p>No public profiles, follower counts, popularity metrics, or pressure to perform for an audience.</p>
+                  </div>
+                  <div class="feature-ui" aria-hidden="true">
+                    <div class="mini-private">
+                      <span class="lock-dot"></span>
+                      <p>Only visible to people you invite</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section id="week-in-tandem" class="section week-section" aria-labelledby="week-heading">
+            <div class="week-inner reveal is-visible">
+              <div class="section-intro light">
+                <p class="eyebrow">A week inside Tandem</p>
+                <h2 id="week-heading">Progress feels different when it’s shared.</h2>
+              </div>
+
+              <div class="week-rail" role="list">
+                <article class="week-card" role="listitem" style="--i: 0">
+                  <p class="week-day">Monday</p>
+                  <h3>Set your intention</h3>
+                  <blockquote>“Walk for 30 minutes three times this week.”</blockquote>
+                </article>
+                <article class="week-card" role="listitem" style="--i: 1">
+                  <p class="week-day">Wednesday</p>
+                  <h3>Share a quick update</h3>
+                  <blockquote>“First walk complete. Almost skipped it, but I’m glad I went.”</blockquote>
+                </article>
+                <article class="week-card" role="listitem" style="--i: 2">
+                  <p class="week-day">Friday</p>
+                  <h3>Receive encouragement</h3>
+                  <blockquote>“Nice work. One more and you’ve got it.”</blockquote>
+                </article>
+                <article class="week-card" role="listitem" style="--i: 3">
+                  <p class="week-day">Sunday</p>
+                  <h3>Reflect together</h3>
+                  <blockquote>“What helped you make progress this week?”</blockquote>
+                </article>
+              </div>
+
+              <p class="week-closer">Small moments of connection create lasting momentum.</p>
+            </div>
+          </section>
+
+          <section id="use-cases" class="section usecases-section" aria-labelledby="usecases-heading">
+            <div class="container">
+              <div class="section-intro reveal is-visible">
+                <p class="eyebrow">Use cases</p>
+                <h2 id="usecases-heading">Whatever you’re working toward, don’t go it alone.</h2>
+              </div>
+
+              <div class="usecase-scroll" tabindex="0" aria-label="Use case examples">
+                <article class="usecase-card">
+                  <h3>Read more consistently</h3>
+                  <p>Set a weekly reading goal and share what you’re learning with a friend.</p>
+                </article>
+                <article class="usecase-card">
+                  <h3>Spend less time scrolling</h3>
+                  <p>Create healthier phone habits with someone pursuing the same change.</p>
+                </article>
+                <article class="usecase-card">
+                  <h3>Finish the project</h3>
+                  <p>Keep making progress on the idea that has been sitting in your notes for months.</p>
+                </article>
+                <article class="usecase-card">
+                  <h3>Move your body</h3>
+                  <p>Build a fitness rhythm—walks, workouts, or recovery—with someone cheering you on.</p>
+                </article>
+                <article class="usecase-card">
+                  <h3>Protect your mornings</h3>
+                  <p>Stick with a morning or evening routine that sets the tone for the rest of your day.</p>
+                </article>
+                <article class="usecase-card">
+                  <h3>Grow in your career</h3>
+                  <p>Ship portfolio pieces, practice interviews, or learn a skill with a trusted partner.</p>
+                </article>
+                <article class="usecase-card">
+                  <h3>Build financial habits</h3>
+                  <p>Stay consistent with saving, budgeting, or debt paydown without turning it into a spectacle.</p>
+                </article>
+                <article class="usecase-card">
+                  <h3>Make space for faith</h3>
+                  <p>Keep a gentle rhythm of reflection, prayer, or study with someone who understands why it matters.</p>
+                </article>
+                <article class="usecase-card">
+                  <h3>Strengthen a relationship</h3>
+                  <p>Set shared intentions for connection—date nights, check-ins, or simply showing up.</p>
+                </article>
+                <article class="usecase-card">
+                  <h3>Rewrite everyday routines</h3>
+                  <p>Build or break the small daily patterns that quietly shape how you feel.</p>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section id="about" class="section why-section" aria-labelledby="why-heading">
+            <div class="container reveal is-visible">
+              <div class="section-intro">
+                <p class="eyebrow">Why Tandem</p>
+                <h2 id="why-heading">Built for progress, not performance.</h2>
+              </div>
+
+              <div class="compare-grid">
+                <div class="compare-col tone-muted">
+                  <h3>Traditional habit apps</h3>
+                  <ul>
+                    <li>Built around solo tracking</li>
+                    <li>Easy to ignore</li>
+                    <li>Focused on streaks and data</li>
+                    <li>Progress stays isolated</li>
+                  </ul>
+                </div>
+                <div class="compare-col tone-muted">
+                  <h3>Social platforms</h3>
+                  <ul>
+                    <li>Public by default</li>
+                    <li>Driven by likes and followers</li>
+                    <li>Encourage comparison</li>
+                    <li>Turn growth into content</li>
+                  </ul>
+                </div>
+                <div class="compare-col tone-accent">
+                  <h3>Tandem</h3>
+                  <ul>
+                    <li>Built around trusted relationships</li>
+                    <li>Private and focused</li>
+                    <li>Encourages honest progress</li>
+                    <li>Designed to help people keep going</li>
+                  </ul>
+                </div>
+              </div>
+
+              <p class="why-tagline">No followers. No public pressure. Just meaningful progress.</p>
+            </div>
+          </section>
+
+          <section class="section brand-section" aria-labelledby="brand-heading">
+            <div class="brand-inner">
+              <h2 id="brand-heading" class="sr-only">Brand statement</h2>
+              <p class="brand-line is-visible">You don’t need more motivation.</p>
+              <p class="brand-line is-visible">You need a rhythm.</p>
+              <p class="brand-line is-visible">A reason to check in.</p>
+              <p class="brand-line is-visible">Someone who notices when you show up.</p>
+              <p class="brand-line is-visible">And someone who reminds you that one missed day doesn’t erase your progress.</p>
+              <p class="brand-line brand-end is-visible">That’s Tandem.</p>
+            </div>
+          </section>
+
+          <section id="testimonials" class="section testimonials-section" aria-labelledby="testimonials-heading">
+            <div class="container reveal is-visible">
+              <div class="section-intro">
+                <p class="eyebrow">Placeholder stories</p>
+                <h2 id="testimonials-heading">Someone in your corner changes everything.</h2>
+              </div>
+
+              <div class="testimonial-grid">
+                <figure class="testimonial-card" data-placeholder="true">
+                  <blockquote>“I finally stayed consistent with my morning walks because someone noticed when I showed up.”</blockquote>
+                  <figcaption>
+                    <span class="testimonial-name">Maya R.</span>
+                    <span class="testimonial-detail">Health habit · placeholder</span>
+                  </figcaption>
+                </figure>
+                <figure class="testimonial-card" data-placeholder="true">
+                  <blockquote>“It feels encouraging, not judgmental. We celebrate small weeks the same way we celebrate big ones.”</blockquote>
+                  <figcaption>
+                    <span class="testimonial-name">Chris &amp; Sam</span>
+                    <span class="testimonial-detail">Creative project · placeholder</span>
+                  </figcaption>
+                </figure>
+                <figure class="testimonial-card" data-placeholder="true">
+                  <blockquote>“Simpler than every habit tracker I’ve abandoned. The check-ins take seconds and keep us connected.”</blockquote>
+                  <figcaption>
+                    <span class="testimonial-name">Priya N.</span>
+                    <span class="testimonial-detail">Reading goal · placeholder</span>
+                  </figcaption>
+                </figure>
+                <figure class="testimonial-card" data-placeholder="true">
+                  <blockquote>“We’re making small but meaningful progress on a side project that used to live forever in our notes.”</blockquote>
+                  <figcaption>
+                    <span class="testimonial-name">Owen L.</span>
+                    <span class="testimonial-detail">Career development · placeholder</span>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <section id="faq" class="section faq-section" aria-labelledby="faq-heading">
+            <div class="container narrow reveal is-visible">
+              <div class="section-intro">
+                <p class="eyebrow">FAQ</p>
+                <h2 id="faq-heading">Questions, answered.</h2>
+              </div>
+
+              <div class="faq-list">
+                <div class="faq-item is-open">
+                  <h3>
+                    <button
+                      type="button"
+                      id="faq-button-0"
+                      class="faq-trigger"
+                      aria-expanded="true"
+                      aria-controls="faq-panel-0"
+                    >
+                      <span>Is Tandem a habit tracker?</span>
+                      <span class="faq-icon" aria-hidden="true">−</span>
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-panel-0"
+                    role="region"
+                    aria-labelledby="faq-button-0"
+                    class="faq-panel"
+                  >
+                    <p>Tandem includes habit and goal tracking, but it is designed around shared progress rather than tracking alone.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    <button
+                      type="button"
+                      id="faq-button-1"
+                      class="faq-trigger"
+                      aria-expanded="false"
+                      aria-controls="faq-panel-1"
+                    >
+                      <span>Do both people need the app?</span>
+                      <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-panel-1"
+                    role="region"
+                    aria-labelledby="faq-button-1"
+                    class="faq-panel"
+                    hidden
+                  >
+                    <p>Yes. Each person has their own account and can participate in shared check-ins, encouragement, and progress.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    <button
+                      type="button"
+                      id="faq-button-2"
+                      class="faq-trigger"
+                      aria-expanded="false"
+                      aria-controls="faq-panel-2"
+                    >
+                      <span>Can I have more than one Tandem?</span>
+                      <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-panel-2"
+                    role="region"
+                    aria-labelledby="faq-button-2"
+                    class="faq-panel"
+                    hidden
+                  >
+                    <p>You can build more than one Tandem over time—with different people and different goals—even if you start with a single partner.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    <button
+                      type="button"
+                      id="faq-button-3"
+                      class="faq-trigger"
+                      aria-expanded="false"
+                      aria-controls="faq-panel-3"
+                    >
+                      <span>Are my goals public?</span>
+                      <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-panel-3"
+                    role="region"
+                    aria-labelledby="faq-button-3"
+                    class="faq-panel"
+                    hidden
+                  >
+                    <p>No. Tandem is private by design. Your activity is only visible to the people you choose.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    <button
+                      type="button"
+                      id="faq-button-4"
+                      class="faq-trigger"
+                      aria-expanded="false"
+                      aria-controls="faq-panel-4"
+                    >
+                      <span>What kinds of goals can I create?</span>
+                      <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-panel-4"
+                    role="region"
+                    aria-labelledby="faq-button-4"
+                    class="faq-panel"
+                    hidden
+                  >
+                    <p>Tandem can support habits, routines, short-term goals, personal challenges, and long-term milestones.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    <button
+                      type="button"
+                      id="faq-button-5"
+                      class="faq-trigger"
+                      aria-expanded="false"
+                      aria-controls="faq-panel-5"
+                    >
+                      <span>What happens if I miss a day?</span>
+                      <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-panel-5"
+                    role="region"
+                    aria-labelledby="faq-button-5"
+                    class="faq-panel"
+                    hidden
+                  >
+                    <p>Tandem encourages reflection and restarting rather than shame, punishment, or losing all progress.</p>
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <h3>
+                    <button
+                      type="button"
+                      id="faq-button-6"
+                      class="faq-trigger"
+                      aria-expanded="false"
+                      aria-controls="faq-panel-6"
+                    >
+                      <span>Is Tandem for coaches or groups?</span>
+                      <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-panel-6"
+                    role="region"
+                    aria-labelledby="faq-button-6"
+                    class="faq-panel"
+                    hidden
+                  >
+                    <p>The initial experience is centered on two people, with room to grow into coaching and small-group features later.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
 
-          <section id="problem" class="section section-alt" aria-labelledby="problem-heading">
-            <div class="container container-narrow">
-              <h2 id="problem-heading" class="section-title">Staying consistent shouldn't be this hard</h2>
-              <p class="section-desc">You know what you want to achieve. The gap is between intention and follow-through.</p>
-              <div class="pain-grid">
-                <div class="pain-card">
-                  <h3>Going it alone is exhausting</h3>
-                  <p>It's hard to stay consistent when no one's watching. Motivation fades. Accountability to yourself only gets you so far.</p>
-                </div>
-                <div class="pain-card">
-                  <h3>Habit trackers are easy to ignore</h3>
-                  <p>Apps can remind you—but they can't understand, encourage, or hold you accountable. You'll swipe away another notification.</p>
-                </div>
-                <div class="pain-card">
-                  <h3>Group accountability gets noisy</h3>
-                  <p>Big communities and group chats drown you in updates. You need focused support from one person who actually gets your goals.</p>
-                </div>
-                <div class="pain-card">
-                  <h3>Scheduling becomes a burden</h3>
-                  <p>Constant meetings and check-ins add friction to your life. You need accountability without the calendar Tetris.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="solution" class="section" aria-labelledby="solution-heading">
-            <div class="container container-narrow">
-              <h2 id="solution-heading" class="section-title">Accountability that actually works</h2>
-              <p class="section-desc">Tandem strips away everything that gets in the way. What remains is simple: two people, committed to showing up for each other.</p>
-              <div class="pillar-grid">
-                <div class="pillar-card">
-                  <span class="pillar-icon" aria-hidden="true">👥</span>
-                  <div>
-                    <h3>Paired accountability</h3>
-                    <p>One person. One partner. Real commitment. Tandem connects you with someone who cares about staying on track—together.</p>
-                  </div>
-                </div>
-                <div class="pillar-card">
-                  <span class="pillar-icon" aria-hidden="true">⏱</span>
-                  <div>
-                    <h3>Lightweight check-ins</h3>
-                    <p>No meetings. No video calls. Quick check-ins when it fits your schedule. Consistency without the overhead.</p>
-                  </div>
-                </div>
-                <div class="pillar-card">
-                  <span class="pillar-icon" aria-hidden="true">🔒</span>
-                  <div>
-                    <h3>Private by design</h3>
-                    <p>Your goals stay between you and your partner. No public posting. No performative pressure. Just honest progress.</p>
-                  </div>
-                </div>
-                <div class="pillar-card">
-                  <span class="pillar-icon" aria-hidden="true">💬</span>
-                  <div>
-                    <h3>Human, not algorithmic</h3>
-                    <p>Real empathy. Real encouragement. A partner who celebrates your wins and supports you through setbacks.</p>
-                  </div>
-                </div>
-                <div class="pillar-card">
-                  <span class="pillar-icon" aria-hidden="true">↔</span>
-                  <div>
-                    <h3>Flexible cadence</h3>
-                    <p>You choose how often to check in. Daily, weekly, or somewhere in between. Tandem adapts to your life.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="how-it-works" class="section section-alt" aria-labelledby="how-heading">
-            <div class="container container-narrow">
-              <h2 id="how-heading" class="section-title">How it works</h2>
-              <p class="section-desc">Four steps. No complexity.</p>
-              <div class="step-grid">
-                <div class="step-card">
-                  <span class="step-num">1</span>
-                  <h3>Choose your goal</h3>
-                  <p>Fitness, study, creative work, habits—whatever you want to build. Pick something real and meaningful to you.</p>
-                </div>
-                <div class="step-card">
-                  <span class="step-num">2</span>
-                  <h3>Pair with someone you trust</h3>
-                  <p>Connect with a friend, a colleague, or get matched with someone who shares similar goals. One person. One partnership.</p>
-                </div>
-                <div class="step-card">
-                  <span class="step-num">3</span>
-                  <h3>Check in consistently</h3>
-                  <p>Lightweight updates when it fits your schedule. No meetings, no video calls. Just honest check-ins that keep you both on track.</p>
-                </div>
-                <div class="step-card">
-                  <span class="step-num">4</span>
-                  <h3>Build momentum together</h3>
-                  <p>Celebrate wins. Support through setbacks. Watch consistency compound over time. You're not doing it alone anymore.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="why-tandem" class="section" aria-labelledby="why-heading">
-            <div class="container container-narrow">
-              <h2 id="why-heading" class="section-title">Why Tandem is different</h2>
-              <p class="section-desc" style="margin-bottom:1rem">We built Tandem because nothing else gets it right.</p>
-              <div class="not-tags">
-                <span class="not-tag">Not a social feed</span>
-                <span class="not-tag">Not a group chat</span>
-                <span class="not-tag">Not a habit app you ignore</span>
-                <span class="not-tag">Not expensive coaching</span>
-                <span class="not-tag">Not another productivity dashboard</span>
-              </div>
-              <div class="highlight-box">
-                <p>Instead: focused accountability with one real person.</p>
-                <p>No feeds. No noise. No performative posting. Just you and a partner who shows up for you—privately, consistently, and humanely.</p>
-              </div>
-            </div>
-          </section>
-
-          <section id="privacy" class="section section-privacy" aria-labelledby="privacy-heading">
-            <div class="container container-narrow">
-              <h2 id="privacy-heading" class="section-title">Privacy-first by design</h2>
-              <p class="section-desc">We built Tandem because accountability requires vulnerability. You deserve a place that honors that.</p>
-              <div class="privacy-list">
-                <div class="privacy-item">
-                  <span class="privacy-check" aria-hidden="true">
-                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  <div>
-                    <h3>Your goals stay personal</h3>
-                    <p>We don't turn your goals into content. No public streaks, no leaderboards, no performative pressure. What you share stays between you and your partner.</p>
-                  </div>
-                </div>
-                <div class="privacy-item">
-                  <span class="privacy-check" aria-hidden="true">
-                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  <div>
-                    <h3>No performative social pressure</h3>
-                    <p>Accountability works when you can be honest. Tandem gives you a private space to share progress—and struggles—without the anxiety of public exposure.</p>
-                  </div>
-                </div>
-                <div class="privacy-item">
-                  <span class="privacy-check" aria-hidden="true">
-                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </span>
-                  <div>
-                    <h3>A calmer, more intentional experience</h3>
-                    <p>We're not competing for your attention. No infinite scroll, no notifications designed to addict. Just thoughtful check-ins that support your growth.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="use-cases" class="section section-alt" aria-labelledby="use-cases-heading">
-            <div class="container container-narrow">
-              <h2 id="use-cases-heading" class="section-title">Who Tandem is for</h2>
-              <p class="section-desc">People who want to build consistency—without the noise.</p>
-              <div class="usecase-grid">
-                <div class="usecase-card">
-                  <span class="usecase-icon" aria-hidden="true">🏃</span>
-                  <h3>Working out regularly</h3>
-                  <p>Stay consistent with running, gym, or any fitness routine. A partner who checks in makes the difference between another skipped day and showing up.</p>
-                </div>
-                <div class="usecase-card">
-                  <span class="usecase-icon" aria-hidden="true">📚</span>
-                  <h3>Studying for exams</h3>
-                  <p>Preparing for a big test? A study partner who checks in keeps you accountable to your schedule when motivation runs low.</p>
-                </div>
-                <div class="usecase-card">
-                  <span class="usecase-icon" aria-hidden="true">✍️</span>
-                  <h3>Writing consistently</h3>
-                  <p>Blog, book, or journal—creative work needs rhythm. A partner who asks how the writing went keeps you coming back to the page.</p>
-                </div>
-                <div class="usecase-card">
-                  <span class="usecase-icon" aria-hidden="true">✓</span>
-                  <h3>Building a habit</h3>
-                  <p>Meditation, reading, learning a language—habits are built through repetition. Accountability turns intention into routine.</p>
-                </div>
-                <div class="usecase-card">
-                  <span class="usecase-icon" aria-hidden="true">🎯</span>
-                  <h3>Staying on track with personal goals</h3>
-                  <p>Whatever you're working toward—career change, side project, personal growth—a partner helps you stay honest and consistent.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="join-waitlist" class="section cta-section" aria-labelledby="cta-heading">
-            <div class="cta-inner">
-              <h2 id="cta-heading">Two people. One goal. Real accountability.</h2>
-              <p>Join the waitlist and be first to try Tandem—privacy-first accountability that actually works.</p>
-              <div class="btn-wrap">
-                <a href="#" class="btn-primary">Join the Waitlist</a>
-              </div>
+          <section id="start" class="section cta-section" aria-labelledby="cta-heading">
+            <div class="cta-inner reveal is-visible">
+              <h2 id="cta-heading">Your next goal needs a partner.</h2>
+              <p>Start small, build momentum, and make progress with someone beside you.</p>
+              <a href="#start" class="btn-primary btn-lg">Start Your Tandem</a>
+              <p class="cta-sub">Better habits. Meaningful goals. Shared progress.</p>
             </div>
           </section>
         </main>
 
-        <footer class="footer">
+        <footer class="footer" id="privacy">
           <div class="footer-inner">
-            <a href="#" class="footer-logo">
-              <span class="logo-icon" aria-hidden="true">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <circle cx="9" cy="12" r="1.5" fill="currentColor" />
-                  <circle cx="15" cy="12" r="1.5" fill="currentColor" />
-                  <path d="M8 15h8" stroke-width="1.5" />
-                </svg>
-              </span>
-              Tandem
-            </a>
-            <div class="footer-links">
-              <a href="#privacy">Privacy</a>
-              <a href="#">Terms</a>
-              <a href="#">Contact</a>
+            <div class="footer-brand">
+              <a href="#" class="footer-logo" aria-label="Tandem home">
+                <span class="logo-mark" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none">
+                    <rect width="32" height="32" rx="9" fill="currentColor" class="logo-mark-bg" />
+                    <circle cx="12" cy="16" r="2.25" fill="var(--bg)" />
+                    <circle cx="20" cy="16" r="2.25" fill="var(--bg)" />
+                    <path d="M11 21h10" stroke="var(--bg)" stroke-width="1.75" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <span>Tandem</span>
+              </a>
+              <p>
+                Tandem helps people build lasting habits and achieve meaningful goals through shared progress.
+              </p>
+            </div>
+
+            <div class="footer-cols">
+              <div>
+                <p class="footer-heading">Product</p>
+                <ul>
+                  <li><a href="#how-it-works">How It Works</a></li>
+                  <li><a href="#features">Features</a></li>
+                  <li><a href="#use-cases">Use Cases</a></li>
+                  <li><a href="#about">About</a></li>
+                </ul>
+              </div>
+              <div>
+                <p class="footer-heading">Company</p>
+                <ul>
+                  <li><a href="#privacy">Privacy</a></li>
+                  <li><a href="#terms">Terms</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </div>
+              <div>
+                <p class="footer-heading">Social</p>
+                <ul>
+                  <li><a href="https://instagram.com" rel="noopener noreferrer" target="_blank">Instagram</a></li>
+                  <li><a href="https://linkedin.com" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-          <p class="footer-copy">© <span id="year">2026</span> Tandem. Built for real connection.</p>
+          <div id="terms" class="sr-only">Terms of service coming soon.</div>
+          <div id="contact" class="sr-only">Contact: hello@tandem.app</div>
+          <div id="sign-in" class="sr-only">Sign in coming soon.</div>
+          <p class="footer-copy">© 2026 Tandem. Stay connected. Keep going.</p>
         </footer>
 
         <div
+          id="cookie-banner"
           role="dialog"
           aria-labelledby="cookie-banner-heading"
           aria-describedby="cookie-banner-desc"
           class="cookie-banner"
-          id="cookie-banner"
           hidden
         >
           <div class="cookie-banner-inner">
             <div>
-              <h2 id="cookie-banner-heading">We Value Your Privacy</h2>
+              <h2 id="cookie-banner-heading">Your privacy matters</h2>
               <p id="cookie-banner-desc">
-                We use essential cookies to keep Tandem running smoothly. We never sell your data. Accept or decline non-essential cookies.
+                We use essential cookies to keep Tandem running smoothly. We never sell your data.
               </p>
             </div>
             <div class="cookie-buttons">
-              <button type="button" class="cookie-decline" id="cookie-decline">Decline</button>
-              <button type="button" class="cookie-accept" id="cookie-accept">Accept</button>
+              <button type="button" class="cookie-decline">Decline</button>
+              <button type="button" class="cookie-accept">Accept</button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <noscript>
-      <p style="padding:1.5rem;text-align:center;font-family:system-ui,sans-serif">
-        Enable JavaScript for the full Tandem experience. The page content above still works without it.
-      </p>
-    </noscript>
-
     <script>
       (function () {
-        var year = document.getElementById('year')
-        if (year) year.textContent = String(new Date().getFullYear())
-
-        var btn = document.getElementById('mobile-menu-btn')
-        var nav = document.getElementById('mobile-nav')
-        var openIcon = document.getElementById('menu-icon-open')
-        var closeIcon = document.getElementById('menu-icon-close')
-        if (btn && nav) {
-          btn.addEventListener('click', function () {
-            var open = nav.hasAttribute('hidden')
-            if (open) {
-              nav.removeAttribute('hidden')
-              btn.setAttribute('aria-expanded', 'true')
-              if (openIcon) openIcon.hidden = true
-              if (closeIcon) closeIcon.hidden = false
-            } else {
-              nav.setAttribute('hidden', '')
-              btn.setAttribute('aria-expanded', 'false')
-              if (openIcon) openIcon.hidden = false
-              if (closeIcon) closeIcon.hidden = true
-            }
-          })
-          nav.querySelectorAll('a').forEach(function (link) {
-            link.addEventListener('click', function () {
-              nav.setAttribute('hidden', '')
-              btn.setAttribute('aria-expanded', 'false')
-              if (openIcon) openIcon.hidden = false
-              if (closeIcon) closeIcon.hidden = true
-            })
-          })
+        var header = document.querySelector('.header');
+        function onScroll() {
+          if (header) header.classList.toggle('is-scrolled', window.scrollY > 8);
         }
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
 
-        var banner = document.getElementById('cookie-banner')
-        var accept = document.getElementById('cookie-accept')
-        var decline = document.getElementById('cookie-decline')
-        try {
-          if (banner && !localStorage.getItem('tandem-cookie-consent')) {
-            banner.hidden = false
+        var menuBtn = document.querySelector('.mobile-menu-btn');
+        var mobileNav = document.getElementById('mobile-nav');
+        var menuIconOpen = menuBtn && menuBtn.querySelector('.icon-menu');
+        var menuIconClose = menuBtn && menuBtn.querySelector('.icon-close');
+
+        function setMenuOpen(open) {
+          if (!menuBtn || !mobileNav) return;
+          menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+          mobileNav.classList.toggle('is-open', open);
+          if (open) {
+            mobileNav.removeAttribute('hidden');
+            document.body.style.overflow = 'hidden';
+          } else {
+            mobileNav.setAttribute('hidden', '');
+            document.body.style.overflow = '';
           }
-        } catch (e) {
-          if (banner) banner.hidden = false
+          if (menuIconOpen) menuIconOpen.hidden = open;
+          if (menuIconClose) menuIconClose.hidden = !open;
         }
-        function dismiss(value) {
-          try { localStorage.setItem('tandem-cookie-consent', value) } catch (e) {}
-          if (banner) banner.hidden = true
+
+        if (menuBtn && mobileNav) {
+          menuBtn.addEventListener('click', function () {
+            setMenuOpen(menuBtn.getAttribute('aria-expanded') !== 'true');
+          });
+          mobileNav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () { setMenuOpen(false); });
+          });
         }
-        if (accept) accept.addEventListener('click', function () { dismiss('accepted') })
-        if (decline) decline.addEventListener('click', function () { dismiss('declined') })
-      })()
+
+        document.querySelectorAll('.faq-item').forEach(function (item) {
+          var btn = item.querySelector('.faq-trigger');
+          var panel = item.querySelector('.faq-panel');
+          var icon = item.querySelector('.faq-icon');
+          if (!btn || !panel) return;
+
+          btn.addEventListener('click', function () {
+            var isOpen = item.classList.contains('is-open');
+
+            document.querySelectorAll('.faq-item.is-open').forEach(function (other) {
+              if (other === item) return;
+              other.classList.remove('is-open');
+              var otherBtn = other.querySelector('.faq-trigger');
+              var otherPanel = other.querySelector('.faq-panel');
+              var otherIcon = other.querySelector('.faq-icon');
+              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+              if (otherPanel) otherPanel.setAttribute('hidden', '');
+              if (otherIcon) otherIcon.textContent = '+';
+            });
+
+            if (isOpen) {
+              item.classList.remove('is-open');
+              btn.setAttribute('aria-expanded', 'false');
+              panel.setAttribute('hidden', '');
+              if (icon) icon.textContent = '+';
+            } else {
+              item.classList.add('is-open');
+              btn.setAttribute('aria-expanded', 'true');
+              panel.removeAttribute('hidden');
+              if (icon) icon.textContent = '−';
+            }
+          });
+        });
+
+        var banner = document.getElementById('cookie-banner');
+        if (banner) {
+          try {
+            if (!localStorage.getItem('tandem-cookie-consent')) {
+              banner.removeAttribute('hidden');
+            }
+          } catch (e) {
+            banner.removeAttribute('hidden');
+          }
+
+          function dismissConsent(value) {
+            try { localStorage.setItem('tandem-cookie-consent', value); } catch (err) {}
+            banner.setAttribute('hidden', '');
+          }
+
+          var acceptBtn = banner.querySelector('.cookie-accept');
+          var declineBtn = banner.querySelector('.cookie-decline');
+          if (acceptBtn) acceptBtn.addEventListener('click', function () { dismissConsent('accepted'); });
+          if (declineBtn) declineBtn.addEventListener('click', function () { dismissConsent('declined'); });
+        }
+      })();
     </script>
+
+    <noscript>
+      <p style="padding:1.5rem;text-align:center;font-family:system-ui,sans-serif">
+        JavaScript is recommended for the full Tandem experience.
+      </p>
+    </noscript>
 
     <script type="module" src="./src/main.jsx"></script>
   </body>

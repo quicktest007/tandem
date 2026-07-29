@@ -1,28 +1,54 @@
-function HowItWorks() {
-  const steps = [
-    { step: '1', title: 'Choose your goal', body: "Fitness, study, creative work, habits—whatever you want to build. Pick something real and meaningful to you." },
-    { step: '2', title: 'Pair with someone you trust', body: "Connect with a friend, a colleague, or get matched with someone who shares similar goals. One person. One partnership." },
-    { step: '3', title: 'Check in consistently', body: "Lightweight updates when it fits your schedule. No meetings, no video calls. Just honest check-ins that keep you both on track." },
-    { step: '4', title: 'Build momentum together', body: "Celebrate wins. Support through setbacks. Watch consistency compound over time. You're not doing it alone anymore." },
-  ]
+import { useReveal } from '../hooks/useReveal'
+
+const steps = [
+  {
+    num: '01',
+    title: 'Choose what matters',
+    body: 'Create a habit or goal around health, learning, creativity, work, relationships, digital wellness, or personal growth.',
+  },
+  {
+    num: '02',
+    title: 'Invite your person',
+    body: 'Build your Tandem with a friend, spouse, coworker, coach, family member, or someone who shares your goal.',
+  },
+  {
+    num: '03',
+    title: 'Check in',
+    body: 'Share quick updates, reflect on progress, celebrate wins, and be honest when the week does not go as planned.',
+  },
+  {
+    num: '04',
+    title: 'Keep moving',
+    body: 'Receive gentle nudges, encouragement, and reminders that help small actions become lasting routines.',
+  },
+]
+
+export default function HowItWorks() {
+  const ref = useReveal()
 
   return (
-    <section id="how-it-works" className="section section-alt" aria-labelledby="how-heading">
-      <div className="container container-narrow">
-        <h2 id="how-heading" className="section-title">How it works</h2>
-        <p className="section-desc">Four steps. No complexity.</p>
-        <div className="step-grid">
-          {steps.map((s, i) => (
-            <div key={i} className="step-card">
-              <span className="step-num">{s.step}</span>
-              <h3>{s.title}</h3>
-              <p>{s.body}</p>
-            </div>
-          ))}
+    <section id="how-it-works" className="section how-section" aria-labelledby="how-heading">
+      <div className="container reveal" ref={ref}>
+        <div className="section-intro">
+          <p className="eyebrow">How it works</p>
+          <h2 id="how-heading">A simple rhythm for lasting progress.</h2>
         </div>
+
+        <ol className="timeline">
+          {steps.map((step, i) => (
+            <li key={step.num} className="timeline-step">
+              <div className="timeline-rail" aria-hidden="true">
+                <span className="timeline-node">{step.num}</span>
+                {i < steps.length - 1 && <span className="timeline-connector" />}
+              </div>
+              <div className="timeline-content">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   )
 }
-
-export default HowItWorks

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-function CookieBanner() {
+export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -25,11 +25,18 @@ function CookieBanner() {
   if (!isVisible) return null
 
   return (
-    <div role="dialog" aria-labelledby="cookie-banner-heading" aria-describedby="cookie-banner-desc" className="cookie-banner">
+    <div
+      role="dialog"
+      aria-labelledby="cookie-banner-heading"
+      aria-describedby="cookie-banner-desc"
+      className="cookie-banner"
+    >
       <div className="cookie-banner-inner">
         <div>
-          <h2 id="cookie-banner-heading">We Value Your Privacy</h2>
-          <p id="cookie-banner-desc">We use essential cookies to keep Tandem running smoothly. We never sell your data. Accept or decline non-essential cookies.</p>
+          <h2 id="cookie-banner-heading">Your privacy matters</h2>
+          <p id="cookie-banner-desc">
+            We use essential cookies to keep Tandem running smoothly. We never sell your data.
+          </p>
         </div>
         <div className="cookie-buttons">
           <button type="button" onClick={handleDecline} className="cookie-decline">Decline</button>
@@ -39,5 +46,3 @@ function CookieBanner() {
     </div>
   )
 }
-
-export default CookieBanner
