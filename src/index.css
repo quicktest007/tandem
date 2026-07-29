@@ -123,16 +123,21 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
 
 .btn-primary {
   background: var(--accent-btn);
-  color: white;
+  color: #fff;
   border: 1px solid transparent;
 }
 
-.btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--accent-hover);
+  color: #fff;
+  transform: translateY(-1px);
+}
 
 .btn-secondary {
-  background: transparent;
+  background: var(--bg-elevated);
   color: var(--text);
-  border: 1px solid var(--line);
+  border: 1.5px solid rgba(0, 88, 152, 0.35);
 }
 
 .btn-secondary:hover {
@@ -296,6 +301,18 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
 .header-nav a:hover { color: var(--text); }
 .header-signin { color: var(--text) !important; }
 
+.header-nav a.btn-primary,
+.header-nav a.btn-primary:hover,
+.header-nav a.btn-primary:focus-visible {
+  color: #fff;
+  background: var(--accent-btn);
+}
+
+.header-nav a.btn-primary:hover,
+.header-nav a.btn-primary:focus-visible {
+  background: var(--accent-hover);
+}
+
 .mobile-menu-btn {
   display: inline-flex;
   border: 0;
@@ -323,6 +340,19 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   text-decoration: none;
   font-weight: 500;
   color: var(--text);
+}
+
+.mobile-nav a.btn-primary,
+.mobile-nav a.btn-primary:hover,
+.mobile-nav a.btn-primary:focus-visible {
+  color: #fff;
+  background: var(--accent-btn);
+  width: fit-content;
+}
+
+.mobile-nav a.btn-primary:hover,
+.mobile-nav a.btn-primary:focus-visible {
+  background: var(--accent-hover);
 }
 
 @media (min-width: 900px) {
@@ -1363,13 +1393,13 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
 }
 
 .cookie-decline {
-  background: transparent;
-  border: 1px solid var(--line);
+  background: var(--bg-elevated);
+  border: 1.5px solid rgba(0, 88, 152, 0.35);
   color: var(--text);
 }
 
 .cookie-accept {
   background: var(--accent-btn);
   border: 0;
-  color: white;
+  color: #fff;
 }
