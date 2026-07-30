@@ -106,64 +106,29 @@
               </div>
               <p class="hero-note">Private by design. No public feed. No follower counts.</p>
 
-              <div class="product-mockup" aria-hidden="true">
-                <div class="product-mockup-glow"></div>
-                <div class="product-card">
-                  <div class="product-card-top">
-                    <div class="product-pair">
-                      <span class="pair-avatar pair-a">A</span>
-                      <span class="pair-path">
-                        <span class="pair-path-dot"></span>
-                        <span class="pair-path-line"></span>
-                        <span class="pair-path-dot"></span>
-                      </span>
-                      <span class="pair-avatar pair-b">J</span>
-                    </div>
-                    <div class="product-pair-meta">
-                      <p class="product-goal-label">This week</p>
-                      <p class="product-goal-title">Walk 30 minutes · 3 times</p>
-                    </div>
-                  </div>
-
-                  <div class="product-progress">
-                    <div class="progress-track">
-                      <span class="progress-fill" style="width: 66%"></span>
-                    </div>
-                    <div class="progress-meta">
-                      <span>2 of 3 walks</span>
-                      <span class="progress-streak">3-week streak</span>
-                    </div>
-                  </div>
-
-                  <div class="product-feed">
-                    <div class="feed-item feed-checkin">
-                      <span class="pair-avatar pair-a sm">A</span>
-                      <div>
-                        <p class="feed-title">Alex checked in</p>
-                        <p class="feed-body">First walk done. Almost skipped it.</p>
-                        <p class="feed-time">Wed · 7:14 AM</p>
-                      </div>
-                      <span class="feed-react">Nice</span>
-                    </div>
-                    <div class="feed-item feed-nudge">
-                      <span class="pair-avatar pair-b sm">J</span>
-                      <div>
-                        <p class="feed-title">Jordan sent encouragement</p>
-                        <p class="feed-body">One more and you’ve got it.</p>
-                        <p class="feed-time">Fri · 6:02 PM</p>
-                      </div>
-                    </div>
-                    <div class="feed-item feed-milestone">
-                      <div class="milestone-badge">Milestone</div>
-                      <p class="feed-title">Shared week complete last Sunday</p>
-                      <p class="feed-body">Small steps. Lasting change.</p>
-                    </div>
-                  </div>
-
-                  <div class="product-reminder">
-                    <span class="reminder-dot"></span>
-                    Gentle reminder · Evening check-in with Jordan
-                  </div>
+              <div class="hero-video">
+                <div class="hero-video-glow" aria-hidden="true"></div>
+                <div class="hero-video-frame">
+                  <video
+                    id="hero-video"
+                    class="hero-video-el"
+                    src="./hero.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="Tandem product preview video"
+                  ></video>
+                  <button
+                    type="button"
+                    class="hero-video-toggle"
+                    id="hero-video-toggle"
+                    aria-pressed="true"
+                    aria-label="Pause hero video"
+                  >
+                    Pause
+                  </button>
                 </div>
               </div>
             </div>
@@ -865,6 +830,31 @@
             if (e.key === 'ArrowLeft') {
               e.preventDefault();
               useCaseScroll.scrollBy({ left: -280, behavior: 'smooth' });
+            }
+          });
+        }
+
+        var heroVideo = document.getElementById('hero-video');
+        var heroToggle = document.getElementById('hero-video-toggle');
+        if (heroVideo && heroToggle) {
+          var preferReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (preferReduced) {
+            heroVideo.pause();
+            heroToggle.textContent = 'Play';
+            heroToggle.setAttribute('aria-label', 'Play hero video');
+            heroToggle.setAttribute('aria-pressed', 'false');
+          }
+          heroToggle.addEventListener('click', function () {
+            if (heroVideo.paused) {
+              heroVideo.play();
+              heroToggle.textContent = 'Pause';
+              heroToggle.setAttribute('aria-label', 'Pause hero video');
+              heroToggle.setAttribute('aria-pressed', 'true');
+            } else {
+              heroVideo.pause();
+              heroToggle.textContent = 'Play';
+              heroToggle.setAttribute('aria-label', 'Play hero video');
+              heroToggle.setAttribute('aria-pressed', 'false');
             }
           });
         }

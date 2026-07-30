@@ -1,4 +1,4 @@
-import ProductMockup from './ProductMockup'
+import HeroVideo from './HeroVideo'
 import { useReveal } from '../hooks/useReveal'
 
 export default function Hero() {
@@ -24,7 +24,7 @@ export default function Hero() {
         </div>
         <p className="hero-note">Private by design. No public feed. No follower counts.</p>
 
-        <ProductMockup />
+        <HeroVideo />
       </div>
     </section>
   )
