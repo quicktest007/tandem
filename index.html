@@ -31,16 +31,17 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/index.css?v=cinema-2" />
+    <link rel="stylesheet" href="./src/index.css?v=cinema-3" />
     <style>
       /* Critical hero layout — keeps text over video even if CSS CDN is stale */
       .hero.hero--cinema {
         position: relative !important;
         overflow: hidden !important;
-        min-height: min(92vh, 54rem) !important;
+        min-height: min(68vh, 38rem) !important;
         display: flex !important;
         align-items: center !important;
-        padding: 4.5rem 0 5rem !important;
+        justify-content: center !important;
+        padding: 3.5rem 0 3.75rem !important;
         color: #fff !important;
         background: #003d6b !important;
       }
@@ -60,7 +61,9 @@
       .hero.hero--cinema .hero-media-overlay {
         position: absolute !important;
         inset: 0 !important;
-        background: linear-gradient(90deg, rgba(0,40,72,.84) 0%, rgba(0,40,72,.55) 45%, rgba(0,40,72,.18) 100%) !important;
+        background:
+          linear-gradient(180deg, rgba(0,30,55,.45) 0%, rgba(0,30,55,.55) 55%, rgba(0,30,55,.62) 100%),
+          radial-gradient(ellipse at center, rgba(0,40,72,.35) 0%, rgba(0,40,72,.55) 100%) !important;
         pointer-events: none !important;
       }
       .hero.hero--cinema .hero-shell {
@@ -68,11 +71,13 @@
         z-index: 1 !important;
         width: min(100% - 2.5rem, 72rem) !important;
         margin: 0 auto !important;
+        display: flex !important;
+        justify-content: center !important;
       }
       .hero.hero--cinema .hero-inner {
-        width: min(100%, 36rem) !important;
-        text-align: left !important;
-        margin: 0 !important;
+        width: min(100%, 40rem) !important;
+        text-align: center !important;
+        margin: 0 auto !important;
       }
       .hero.hero--cinema h1 {
         color: #fff !important;
@@ -83,12 +88,16 @@
       .hero.hero--cinema .hero-note {
         color: rgba(245, 249, 252, 0.9) !important;
       }
+      .hero.hero--cinema .hero-sub {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
       .hero.hero--cinema .hero-ctas {
         display: flex !important;
         flex-wrap: wrap !important;
-        justify-content: flex-start !important;
+        justify-content: center !important;
         gap: 0.85rem !important;
-        margin-top: 2rem !important;
+        margin-top: 1.75rem !important;
       }
       .hero.hero--cinema .btn-hero-primary,
       .hero.hero--cinema .btn-hero-secondary {
