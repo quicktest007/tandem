@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useReveal } from '../hooks/useReveal'
 
 const base = import.meta.env.BASE_URL
@@ -8,6 +8,7 @@ export default function Hero() {
   const ref = useReveal()
   const videoRef = useRef(null)
   const indexRef = useRef(0)
+  const [paused, setPaused] = useState(false)
 
   useEffect(() => {
     const video = videoRef.current
@@ -15,19 +16,24 @@ export default function Hero() {
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       video.pause()
+      setPaused(true)
       return
     }
 
     const playCurrent = () => {
       const play = video.play()
-      if (play?.catch) play.catch(() => {})
+      if (play?.catch) {
+        play.catch(() => setPaused(true))
+      } else {
+        setPaused(false)
+      }
     }
 
     const onEnded = () => {
       indexRef.current = (indexRef.current + 1) % playlist.length
       video.src = playlist[indexRef.current]
       video.load()
-      playCurrent()
+      if (!video.dataset.userPaused) playCurrent()
     }
 
     video.addEventListener('ended', onEnded)
@@ -35,6 +41,19 @@ export default function Hero() {
 
     return () => video.removeEventListener('ended', onEnded)
   }, [])
+
+  const togglePlayback = () => {
+    const video = videoRef.current
+    if (!video) return
+    if (video.paused) {
+      video.dataset.userPaused = ''
+      video.play().then(() => setPaused(false)).catch(() => setPaused(true))
+    } else {
+      video.dataset.userPaused = 'true'
+      video.pause()
+      setPaused(true)
+    }
+  }
 
   return (
     <section className="hero hero--cinema" aria-labelledby="hero-heading">
@@ -65,6 +84,16 @@ export default function Hero() {
           <p className="hero-note">Private by design. No public feed. No follower counts.</p>
         </div>
       </div>
+
+      <button
+        type="button"
+        className="hero-video-toggle"
+        onClick={togglePlayback}
+        aria-pressed={!paused}
+        aria-label={paused ? 'Play hero video' : 'Pause hero video'}
+      >
+        {paused ? 'Play' : 'Pause'}
+      </button>
     </section>
   )
 }

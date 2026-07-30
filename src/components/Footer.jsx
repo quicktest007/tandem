@@ -8,19 +8,20 @@ const productLinks = [
 ]
 
 const legalLinks = [
-  { href: '#privacy', label: 'Privacy' },
+  { href: '#privacy-policy', label: 'Privacy' },
   { href: '#terms', label: 'Terms' },
   { href: '#contact', label: 'Contact' },
 ]
 
 export default function Footer() {
   return (
-    <footer className="footer" id="privacy">
+    <footer className="footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <a href="#top" className="footer-logo" aria-label="Tandem home">
+          <a href="#top" className="footer-logo">
             <Logo />
             <span>Tandem</span>
+            <span className="sr-only"> home</span>
           </a>
           <p>
             Tandem helps people build lasting habits and achieve meaningful goals through shared progress.
@@ -63,9 +64,29 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div id="terms" className="sr-only" tabIndex={-1}>Terms of service coming soon.</div>
-      <div id="contact" className="sr-only" tabIndex={-1}>Contact: hello@tandem.app</div>
-      <div id="sign-in" className="sr-only" tabIndex={-1}>Sign in coming soon.</div>
+
+      <div className="footer-notices">
+        <section id="privacy-policy" className="footer-notice" tabIndex={-1} aria-labelledby="privacy-heading">
+          <h2 id="privacy-heading">Privacy</h2>
+          <p>Full privacy policy coming soon. We never sell your data.</p>
+        </section>
+        <section id="terms" className="footer-notice" tabIndex={-1} aria-labelledby="terms-heading">
+          <h2 id="terms-heading">Terms</h2>
+          <p>Terms of service coming soon.</p>
+        </section>
+        <section id="contact" className="footer-notice" tabIndex={-1} aria-labelledby="contact-heading">
+          <h2 id="contact-heading">Contact</h2>
+          <p>
+            Reach us at{' '}
+            <a href="mailto:hello@tandem.app">hello@tandem.app</a>.
+          </p>
+        </section>
+        <section id="sign-in" className="footer-notice" tabIndex={-1} aria-labelledby="signin-heading">
+          <h2 id="signin-heading">Sign in</h2>
+          <p>Sign in is coming soon. Thanks for your patience.</p>
+        </section>
+      </div>
+
       <p className="footer-copy">© {new Date().getFullYear()} Tandem. Stay connected. Keep going.</p>
     </footer>
   )

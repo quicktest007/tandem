@@ -31,7 +31,7 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/index.css?v=cta-video-1" />
+    <link rel="stylesheet" href="./src/index.css?v=a11y-1" />
     <style>
       /* Critical hero layout — keeps text over video even if CSS CDN is stale */
       .hero.hero--cinema {
@@ -128,11 +128,12 @@
         <a class="skip-link" href="#main-content">Skip to main content</a>
         <header class="header">
           <div class="header-inner">
-            <a href="#top" class="header-logo" aria-label="Tandem home">
+            <a href="#top" class="header-logo">
               <span class="logo-mark" aria-hidden="true">
                 <img src="./logo.png" alt="" width="36" height="36" />
               </span>
               <span>Tandem</span>
+              <span class="sr-only"> home</span>
             </a>
 
             <nav class="header-nav" aria-label="Main">
@@ -175,7 +176,29 @@
           </nav>
         </header>
 
-        <main id="main-content">
+        <div
+          id="cookie-banner"
+          role="region"
+          aria-labelledby="cookie-banner-heading"
+          aria-describedby="cookie-banner-desc"
+          class="cookie-banner"
+          hidden
+        >
+          <div class="cookie-banner-inner">
+            <div>
+              <h2 id="cookie-banner-heading">Your privacy matters</h2>
+              <p id="cookie-banner-desc">
+                We use essential cookies to keep Tandem running smoothly. We never sell your data.
+              </p>
+            </div>
+            <div class="cookie-buttons">
+              <button type="button" class="cookie-decline">Decline</button>
+              <button type="button" class="cookie-accept">Accept</button>
+            </div>
+          </div>
+        </div>
+
+        <main id="main-content" tabindex="-1">
           <section class="hero hero--cinema" aria-labelledby="hero-heading">
             <div class="hero-media" aria-hidden="true">
               <video
@@ -204,6 +227,16 @@
                 <p class="hero-note">Private by design. No public feed. No follower counts.</p>
               </div>
             </div>
+
+            <button
+              type="button"
+              class="hero-video-toggle"
+              id="hero-video-toggle"
+              aria-pressed="true"
+              aria-label="Pause hero video"
+            >
+              Pause
+            </button>
           </section>
 
           <section id="problem" class="section problem-section" aria-labelledby="problem-heading">
@@ -500,11 +533,22 @@
             </div>
           </section>
 
-          <section class="lifestyle-break" aria-label="Tandem brand visual">
+          <section class="lifestyle-break" aria-labelledby="lifestyle-heading">
+            <div class="lifestyle-break-copy">
+              <h2 id="lifestyle-heading">
+                Make Your <span class="accent">Goals</span> Happen
+              </h2>
+              <p>The tools. The progress. The momentum together.</p>
+              <ul class="lifestyle-break-features">
+                <li>Track Habits</li>
+                <li>Check In</li>
+                <li>See Progress</li>
+              </ul>
+            </div>
             <img
               class="lifestyle-break-image"
               src="./lifestyle-together.jpg"
-              alt="Partners riding a bike together under the Tandem message Make Your Goals Happen, with Track Habits, Check In, and See Progress."
+              alt="Partners joyfully riding a bicycle together on a sunlit path."
               width="1024"
               height="681"
               loading="lazy"
@@ -556,8 +600,7 @@
           <section class="section brand-section" aria-labelledby="brand-heading">
             <div class="brand-layout">
               <div class="brand-inner">
-                <h2 id="brand-heading" class="sr-only">Brand statement</h2>
-                <p class="brand-line is-visible">You don’t need more motivation.</p>
+                <h2 id="brand-heading" class="brand-line brand-heading is-visible">You don’t need more motivation.</h2>
                 <p class="brand-line is-visible">You need a rhythm.</p>
                 <p class="brand-line is-visible">A reason to check in.</p>
                 <p class="brand-line is-visible">Someone who notices when you show up.</p>
@@ -812,20 +855,30 @@
             <div class="cta-inner reveal is-visible">
               <h2 id="cta-heading">Your next goal needs a partner.</h2>
               <p>Start small, build momentum, and make progress with someone beside you.</p>
-              <a href="#start" class="btn-cta-primary">Start Your Tandem</a>
+              <a href="mailto:hello@tandem.app?subject=Start%20Your%20Tandem" class="btn-cta-primary">Start Your Tandem</a>
               <p class="cta-sub">Better habits. Meaningful goals. Shared progress.</p>
             </div>
+            <button
+              type="button"
+              class="cta-video-toggle"
+              id="cta-video-toggle"
+              aria-pressed="true"
+              aria-label="Pause background video"
+            >
+              Pause
+            </button>
           </section>
         </main>
 
-        <footer class="footer" id="privacy">
+        <footer class="footer">
           <div class="footer-inner">
             <div class="footer-brand">
-              <a href="#top" class="footer-logo" aria-label="Tandem home">
+              <a href="#top" class="footer-logo">
                 <span class="logo-mark" aria-hidden="true">
                   <img src="./logo.png" alt="" width="36" height="36" />
                 </span>
                 <span>Tandem</span>
+                <span class="sr-only"> home</span>
               </a>
               <p>
                 Tandem helps people build lasting habits and achieve meaningful goals through shared progress.
@@ -834,8 +887,8 @@
 
             <div class="footer-cols">
               <div>
-                <p class="footer-heading">Product</p>
-                <ul>
+                <p class="footer-heading" id="footer-product">Product</p>
+                <ul aria-labelledby="footer-product">
                   <li><a href="#how-it-works">How It Works</a></li>
                   <li><a href="#features">Features</a></li>
                   <li><a href="#use-cases">Use Cases</a></li>
@@ -843,16 +896,16 @@
                 </ul>
               </div>
               <div>
-                <p class="footer-heading">Company</p>
-                <ul>
-                  <li><a href="#privacy">Privacy</a></li>
+                <p class="footer-heading" id="footer-company">Company</p>
+                <ul aria-labelledby="footer-company">
+                  <li><a href="#privacy-policy">Privacy</a></li>
                   <li><a href="#terms">Terms</a></li>
                   <li><a href="#contact">Contact</a></li>
                 </ul>
               </div>
               <div>
-                <p class="footer-heading">Social</p>
-                <ul>
+                <p class="footer-heading" id="footer-social">Social</p>
+                <ul aria-labelledby="footer-social">
                   <li>
                     <a href="https://instagram.com" rel="noopener noreferrer" target="_blank">
                       Instagram
@@ -869,33 +922,28 @@
               </div>
             </div>
           </div>
-          <div id="terms" class="sr-only">Terms of service coming soon.</div>
-          <div id="contact" class="sr-only">Contact: hello@tandem.app</div>
-          <div id="sign-in" class="sr-only">Sign in coming soon.</div>
+
+          <div class="footer-notices">
+            <section id="privacy-policy" class="footer-notice" tabindex="-1" aria-labelledby="privacy-heading">
+              <h2 id="privacy-heading">Privacy</h2>
+              <p>Full privacy policy coming soon. We never sell your data.</p>
+            </section>
+            <section id="terms" class="footer-notice" tabindex="-1" aria-labelledby="terms-heading">
+              <h2 id="terms-heading">Terms</h2>
+              <p>Terms of service coming soon.</p>
+            </section>
+            <section id="contact" class="footer-notice" tabindex="-1" aria-labelledby="contact-heading">
+              <h2 id="contact-heading">Contact</h2>
+              <p>Reach us at <a href="mailto:hello@tandem.app">hello@tandem.app</a>.</p>
+            </section>
+            <section id="sign-in" class="footer-notice" tabindex="-1" aria-labelledby="signin-heading">
+              <h2 id="signin-heading">Sign in</h2>
+              <p>Sign in is coming soon. Thanks for your patience.</p>
+            </section>
+          </div>
+
           <p class="footer-copy">© 2026 Tandem. Stay connected. Keep going.</p>
         </footer>
-
-        <div
-          id="cookie-banner"
-          role="region"
-          aria-labelledby="cookie-banner-heading"
-          aria-describedby="cookie-banner-desc"
-          class="cookie-banner"
-          hidden
-        >
-          <div class="cookie-banner-inner">
-            <div>
-              <h2 id="cookie-banner-heading">Your privacy matters</h2>
-              <p id="cookie-banner-desc">
-                We use essential cookies to keep Tandem running smoothly. We never sell your data.
-              </p>
-            </div>
-            <div class="cookie-buttons">
-              <button type="button" class="cookie-decline">Decline</button>
-              <button type="button" class="cookie-accept">Accept</button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -921,6 +969,8 @@
           if (open) {
             mobileNav.removeAttribute('hidden');
             document.body.style.overflow = 'hidden';
+            var firstLink = mobileNav.querySelector('a');
+            if (firstLink) firstLink.focus();
           } else {
             mobileNav.setAttribute('hidden', '');
             document.body.style.overflow = '';
@@ -937,9 +987,23 @@
             link.addEventListener('click', function () { setMenuOpen(false); });
           });
           window.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') {
+            var open = menuBtn.getAttribute('aria-expanded') === 'true';
+            if (!open) return;
+            if (e.key === 'Escape') {
               setMenuOpen(false);
               menuBtn.focus();
+              return;
+            }
+            if (e.key !== 'Tab') return;
+            var focusable = [menuBtn].concat(Array.prototype.slice.call(mobileNav.querySelectorAll('a')));
+            var first = focusable[0];
+            var last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
             }
           });
         }
@@ -959,24 +1023,71 @@
         }
 
         var heroVideo = document.getElementById('hero-video');
+        var heroToggle = document.getElementById('hero-video-toggle');
         if (heroVideo) {
           var heroPlaylist = ['./hero.mp4', './hero-2.mp4'];
           var heroIndex = 0;
+          var heroUserPaused = false;
           if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             heroVideo.pause();
+            heroUserPaused = true;
+            if (heroToggle) {
+              heroToggle.textContent = 'Play';
+              heroToggle.setAttribute('aria-label', 'Play hero video');
+              heroToggle.setAttribute('aria-pressed', 'false');
+            }
           } else {
             heroVideo.addEventListener('ended', function () {
+              if (heroUserPaused) return;
               heroIndex = (heroIndex + 1) % heroPlaylist.length;
               heroVideo.src = heroPlaylist[heroIndex];
               heroVideo.load();
               heroVideo.play();
             });
           }
+          if (heroToggle) {
+            heroToggle.addEventListener('click', function () {
+              if (heroVideo.paused) {
+                heroUserPaused = false;
+                heroVideo.play();
+                heroToggle.textContent = 'Pause';
+                heroToggle.setAttribute('aria-label', 'Pause hero video');
+                heroToggle.setAttribute('aria-pressed', 'true');
+              } else {
+                heroUserPaused = true;
+                heroVideo.pause();
+                heroToggle.textContent = 'Play';
+                heroToggle.setAttribute('aria-label', 'Play hero video');
+                heroToggle.setAttribute('aria-pressed', 'false');
+              }
+            });
+          }
         }
 
         var ctaVideo = document.getElementById('cta-video');
+        var ctaToggle = document.getElementById('cta-video-toggle');
         if (ctaVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
           ctaVideo.pause();
+          if (ctaToggle) {
+            ctaToggle.textContent = 'Play';
+            ctaToggle.setAttribute('aria-label', 'Play background video');
+            ctaToggle.setAttribute('aria-pressed', 'false');
+          }
+        }
+        if (ctaVideo && ctaToggle) {
+          ctaToggle.addEventListener('click', function () {
+            if (ctaVideo.paused) {
+              ctaVideo.play();
+              ctaToggle.textContent = 'Pause';
+              ctaToggle.setAttribute('aria-label', 'Pause background video');
+              ctaToggle.setAttribute('aria-pressed', 'true');
+            } else {
+              ctaVideo.pause();
+              ctaToggle.textContent = 'Play';
+              ctaToggle.setAttribute('aria-label', 'Play background video');
+              ctaToggle.setAttribute('aria-pressed', 'false');
+            }
+          });
         }
 
         document.querySelectorAll('.faq-item').forEach(function (item) {
@@ -1015,17 +1126,23 @@
 
         var banner = document.getElementById('cookie-banner');
         if (banner) {
-          try {
-            if (!localStorage.getItem('tandem-cookie-consent')) {
-              banner.removeAttribute('hidden');
-            }
-          } catch (e) {
+          function showBanner() {
             banner.removeAttribute('hidden');
+            document.body.classList.add('has-cookie-banner');
+          }
+          function hideBanner() {
+            banner.setAttribute('hidden', '');
+            document.body.classList.remove('has-cookie-banner');
+          }
+          try {
+            if (!localStorage.getItem('tandem-cookie-consent')) showBanner();
+          } catch (e) {
+            showBanner();
           }
 
           function dismissConsent(value) {
             try { localStorage.setItem('tandem-cookie-consent', value); } catch (err) {}
-            banner.setAttribute('hidden', '');
+            hideBanner();
           }
 
           var acceptBtn = banner.querySelector('.cookie-accept');

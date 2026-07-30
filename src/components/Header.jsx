@@ -12,6 +12,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const menuBtnRef = useRef(null)
+  const mobileNavRef = useRef(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -27,12 +28,40 @@ export default function Header() {
 
   useEffect(() => {
     if (!menuOpen) return undefined
+
+    const nav = mobileNavRef.current
+    const firstLink = nav?.querySelector('a')
+    firstLink?.focus()
+
     const onKeyDown = (e) => {
       if (e.key === 'Escape') {
         setMenuOpen(false)
         menuBtnRef.current?.focus()
+        return
+      }
+
+      if (e.key !== 'Tab' || !nav) return
+
+      const focusable = [
+        menuBtnRef.current,
+        ...nav.querySelectorAll('a'),
+      ].filter(Boolean)
+
+      if (focusable.length === 0) return
+
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      const active = document.activeElement
+
+      if (e.shiftKey && active === first) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault()
+        first.focus()
       }
     }
+
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [menuOpen])
@@ -42,9 +71,10 @@ export default function Header() {
   return (
     <header className={`header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="header-inner">
-        <a href="#top" className="header-logo" aria-label="Tandem home">
+        <a href="#top" className="header-logo">
           <Logo />
           <span>Tandem</span>
+          <span className="sr-only"> home</span>
         </a>
 
         <nav className="header-nav" aria-label="Main">
@@ -76,6 +106,7 @@ export default function Header() {
 
       <nav
         id="mobile-nav"
+        ref={mobileNavRef}
         className={`mobile-nav ${menuOpen ? 'is-open' : ''}`}
         aria-label="Mobile"
         hidden={!menuOpen}

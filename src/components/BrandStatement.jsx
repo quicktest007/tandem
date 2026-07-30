@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'react'
 const base = import.meta.env.BASE_URL
 
 const lines = [
-  'You don’t need more motivation.',
   'You need a rhythm.',
   'A reason to check in.',
   'Someone who notices when you show up.',
@@ -41,7 +40,9 @@ export default function BrandStatement() {
     <section className="section brand-section" aria-labelledby="brand-heading">
       <div className="brand-layout" ref={ref}>
         <div className="brand-inner">
-          <h2 id="brand-heading" className="sr-only">Brand statement</h2>
+          <h2 id="brand-heading" className="brand-line brand-heading">
+            You don’t need more motivation.
+          </h2>
           {lines.map((line) => (
             <p key={line} className="brand-line">{line}</p>
           ))}

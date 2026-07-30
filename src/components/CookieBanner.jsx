@@ -12,6 +12,16 @@ export default function CookieBanner() {
     }
   }, [])
 
+  useEffect(() => {
+    if (!isVisible) {
+      document.body.classList.remove('has-cookie-banner')
+      return undefined
+    }
+
+    document.body.classList.add('has-cookie-banner')
+    return () => document.body.classList.remove('has-cookie-banner')
+  }, [isVisible])
+
   const handleAccept = () => {
     try { localStorage.setItem('tandem-cookie-consent', 'accepted') } catch {}
     setIsVisible(false)
