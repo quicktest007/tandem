@@ -248,11 +248,6 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   outline-offset: 3px;
 }
 
-.usecase-scroll:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 4px;
-}
-
 .faq-trigger:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: -3px;
@@ -1114,52 +1109,6 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   }
 }
 
-/* Use cases */
-.usecases-featured {
-  display: grid;
-  gap: 2rem;
-  align-items: end;
-  margin-bottom: 2.5rem;
-}
-
-.usecases-intro {
-  margin-bottom: 0;
-}
-
-.usecases-lead {
-  margin: 1rem 0 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-  max-width: 32rem;
-}
-
-.usecases-photo {
-  margin: 0;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  aspect-ratio: 4 / 3;
-  background: var(--bg-soft);
-}
-
-.usecases-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 35%;
-}
-
-@media (min-width: 900px) {
-  .usecases-featured {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    gap: 3rem;
-    align-items: center;
-  }
-
-  .usecases-photo {
-    aspect-ratio: 5 / 4;
-  }
-}
-
 /* Full-bleed lifestyle campaign visual — show the full designed graphic */
 .lifestyle-break {
   margin: 0;
@@ -1210,37 +1159,6 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   height: auto;
   object-fit: contain;
   object-position: center;
-}
-
-.usecase-scroll {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(16.5rem, 18.5rem);
-  gap: 1rem;
-  overflow-x: auto;
-  padding-bottom: 0.75rem;
-  scroll-snap-type: x mandatory;
-}
-
-.usecase-card {
-  scroll-snap-align: start;
-  background: var(--bg-elevated);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1.35rem;
-  min-height: 11rem;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-.usecase-card:hover {
-  border-color: rgba(22, 165, 174, 0.4);
-  transform: translateY(-2px);
-}
-
-.usecase-card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
 }
 
 /* Why / compare */
