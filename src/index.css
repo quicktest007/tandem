@@ -368,21 +368,24 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   overflow: hidden;
 }
 
-.hero--cinema {
+.hero.hero--cinema {
   min-height: min(92vh, 54rem);
   display: flex;
   align-items: center;
   padding: 4.5rem 0 5rem;
   color: #fff;
+  background: #003d6b;
 }
 
-.hero-media {
+.hero.hero--cinema .hero-media {
   position: absolute;
   inset: 0;
   z-index: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.hero-media-video {
+.hero.hero--cinema .hero-media-video {
   display: block;
   width: 100%;
   height: 100%;
@@ -390,7 +393,7 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   background: #003d6b;
 }
 
-.hero-media-overlay {
+.hero.hero--cinema .hero-media-overlay {
   position: absolute;
   inset: 0;
   background:
@@ -405,29 +408,30 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   pointer-events: none;
 }
 
-.hero-shell {
+.hero.hero--cinema .hero-shell {
   position: relative;
   z-index: 1;
   width: min(100% - 2.5rem, var(--container));
   margin: 0 auto;
 }
 
-.hero-inner {
+.hero.hero--cinema .hero-inner {
   width: min(100%, 36rem);
   text-align: left;
+  margin: 0;
 }
 
-.hero--cinema h1 {
+.hero.hero--cinema h1 {
   color: #fff;
   font-size: clamp(2.5rem, 6.5vw, 4.5rem);
   text-wrap: balance;
 }
 
-.hero-eyebrow {
+.hero.hero--cinema .hero-eyebrow {
   color: rgba(245, 249, 252, 0.85) !important;
 }
 
-.hero-sub {
+.hero.hero--cinema .hero-sub {
   max-width: 32rem;
   margin: 1.25rem 0 0;
   font-size: clamp(1.05rem, 2.2vw, 1.2rem);
@@ -435,7 +439,7 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   line-height: 1.65;
 }
 
-.hero-ctas {
+.hero.hero--cinema .hero-ctas {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -444,8 +448,8 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   margin-top: 2rem;
 }
 
-.btn-hero-primary,
-.btn-hero-secondary {
+.hero.hero--cinema .btn-hero-primary,
+.hero.hero--cinema .btn-hero-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -458,41 +462,41 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-.btn-hero-primary {
+.hero.hero--cinema .btn-hero-primary {
   background: #fff;
-  color: var(--navy);
+  color: #005898;
   border: 1px solid #fff;
 }
 
-.btn-hero-primary:hover {
+.hero.hero--cinema .btn-hero-primary:hover {
   background: #eef5fb;
   transform: translateY(-1px);
 }
 
-.btn-hero-secondary {
+.hero.hero--cinema .btn-hero-secondary {
   background: transparent;
   color: #fff;
   border: 1.5px solid rgba(255, 255, 255, 0.7);
 }
 
-.btn-hero-secondary:hover {
+.hero.hero--cinema .btn-hero-secondary:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: #fff;
 }
 
-.btn-hero-primary:focus-visible,
-.btn-hero-secondary:focus-visible {
+.hero.hero--cinema .btn-hero-primary:focus-visible,
+.hero.hero--cinema .btn-hero-secondary:focus-visible {
   outline: 3px solid #fff;
   outline-offset: 3px;
 }
 
-.hero-note {
+.hero.hero--cinema .hero-note {
   margin: 1.15rem 0 0;
   font-size: 0.875rem;
   color: rgba(245, 249, 252, 0.78);
 }
 
-.hero-video-toggle {
+.hero.hero--cinema .hero-video-toggle {
   position: absolute;
   right: 1rem;
   bottom: 1rem;
@@ -510,12 +514,12 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.hero-video-toggle:hover {
+.hero.hero--cinema .hero-video-toggle:hover {
   background: rgba(0, 40, 72, 0.9);
   transform: translateY(-1px);
 }
 
-.hero-video-toggle:focus-visible {
+.hero.hero--cinema .hero-video-toggle:focus-visible {
   outline: 3px solid #fff;
   outline-offset: 2px;
 }

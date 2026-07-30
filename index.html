@@ -31,7 +31,93 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/index.css" />
+    <link rel="stylesheet" href="./src/index.css?v=cinema-2" />
+    <style>
+      /* Critical hero layout — keeps text over video even if CSS CDN is stale */
+      .hero.hero--cinema {
+        position: relative !important;
+        overflow: hidden !important;
+        min-height: min(92vh, 54rem) !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 4.5rem 0 5rem !important;
+        color: #fff !important;
+        background: #003d6b !important;
+      }
+      .hero.hero--cinema .hero-media {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .hero.hero--cinema .hero-media-video {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+      }
+      .hero.hero--cinema .hero-media-overlay {
+        position: absolute !important;
+        inset: 0 !important;
+        background: linear-gradient(90deg, rgba(0,40,72,.84) 0%, rgba(0,40,72,.55) 45%, rgba(0,40,72,.18) 100%) !important;
+        pointer-events: none !important;
+      }
+      .hero.hero--cinema .hero-shell {
+        position: relative !important;
+        z-index: 1 !important;
+        width: min(100% - 2.5rem, 72rem) !important;
+        margin: 0 auto !important;
+      }
+      .hero.hero--cinema .hero-inner {
+        width: min(100%, 36rem) !important;
+        text-align: left !important;
+        margin: 0 !important;
+      }
+      .hero.hero--cinema h1 {
+        color: #fff !important;
+        margin: 0 !important;
+      }
+      .hero.hero--cinema .hero-eyebrow,
+      .hero.hero--cinema .hero-sub,
+      .hero.hero--cinema .hero-note {
+        color: rgba(245, 249, 252, 0.9) !important;
+      }
+      .hero.hero--cinema .hero-ctas {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: flex-start !important;
+        gap: 0.85rem !important;
+        margin-top: 2rem !important;
+      }
+      .hero.hero--cinema .btn-hero-primary,
+      .hero.hero--cinema .btn-hero-secondary {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 3rem !important;
+        padding: 0.85rem 1.45rem !important;
+        border-radius: 999px !important;
+        text-decoration: none !important;
+        font-weight: 700 !important;
+      }
+      .hero.hero--cinema .btn-hero-primary {
+        background: #fff !important;
+        color: #005898 !important;
+        border: 1px solid #fff !important;
+      }
+      .hero.hero--cinema .btn-hero-secondary {
+        background: transparent !important;
+        color: #fff !important;
+        border: 1.5px solid rgba(255,255,255,.7) !important;
+      }
+      .hero.hero--cinema .hero-video-toggle {
+        position: absolute !important;
+        right: 1rem !important;
+        bottom: 1rem !important;
+        z-index: 2 !important;
+      }
+    </style>
   </head>
   <body>
     <div id="root">
