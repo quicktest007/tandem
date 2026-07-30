@@ -31,7 +31,7 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/index.css?v=lifestyle-2" />
+    <link rel="stylesheet" href="./src/index.css?v=lifestyle-3" />
     <style>
       /* Critical hero layout — keeps text over video even if CSS CDN is stale */
       .hero.hero--cinema {
@@ -184,9 +184,8 @@
                 src="./hero.mp4"
                 autoplay
                 muted
-                loop
                 playsinline
-                preload="metadata"
+                preload="auto"
               ></video>
               <div class="hero-media-overlay"></div>
             </div>
@@ -947,8 +946,19 @@
         }
 
         var heroVideo = document.getElementById('hero-video');
-        if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          heroVideo.pause();
+        if (heroVideo) {
+          var heroPlaylist = ['./hero.mp4', './hero-2.mp4'];
+          var heroIndex = 0;
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            heroVideo.pause();
+          } else {
+            heroVideo.addEventListener('ended', function () {
+              heroIndex = (heroIndex + 1) % heroPlaylist.length;
+              heroVideo.src = heroPlaylist[heroIndex];
+              heroVideo.load();
+              heroVideo.play();
+            });
+          }
         }
 
         document.querySelectorAll('.faq-item').forEach(function (item) {

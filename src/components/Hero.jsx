@@ -1,10 +1,13 @@
 import { useEffect, useRef } from 'react'
 import { useReveal } from '../hooks/useReveal'
 
+const base = import.meta.env.BASE_URL
+const playlist = [`${base}hero.mp4`, `${base}hero-2.mp4`]
+
 export default function Hero() {
   const ref = useReveal()
   const videoRef = useRef(null)
-  const src = `${import.meta.env.BASE_URL}hero.mp4`
+  const indexRef = useRef(0)
 
   useEffect(() => {
     const video = videoRef.current
@@ -15,8 +18,22 @@ export default function Hero() {
       return
     }
 
-    const play = video.play()
-    if (play?.catch) play.catch(() => {})
+    const playCurrent = () => {
+      const play = video.play()
+      if (play?.catch) play.catch(() => {})
+    }
+
+    const onEnded = () => {
+      indexRef.current = (indexRef.current + 1) % playlist.length
+      video.src = playlist[indexRef.current]
+      video.load()
+      playCurrent()
+    }
+
+    video.addEventListener('ended', onEnded)
+    playCurrent()
+
+    return () => video.removeEventListener('ended', onEnded)
   }, [])
 
   return (
@@ -25,12 +42,11 @@ export default function Hero() {
         <video
           ref={videoRef}
           className="hero-media-video"
-          src={src}
+          src={playlist[0]}
           autoPlay
           muted
-          loop
           playsInline
-          preload="metadata"
+          preload="auto"
         />
         <div className="hero-media-overlay" />
       </div>

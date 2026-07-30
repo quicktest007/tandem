@@ -1117,18 +1117,23 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   }
 }
 
-/* Full-bleed lifestyle campaign visual */
+/* Full-bleed lifestyle campaign visual — show the full designed graphic */
 .lifestyle-break {
   margin: 0;
   padding: 0;
-  background: #0b2f4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(90deg, #dff3f4 0%, #eaf6f8 35%, #d9eef5 100%);
 }
 
 .lifestyle-break-image {
+  display: block;
   width: 100%;
+  max-width: 90rem;
   height: auto;
-  max-height: min(72vh, 40rem);
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
