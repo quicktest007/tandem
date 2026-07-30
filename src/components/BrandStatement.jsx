@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react'
 
+const base = import.meta.env.BASE_URL
+
 const lines = [
   'You don’t need more motivation.',
   'You need a rhythm.',
@@ -37,12 +39,24 @@ export default function BrandStatement() {
 
   return (
     <section className="section brand-section" aria-labelledby="brand-heading">
-      <div className="brand-inner" ref={ref}>
-        <h2 id="brand-heading" className="sr-only">Brand statement</h2>
-        {lines.map((line) => (
-          <p key={line} className="brand-line">{line}</p>
-        ))}
-        <p className="brand-line brand-end">That’s Tandem.</p>
+      <div className="brand-layout" ref={ref}>
+        <div className="brand-inner">
+          <h2 id="brand-heading" className="sr-only">Brand statement</h2>
+          {lines.map((line) => (
+            <p key={line} className="brand-line">{line}</p>
+          ))}
+          <p className="brand-line brand-end">That’s Tandem.</p>
+        </div>
+        <figure className="brand-visual">
+          <img
+            src={`${base}lifestyle-brand.jpg`}
+            alt="Illustration of kids on a tandem bicycle beside a Tandem mural that says Make Your Goals happen."
+            width={719}
+            height={1024}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
       </div>
     </section>
   )

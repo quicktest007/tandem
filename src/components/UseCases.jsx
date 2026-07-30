@@ -1,5 +1,7 @@
 import { useReveal } from '../hooks/useReveal'
 
+const base = import.meta.env.BASE_URL
+
 const cases = [
   {
     title: 'Read more consistently',
@@ -61,12 +63,27 @@ export default function UseCases() {
   return (
     <section id="use-cases" className="section usecases-section" aria-labelledby="usecases-heading">
       <div className="container">
-        <div className="section-intro reveal" ref={ref}>
-          <p className="eyebrow">Use cases</p>
-          <h2 id="usecases-heading">Whatever you’re working toward, don’t go it alone.</h2>
-          <p className="sr-only">
-            Horizontal list of examples. When focused, use the left and right arrow keys to scroll.
-          </p>
+        <div className="usecases-featured reveal" ref={ref}>
+          <div className="section-intro usecases-intro">
+            <p className="eyebrow">Use cases</p>
+            <h2 id="usecases-heading">Whatever you’re working toward, don’t go it alone.</h2>
+            <p className="usecases-lead">
+              Quiet mornings. Shared rides. The small habits that only stick when someone is beside you.
+            </p>
+            <p className="sr-only">
+              Horizontal list of examples. When focused, use the left and right arrow keys to scroll.
+            </p>
+          </div>
+          <figure className="usecases-photo">
+            <img
+              src={`${base}lifestyle-focus.jpg`}
+              alt="Someone reading a book beside a mug of hot chocolate."
+              width={1024}
+              height={682}
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
         </div>
 
         <div
