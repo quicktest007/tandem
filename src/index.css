@@ -493,34 +493,6 @@ h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
   color: rgba(245, 249, 252, 0.78);
 }
 
-.hero.hero--cinema .hero-video-toggle {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 2;
-  border: 0;
-  border-radius: 999px;
-  padding: 0.55rem 0.95rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  font-family: var(--font);
-  cursor: pointer;
-  color: #fff;
-  background: rgba(0, 40, 72, 0.72);
-  backdrop-filter: blur(8px);
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.hero.hero--cinema .hero-video-toggle:hover {
-  background: rgba(0, 40, 72, 0.9);
-  transform: translateY(-1px);
-}
-
-.hero.hero--cinema .hero-video-toggle:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 2px;
-}
-
 .hero-bg { display: none; }
 
 .product-mockup {

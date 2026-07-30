@@ -31,7 +31,7 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/index.css?v=lifestyle-1" />
+    <link rel="stylesheet" href="./src/index.css?v=lifestyle-2" />
     <style>
       /* Critical hero layout — keeps text over video even if CSS CDN is stale */
       .hero.hero--cinema {
@@ -120,12 +120,6 @@
         color: #fff !important;
         border: 1.5px solid rgba(255,255,255,.7) !important;
       }
-      .hero.hero--cinema .hero-video-toggle {
-        position: absolute !important;
-        right: 1rem !important;
-        bottom: 1rem !important;
-        z-index: 2 !important;
-      }
     </style>
   </head>
   <body>
@@ -211,16 +205,6 @@
                 <p class="hero-note">Private by design. No public feed. No follower counts.</p>
               </div>
             </div>
-
-            <button
-              type="button"
-              class="hero-video-toggle"
-              id="hero-video-toggle"
-              aria-pressed="true"
-              aria-label="Pause hero video"
-            >
-              Pause
-            </button>
           </section>
 
           <section id="problem" class="section problem-section" aria-labelledby="problem-heading">
@@ -963,28 +947,8 @@
         }
 
         var heroVideo = document.getElementById('hero-video');
-        var heroToggle = document.getElementById('hero-video-toggle');
-        if (heroVideo && heroToggle) {
-          var preferReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          if (preferReduced) {
-            heroVideo.pause();
-            heroToggle.textContent = 'Play';
-            heroToggle.setAttribute('aria-label', 'Play hero video');
-            heroToggle.setAttribute('aria-pressed', 'false');
-          }
-          heroToggle.addEventListener('click', function () {
-            if (heroVideo.paused) {
-              heroVideo.play();
-              heroToggle.textContent = 'Pause';
-              heroToggle.setAttribute('aria-label', 'Pause hero video');
-              heroToggle.setAttribute('aria-pressed', 'true');
-            } else {
-              heroVideo.pause();
-              heroToggle.textContent = 'Play';
-              heroToggle.setAttribute('aria-label', 'Play hero video');
-              heroToggle.setAttribute('aria-pressed', 'false');
-            }
-          });
+        if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          heroVideo.pause();
         }
 
         document.querySelectorAll('.faq-item').forEach(function (item) {
