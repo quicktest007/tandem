@@ -87,51 +87,45 @@
         </header>
 
         <main id="main-content">
-          <section class="hero" aria-labelledby="hero-heading">
-            <div class="hero-bg" aria-hidden="true">
-              <span class="hero-orb hero-orb-a"></span>
-              <span class="hero-orb hero-orb-b"></span>
-              <span class="hero-path-line"></span>
+          <section class="hero hero--cinema" aria-labelledby="hero-heading">
+            <div class="hero-media" aria-hidden="true">
+              <video
+                id="hero-video"
+                class="hero-media-video"
+                src="./hero.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="hero-media-overlay"></div>
             </div>
 
-            <div class="hero-inner reveal is-visible">
-              <p class="eyebrow">Habits · Goals · Shared progress</p>
-              <h1 id="hero-heading">Consistency is easier together.</h1>
-              <p class="hero-sub">
-                Build better habits, reach meaningful goals, and keep moving forward with someone beside you.
-              </p>
-              <div class="hero-ctas">
-                <a href="#start" class="btn-primary">Start Your Tandem</a>
-                <a href="#how-it-works" class="btn-secondary">See How It Works</a>
-              </div>
-              <p class="hero-note">Private by design. No public feed. No follower counts.</p>
-
-              <div class="hero-video">
-                <div class="hero-video-glow" aria-hidden="true"></div>
-                <div class="hero-video-frame">
-                  <video
-                    id="hero-video"
-                    class="hero-video-el"
-                    src="./hero.mp4"
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                    aria-label="Tandem product preview video"
-                  ></video>
-                  <button
-                    type="button"
-                    class="hero-video-toggle"
-                    id="hero-video-toggle"
-                    aria-pressed="true"
-                    aria-label="Pause hero video"
-                  >
-                    Pause
-                  </button>
+            <div class="hero-shell">
+              <div class="hero-inner reveal is-visible">
+                <p class="eyebrow hero-eyebrow">Habits · Goals · Shared progress</p>
+                <h1 id="hero-heading">Consistency is easier together.</h1>
+                <p class="hero-sub">
+                  Build better habits, reach meaningful goals, and keep moving forward with someone beside you.
+                </p>
+                <div class="hero-ctas">
+                  <a href="#start" class="btn-hero-primary">Start Your Tandem</a>
+                  <a href="#how-it-works" class="btn-hero-secondary">See How It Works</a>
                 </div>
+                <p class="hero-note">Private by design. No public feed. No follower counts.</p>
               </div>
             </div>
+
+            <button
+              type="button"
+              class="hero-video-toggle"
+              id="hero-video-toggle"
+              aria-pressed="true"
+              aria-label="Pause hero video"
+            >
+              Pause
+            </button>
           </section>
 
           <section id="problem" class="section problem-section" aria-labelledby="problem-heading">
