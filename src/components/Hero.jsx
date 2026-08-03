@@ -80,7 +80,6 @@ export default function Hero() {
           </p>
           <div className="hero-ctas">
             <a href="#start" className="btn-hero-primary">Start Your Tandem</a>
-            <a href="#how-it-works" className="btn-hero-secondary">See How It Works</a>
           </div>
           <p className="hero-note">{noOrphan('Focus on what matters. Leave the noise behind.')}</p>
         </div>

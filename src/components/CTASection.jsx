@@ -55,7 +55,6 @@ export default function CTASection() {
         <a href="mailto:hello@tandem.app?subject=Start%20Your%20Tandem" className="btn-cta-primary">
           {noOrphan('Start Your Tandem')}
         </a>
-        <p className="cta-sub">{noOrphan('Better habits. Meaningful goals. Shared progress.')}</p>
       </div>
 
       <button

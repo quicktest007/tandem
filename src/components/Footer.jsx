@@ -22,9 +22,6 @@ export default function Footer() {
             <span>Tandem</span>
             <span className="sr-only"> home</span>
           </a>
-          <p>
-            Tandem helps people build lasting habits and achieve meaningful goals through shared progress.
-          </p>
         </div>
 
         <div className="footer-cols">
@@ -79,10 +76,6 @@ export default function Footer() {
             Reach us at{' '}
             <a href="mailto:hello@tandem.app">hello@tandem.app</a>.
           </p>
-        </section>
-        <section id="sign-in" className="footer-notice" tabIndex={-1} aria-labelledby="signin-heading">
-          <h2 id="signin-heading">Sign in</h2>
-          <p>Sign in is coming soon. Thanks for your patience.</p>
         </section>
       </div>
 

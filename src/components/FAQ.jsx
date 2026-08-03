@@ -4,28 +4,12 @@ import { noOrphan } from '../utils/noOrphan'
 
 const faqs = [
   {
-    q: noOrphan('Is Tandem a habit tracker?'),
-    a: noOrphan('Tandem includes habit and goal tracking, but it is designed around shared progress rather than tracking alone.'),
-  },
-  {
     q: noOrphan('Do both people need the app?'),
     a: noOrphan('Yes. Each person has their own account and can participate in shared check-ins, encouragement, and progress.'),
   },
   {
     q: noOrphan('Can I have more than one Tandem?'),
     a: noOrphan('You can build more than one Tandem over time—with different people and different goals—even if you start with a single partner.'),
-  },
-  {
-    q: noOrphan('Are my goals public?'),
-    a: noOrphan('No. Tandem is private by design. Your activity is only visible to the people you choose.'),
-  },
-  {
-    q: noOrphan('What kinds of goals can I create?'),
-    a: noOrphan('Tandem can support habits, routines, short-term goals, personal challenges, and long-term milestones.'),
-  },
-  {
-    q: noOrphan('What happens if I miss a day?'),
-    a: noOrphan('Tandem encourages reflection and restarting rather than shame, punishment, or losing all progress.'),
   },
   {
     q: noOrphan('Is Tandem for coaches or groups?'),

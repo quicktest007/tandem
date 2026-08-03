@@ -3,13 +3,6 @@ import { noOrphan } from '../utils/noOrphan'
 
 const base = import.meta.env.BASE_URL
 
-const lines = [
-  noOrphan('You need a rhythm.'),
-  noOrphan('A reason to check in.'),
-  noOrphan('Someone who notices when you show up.'),
-  noOrphan('And someone who reminds you that one missed day doesn’t erase your progress.'),
-]
-
 export default function BrandStatement() {
   const ref = useRef(null)
 
@@ -44,15 +37,12 @@ export default function BrandStatement() {
           <h2 id="brand-heading" className="brand-line brand-heading">
             {noOrphan('You don’t need more motivation.')}
           </h2>
-          {lines.map((line) => (
-            <p key={line} className="brand-line">{line}</p>
-          ))}
           <p className="brand-line brand-end">{noOrphan('That’s Tandem.')}</p>
         </div>
         <figure className="brand-visual">
           <img
             src={`${base}lifestyle-brand.jpg`}
-            alt="Illustration of kids on a tandem bicycle beside a Tandem mural that says Make Your Goals happen."
+            alt="Illustration of kids on a tandem bicycle beside a Tandem mural."
             width={719}
             height={1024}
             loading="lazy"

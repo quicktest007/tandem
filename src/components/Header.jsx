@@ -80,7 +80,6 @@ export default function Header() {
           {navLinks.map((link) => (
             <a key={link.href} href={link.href}>{link.label}</a>
           ))}
-          <a href="#sign-in" className="header-signin">Sign In</a>
           <a href="#start" className="btn-primary btn-sm">Start Your Tandem</a>
         </nav>
 
@@ -113,7 +112,6 @@ export default function Header() {
         {navLinks.map((link) => (
           <a key={link.href} href={link.href} onClick={close}>{link.label}</a>
         ))}
-        <a href="#sign-in" onClick={close}>Sign In</a>
         <a href="#start" className="btn-primary" onClick={close}>Start Your Tandem</a>
       </nav>
     </header>

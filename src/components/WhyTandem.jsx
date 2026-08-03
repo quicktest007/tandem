@@ -57,8 +57,6 @@ export default function WhyTandem() {
             </div>
           ))}
         </div>
-
-        <p className="why-tagline">{noOrphan('No followers. No public pressure. Just meaningful progress.')}</p>
       </div>
     </section>
   )
