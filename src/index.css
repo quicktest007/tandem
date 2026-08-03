@@ -118,7 +118,6 @@ blockquote,
 .section-intro p,
 .why-tagline,
 .week-closer,
-.lifestyle-break-copy p,
 .faq-panel p,
 .footer-brand p,
 .footer-notice p {
@@ -1125,58 +1124,6 @@ blockquote,
     grid-template-columns: repeat(4, 1fr);
     overflow: visible;
   }
-}
-
-/* Full-bleed lifestyle campaign visual — show the full designed graphic */
-.lifestyle-break {
-  margin: 0;
-  padding: 3.5rem 0;
-  display: grid;
-  gap: 1.75rem;
-  justify-items: center;
-  background:
-    linear-gradient(90deg, #dff3f4 0%, #eaf6f8 35%, #d9eef5 100%);
-}
-
-.lifestyle-break-copy {
-  width: min(100% - 2.5rem, 40rem);
-  text-align: center;
-}
-
-.lifestyle-break-copy h2 {
-  font-size: clamp(1.85rem, 4vw, 2.75rem);
-}
-
-.lifestyle-break-copy h2 .accent {
-  color: var(--partner-text);
-}
-
-.lifestyle-break-copy p {
-  margin: 0.85rem 0 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-}
-
-.lifestyle-break-features {
-  list-style: none;
-  margin: 1.25rem 0 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.65rem 1.15rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.lifestyle-break-image {
-  display: block;
-  width: 100%;
-  max-width: 90rem;
-  height: auto;
-  object-fit: contain;
-  object-position: center;
 }
 
 /* Why / compare */

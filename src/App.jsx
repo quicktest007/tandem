@@ -4,7 +4,6 @@ import ProblemSection from './components/ProblemSection'
 import HowItWorks from './components/HowItWorks'
 import Features from './components/Features'
 import WeekStory from './components/WeekStory'
-import LifestyleBreak from './components/LifestyleBreak'
 import WhyTandem from './components/WhyTandem'
 import BrandStatement from './components/BrandStatement'
 import FAQ from './components/FAQ'
@@ -24,7 +23,6 @@ function App() {
         <HowItWorks />
         <Features />
         <WeekStory />
-        <LifestyleBreak />
         <WhyTandem />
         <BrandStatement />
         <FAQ />
