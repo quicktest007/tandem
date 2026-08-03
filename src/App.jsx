@@ -7,7 +7,6 @@ import WeekStory from './components/WeekStory'
 import LifestyleBreak from './components/LifestyleBreak'
 import WhyTandem from './components/WhyTandem'
 import BrandStatement from './components/BrandStatement'
-import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import CTASection from './components/CTASection'
 import Footer from './components/Footer'
@@ -28,7 +27,6 @@ function App() {
         <LifestyleBreak />
         <WhyTandem />
         <BrandStatement />
-        <Testimonials />
         <FAQ />
         <CTASection />
       </main>

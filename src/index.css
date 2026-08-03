@@ -120,7 +120,6 @@ blockquote,
 .week-closer,
 .lifestyle-break-copy p,
 .faq-panel p,
-.testimonial-card blockquote,
 .footer-brand p,
 .footer-notice p {
   text-wrap: pretty;
@@ -1308,40 +1307,6 @@ blockquote,
   margin-top: 2rem;
   color: var(--accent-btn);
 }
-
-/* Testimonials */
-.testimonial-grid {
-  display: grid;
-  gap: 1rem;
-}
-
-@media (min-width: 800px) {
-  .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-.testimonial-card {
-  margin: 0;
-  padding: 1.4rem;
-  border-radius: var(--radius);
-  background: var(--bg-elevated);
-  border: 1px dashed rgba(0, 88, 152, 0.18);
-}
-
-.testimonial-card blockquote {
-  margin: 0;
-  font-family: var(--display);
-  font-size: 1.15rem;
-  line-height: 1.4;
-}
-
-.testimonial-card figcaption {
-  display: grid;
-  gap: 0.15rem;
-  margin-top: 1rem;
-}
-
-.testimonial-name { font-weight: 700; font-size: 0.9rem; }
-.testimonial-detail { font-size: 0.8rem; color: var(--muted); }
 
 /* FAQ */
 .faq-list {
