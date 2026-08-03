@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useReveal } from '../hooks/useReveal'
+import { noOrphan } from '../utils/noOrphan'
 
 const base = import.meta.env.BASE_URL
 const playlist = [`${base}hero.mp4`, `${base}hero-2.mp4`]
@@ -72,16 +73,16 @@ export default function Hero() {
 
       <div className="hero-shell">
         <div className="hero-inner reveal" ref={ref}>
-          <p className="eyebrow hero-eyebrow">Habits · Goals · Shared progress</p>
-          <h1 id="hero-heading">Small steps. Shared momentum.</h1>
+          <p className="eyebrow hero-eyebrow">{noOrphan('Habits · Goals · Shared progress')}</p>
+          <h1 id="hero-heading">{noOrphan('Small steps. Shared momentum.')}</h1>
           <p className="hero-sub">
-            Real change doesn’t happen overnight. Tandem helps you and someone you trust build momentum through everyday progress.
+            {noOrphan('Real change doesn’t happen overnight. Tandem helps you and someone you trust build momentum through everyday progress.')}
           </p>
           <div className="hero-ctas">
             <a href="#start" className="btn-hero-primary">Start Your Tandem</a>
             <a href="#how-it-works" className="btn-hero-secondary">See How It Works</a>
           </div>
-          <p className="hero-note">Focus on what matters. Leave the noise behind.</p>
+          <p className="hero-note">{noOrphan('Focus on what matters. Leave the noise behind.')}</p>
         </div>
       </div>
 

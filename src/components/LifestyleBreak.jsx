@@ -1,3 +1,5 @@
+import { noOrphan } from '../utils/noOrphan'
+
 const base = import.meta.env.BASE_URL
 
 export default function LifestyleBreak() {
@@ -5,13 +7,13 @@ export default function LifestyleBreak() {
     <section className="lifestyle-break" aria-labelledby="lifestyle-heading">
       <div className="lifestyle-break-copy">
         <h2 id="lifestyle-heading">
-          Make Your <span className="accent">Goals</span> Happen
+          Make Your <span className="accent">Goals</span>{'\u00A0'}Happen
         </h2>
-        <p>The tools. The progress. The momentum together.</p>
+        <p>{noOrphan('The tools. The progress. The momentum together.')}</p>
         <ul className="lifestyle-break-features">
-          <li>Track Habits</li>
-          <li>Check In</li>
-          <li>See Progress</li>
+          <li>{noOrphan('Track Habits')}</li>
+          <li>{noOrphan('Check In')}</li>
+          <li>{noOrphan('See Progress')}</li>
         </ul>
       </div>
       <img

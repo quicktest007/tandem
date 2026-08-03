@@ -1,12 +1,13 @@
 import { useEffect, useRef } from 'react'
+import { noOrphan } from '../utils/noOrphan'
 
 const base = import.meta.env.BASE_URL
 
 const lines = [
-  'You need a rhythm.',
-  'A reason to check in.',
-  'Someone who notices when you show up.',
-  'And someone who reminds you that one missed day doesn’t erase your progress.',
+  noOrphan('You need a rhythm.'),
+  noOrphan('A reason to check in.'),
+  noOrphan('Someone who notices when you show up.'),
+  noOrphan('And someone who reminds you that one missed day doesn’t erase your progress.'),
 ]
 
 export default function BrandStatement() {
@@ -41,12 +42,12 @@ export default function BrandStatement() {
       <div className="brand-layout" ref={ref}>
         <div className="brand-inner">
           <h2 id="brand-heading" className="brand-line brand-heading">
-            You don’t need more motivation.
+            {noOrphan('You don’t need more motivation.')}
           </h2>
           {lines.map((line) => (
             <p key={line} className="brand-line">{line}</p>
           ))}
-          <p className="brand-line brand-end">That’s Tandem.</p>
+          <p className="brand-line brand-end">{noOrphan('That’s Tandem.')}</p>
         </div>
         <figure className="brand-visual">
           <img

@@ -1,34 +1,35 @@
 import { useReveal } from '../hooks/useReveal'
+import { noOrphan } from '../utils/noOrphan'
 
 const columns = [
   {
-    title: 'Traditional habit apps',
+    title: noOrphan('Traditional habit apps'),
     tone: 'muted',
     points: [
-      'Built around solo tracking',
-      'Easy to ignore',
-      'Focused on streaks and data',
-      'Progress stays isolated',
+      noOrphan('Built around solo tracking'),
+      noOrphan('Easy to ignore'),
+      noOrphan('Focused on streaks and data'),
+      noOrphan('Progress stays isolated'),
     ],
   },
   {
-    title: 'Social platforms',
+    title: noOrphan('Social platforms'),
     tone: 'muted',
     points: [
-      'Public by default',
-      'Driven by likes and followers',
-      'Encourage comparison',
-      'Turn growth into content',
+      noOrphan('Public by default'),
+      noOrphan('Driven by likes and followers'),
+      noOrphan('Encourage comparison'),
+      noOrphan('Turn growth into content'),
     ],
   },
   {
     title: 'Tandem',
     tone: 'accent',
     points: [
-      'Built around trusted relationships',
-      'Private and focused',
-      'Encourages honest progress',
-      'Designed to help people keep going',
+      noOrphan('Built around trusted relationships'),
+      noOrphan('Private and focused'),
+      noOrphan('Encourages honest progress'),
+      noOrphan('Designed to help people keep going'),
     ],
   },
 ]
@@ -40,8 +41,8 @@ export default function WhyTandem() {
     <section id="about" className="section why-section" aria-labelledby="why-heading">
       <div className="container reveal" ref={ref}>
         <div className="section-intro">
-          <p className="eyebrow">Why Tandem</p>
-          <h2 id="why-heading">Built for progress, not performance.</h2>
+          <p className="eyebrow">{noOrphan('Why Tandem')}</p>
+          <h2 id="why-heading">{noOrphan('Built for progress, not performance.')}</h2>
         </div>
 
         <div className="compare-grid">
@@ -57,7 +58,7 @@ export default function WhyTandem() {
           ))}
         </div>
 
-        <p className="why-tagline">No followers. No public pressure. Just meaningful progress.</p>
+        <p className="why-tagline">{noOrphan('No followers. No public pressure. Just meaningful progress.')}</p>
       </div>
     </section>
   )

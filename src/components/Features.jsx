@@ -1,40 +1,41 @@
 import { useReveal } from '../hooks/useReveal'
+import { noOrphan } from '../utils/noOrphan'
 
 const features = [
   {
     id: 'shared-progress',
-    title: 'Shared Progress',
-    body: 'See how you and your partner are moving toward your goals without turning progress into a competition.',
+    title: noOrphan('Shared Progress'),
+    body: noOrphan('See how you and your partner are moving toward your goals without turning progress into a competition.'),
     visual: 'progress',
   },
   {
     id: 'quick-checkins',
-    title: 'Quick Check-Ins',
-    body: 'Share a simple update in seconds. Check-ins should feel lightweight enough to become part of everyday life.',
+    title: noOrphan('Quick Check-Ins'),
+    body: noOrphan('Share a simple update in seconds. Check-ins should feel lightweight enough to become part of everyday life.'),
     visual: 'checkin',
   },
   {
     id: 'gentle-nudges',
-    title: 'Gentle Nudges',
-    body: 'Get thoughtful reminders when it is time to take action, reconnect, or reflect.',
+    title: noOrphan('Gentle Nudges'),
+    body: noOrphan('Get thoughtful reminders when it is time to take action, reconnect, or reflect.'),
     visual: 'nudge',
   },
   {
     id: 'encouragement',
     title: 'Encouragement',
-    body: 'Celebrate milestones, send reactions, and remind each other that progress matters.',
+    body: noOrphan('Celebrate milestones, send reactions, and remind each other that progress matters.'),
     visual: 'encourage',
   },
   {
     id: 'flexible-goals',
-    title: 'Flexible Goals',
-    body: 'Use Tandem for recurring habits, weekly goals, personal challenges, or longer-term milestones.',
+    title: noOrphan('Flexible Goals'),
+    body: noOrphan('Use Tandem for recurring habits, weekly goals, personal challenges, or longer-term milestones.'),
     visual: 'goals',
   },
   {
     id: 'private-by-design',
-    title: 'Private by Design',
-    body: 'No public profiles, follower counts, popularity metrics, or pressure to perform for an audience.',
+    title: noOrphan('Private by Design'),
+    body: noOrphan('No public profiles, follower counts, popularity metrics, or pressure to perform for an audience.'),
     visual: 'private',
   },
 ]
@@ -51,7 +52,7 @@ function FeatureVisual({ type }) {
           </div>
           <span className="pair-avatar pair-b sm">J</span>
         </div>
-        <p className="feature-ui-caption">Side by side — not head to head</p>
+        <p className="feature-ui-caption">{noOrphan('Side by side — not head to head')}</p>
       </div>
     )
   }
@@ -59,8 +60,8 @@ function FeatureVisual({ type }) {
     return (
       <div className="feature-ui" aria-hidden="true">
         <div className="mini-checkin">
-          <p>“Walked after dinner. Felt good to move.”</p>
-          <span className="fake-btn">Send check-in</span>
+          <p>{noOrphan('“Walked after dinner. Felt good to move.”')}</p>
+          <span className="fake-btn">{noOrphan('Send check-in')}</span>
         </div>
       </div>
     )
@@ -71,8 +72,8 @@ function FeatureVisual({ type }) {
         <div className="mini-nudge">
           <span className="reminder-dot" />
           <div>
-            <p className="feed-title">Evening nudge</p>
-            <p className="feed-body">Time for a quick check-in with Jordan?</p>
+            <p className="feed-title">{noOrphan('Evening nudge')}</p>
+            <p className="feed-body">{noOrphan('Time for a quick check-in with Jordan?')}</p>
           </div>
         </div>
       </div>
@@ -82,9 +83,9 @@ function FeatureVisual({ type }) {
     return (
       <div className="feature-ui" aria-hidden="true">
         <div className="mini-reacts">
-          <span>Nice work</span>
-          <span>Proud of you</span>
-          <span>Keep going</span>
+          <span>{noOrphan('Nice work')}</span>
+          <span>{noOrphan('Proud of you')}</span>
+          <span>{noOrphan('Keep going')}</span>
         </div>
       </div>
     )
@@ -93,9 +94,9 @@ function FeatureVisual({ type }) {
     return (
       <div className="feature-ui" aria-hidden="true">
         <ul className="mini-goals">
-          <li>Daily reading</li>
-          <li>Weekly project sprint</li>
-          <li>90-day milestone</li>
+          <li>{noOrphan('Daily reading')}</li>
+          <li>{noOrphan('Weekly project sprint')}</li>
+          <li>{noOrphan('90-day milestone')}</li>
         </ul>
       </div>
     )
@@ -104,7 +105,7 @@ function FeatureVisual({ type }) {
     <div className="feature-ui" aria-hidden="true">
       <div className="mini-private">
         <span className="lock-dot" />
-        <p>Only visible to people you invite</p>
+        <p>{noOrphan('Only visible to people you invite')}</p>
       </div>
     </div>
   )
@@ -118,7 +119,7 @@ export default function Features() {
       <div className="container">
         <div className="section-intro reveal" ref={ref}>
           <p className="eyebrow">Features</p>
-          <h2 id="features-heading">Everything you need to keep going. Nothing you don’t.</h2>
+          <h2 id="features-heading">{noOrphan('Everything you need to keep going. Nothing you don’t.')}</h2>
         </div>
 
         <div className="feature-list">

@@ -1,25 +1,26 @@
 import { useReveal } from '../hooks/useReveal'
+import { noOrphan } from '../utils/noOrphan'
 
 const steps = [
   {
     num: '01',
-    title: 'Choose what matters',
-    body: 'Create a habit or goal around health, learning, creativity, work, relationships, digital wellness, or personal growth.',
+    title: noOrphan('Choose what matters'),
+    body: noOrphan('Create a habit or goal around health, learning, creativity, work, relationships, digital wellness, or personal growth.'),
   },
   {
     num: '02',
-    title: 'Invite your person',
-    body: 'Build your Tandem with a friend, spouse, coworker, coach, family member, or someone who shares your goal.',
+    title: noOrphan('Invite your person'),
+    body: noOrphan('Build your Tandem with a friend, spouse, coworker, coach, family member, or someone who shares your goal.'),
   },
   {
     num: '03',
-    title: 'Check in',
-    body: 'Share quick updates, reflect on progress, celebrate wins, and be honest when the week does not go as planned.',
+    title: noOrphan('Check in'),
+    body: noOrphan('Share quick updates, reflect on progress, celebrate wins, and be honest when the week does not go as planned.'),
   },
   {
     num: '04',
-    title: 'Keep moving',
-    body: 'Receive gentle nudges, encouragement, and reminders that help small actions become lasting routines.',
+    title: noOrphan('Keep moving'),
+    body: noOrphan('Receive gentle nudges, encouragement, and reminders that help small actions become lasting routines.'),
   },
 ]
 
@@ -30,8 +31,8 @@ export default function HowItWorks() {
     <section id="how-it-works" className="section how-section" aria-labelledby="how-heading">
       <div className="container reveal" ref={ref}>
         <div className="section-intro">
-          <p className="eyebrow">How it works</p>
-          <h2 id="how-heading">A simple rhythm for lasting progress.</h2>
+          <p className="eyebrow">{noOrphan('How it works')}</p>
+          <h2 id="how-heading">{noOrphan('A simple rhythm for lasting progress.')}</h2>
         </div>
 
         <ol className="timeline">
