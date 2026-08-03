@@ -73,15 +73,15 @@ export default function Hero() {
       <div className="hero-shell">
         <div className="hero-inner reveal" ref={ref}>
           <p className="eyebrow hero-eyebrow">Habits · Goals · Shared progress</p>
-          <h1 id="hero-heading">Consistency is easier together.</h1>
+          <h1 id="hero-heading">Small steps. Shared momentum.</h1>
           <p className="hero-sub">
-            Build better habits, reach meaningful goals, and keep moving forward with someone beside you.
+            Real change doesn’t happen overnight. Tandem helps you and someone you trust build momentum through everyday progress.
           </p>
           <div className="hero-ctas">
             <a href="#start" className="btn-hero-primary">Start Your Tandem</a>
             <a href="#how-it-works" className="btn-hero-secondary">See How It Works</a>
           </div>
-          <p className="hero-note">Private by design. No public feed. No follower counts.</p>
+          <p className="hero-note">Focus on what matters. Leave the noise behind.</p>
         </div>
       </div>
 
