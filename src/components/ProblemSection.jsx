@@ -13,7 +13,7 @@ export default function ProblemSection() {
             {noOrphan('People set goals with good intentions. They download another app, create a plan, and feel motivated for a few days. Then life gets busy, momentum fades, and the goal quietly disappears.')}
           </p>
           <p>
-            {noOrphan('Tandem creates a simple rhythm that helps people keep going. Not through pressure, competition, or public performance—but through shared progress with someone they trust.')}
+            {noOrphan('Tandem creates a simple rhythm that helps people keep going. Not through pressure, competition, or public performance, but through shared progress with someone they trust.')}
           </p>
         </div>
 
