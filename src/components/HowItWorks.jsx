@@ -3,24 +3,20 @@ import { noOrphan } from '../utils/noOrphan'
 
 const steps = [
   {
-    num: '01',
-    title: noOrphan('Choose what matters'),
-    body: noOrphan('Create a habit or goal around health, learning, creativity, work, relationships, digital wellness, or personal growth.'),
+    title: noOrphan('It starts with purpose.'),
+    body: noOrphan('Choose one meaningful habit or goal.'),
   },
   {
-    num: '02',
-    title: noOrphan('Invite your person'),
-    body: noOrphan('Build your Tandem with a friend, spouse, coworker, coach, family member, or someone who shares your goal.'),
+    title: noOrphan('It stays personal.'),
+    body: noOrphan('Invite someone who genuinely wants to see you succeed.'),
   },
   {
-    num: '03',
-    title: noOrphan('Check in'),
-    body: noOrphan('Share quick updates, reflect on progress, celebrate wins, and be honest when the week does not go as planned.'),
+    title: noOrphan('It becomes a rhythm.'),
+    body: noOrphan('Check in consistently, not perfectly.'),
   },
   {
-    num: '04',
-    title: noOrphan('Keep moving'),
-    body: noOrphan('Receive gentle nudges, encouragement, and reminders that help small actions become lasting routines.'),
+    title: noOrphan('It becomes part of your life.'),
+    body: noOrphan('Momentum replaces motivation.'),
   },
 ]
 
@@ -31,21 +27,19 @@ export default function HowItWorks() {
     <section id="how-it-works" className="section how-section" aria-labelledby="how-heading">
       <div className="container reveal" ref={ref}>
         <div className="section-intro">
-          <p className="eyebrow">{noOrphan('How it works')}</p>
-          <h2 id="how-heading">{noOrphan('A simple rhythm for lasting progress.')}</h2>
+          <h2 id="how-heading">{noOrphan('Why Tandem works')}</h2>
         </div>
 
-        <ol className="timeline">
+        <ol className="why-flow">
           {steps.map((step, i) => (
-            <li key={step.num} className="timeline-step">
-              <div className="timeline-rail" aria-hidden="true">
-                <span className="timeline-node">{step.num}</span>
-                {i < steps.length - 1 && <span className="timeline-connector" />}
-              </div>
-              <div className="timeline-content">
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
-              </div>
+            <li key={step.title} className="why-step">
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+              {i < steps.length - 1 && (
+                <span className="why-arrow" aria-hidden="true">
+                  ↓
+                </span>
+              )}
             </li>
           ))}
         </ol>

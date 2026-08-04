@@ -660,82 +660,39 @@ blockquote,
   color: var(--muted);
 }
 
-/* How it works timeline */
+/* Why Tandem works */
 .how-section { background: var(--bg-elevated); border-block: 1px solid var(--line); }
 
-.timeline {
+.how-section .section-intro {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.why-flow {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  display: grid;
-  gap: 0;
+  max-width: 32rem;
+  text-align: center;
 }
 
-.timeline-step {
-  display: grid;
-  grid-template-columns: 4.5rem 1fr;
-  gap: 1rem;
+.why-step h3 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
 }
 
-.timeline-rail {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.timeline-node {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  background: var(--bg-ink);
-  color: white;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.timeline-connector {
-  width: 2px;
-  flex: 1;
-  min-height: 2.5rem;
-  background: linear-gradient(180deg, var(--partner), var(--accent));
-  opacity: 0.45;
-}
-
-.timeline-content {
-  padding-bottom: 2rem;
-}
-
-.timeline-content p {
+.why-step p {
   margin: 0;
   color: var(--muted);
-  max-width: 36rem;
 }
 
-@media (min-width: 900px) {
-  .timeline {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-  }
-
-  .timeline-step {
-    grid-template-columns: 1fr;
-  }
-
-  .timeline-rail {
-    flex-direction: row;
-    margin-bottom: 1rem;
-  }
-
-  .timeline-connector {
-    width: auto;
-    flex: 1;
-    min-height: 2px;
-    height: 2px;
-  }
-
-  .timeline-content { padding-bottom: 0; }
+.why-arrow {
+  display: block;
+  margin: 1.35rem 0;
+  color: var(--partner);
+  font-size: 1.35rem;
+  line-height: 1;
+  opacity: 0.85;
 }
 
 /* Features */
