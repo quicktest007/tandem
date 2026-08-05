@@ -371,20 +371,24 @@ blockquote,
 .nav-wave-letters span {
   display: inline-block;
   transform-origin: center bottom;
-  animation: nav-wave 1.7s ease-in-out infinite;
-  animation-delay: calc(var(--i, 0) * 0.07s);
-  will-change: transform;
+  transform: translateY(0);
 }
 
 .nav-wave-letters span.is-space {
   width: 0.28em;
-  animation: none;
 }
 
 .nav-wave:hover .nav-wave-letters span,
 .nav-wave:focus-visible .nav-wave-letters span {
-  animation-duration: 1.05s;
   color: var(--teal-deep);
+  animation: nav-wave 0.65s ease-in-out 1 both;
+  animation-delay: calc(var(--i, 0) * 0.045s);
+}
+
+.nav-wave:hover .nav-wave-letters span.is-space,
+.nav-wave:focus-visible .nav-wave-letters span.is-space {
+  animation: none;
+  color: inherit;
 }
 
 @keyframes nav-wave {
@@ -392,13 +396,14 @@ blockquote,
   100% {
     transform: translateY(0);
   }
-  50% {
+  45% {
     transform: translateY(-0.28em);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nav-wave-letters span {
+  .nav-wave:hover .nav-wave-letters span,
+  .nav-wave:focus-visible .nav-wave-letters span {
     animation: none !important;
     transform: none !important;
   }
