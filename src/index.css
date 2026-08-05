@@ -116,8 +116,7 @@ blockquote,
 .brand-line,
 .section-intro p,
 .faq-panel p,
-.footer-brand p,
-.footer-notice p {
+.footer-brand p {
   text-wrap: pretty;
 }
 
@@ -1195,50 +1194,6 @@ blockquote,
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.875rem;
-}
-
-.footer-notices {
-  width: min(100% - 2.5rem, var(--container));
-  margin: 2.5rem auto 0;
-  display: grid;
-  gap: 1rem;
-}
-
-@media (min-width: 800px) {
-  .footer-notices {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-.footer-notice {
-  scroll-margin-top: 5.5rem;
-  scroll-margin-bottom: 9rem;
-  padding: 1rem 1.1rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  background: var(--bg-soft);
-}
-
-.footer-notice:focus {
-  outline: none;
-}
-
-.footer-notice:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
-}
-
-.footer-notice h2 {
-  font-family: var(--font);
-  font-size: 1rem;
-  margin: 0 0 0.35rem;
-  letter-spacing: 0;
-}
-
-.footer-notice p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.9rem;
 }
 
 /* Cookie banner */

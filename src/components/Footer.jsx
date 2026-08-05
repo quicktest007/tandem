@@ -9,7 +9,7 @@ const productLinks = [
 const legalLinks = [
   { href: '#privacy-policy', label: 'Privacy' },
   { href: '#terms', label: 'Terms' },
-  { href: '#contact', label: 'Contact' },
+  { href: 'mailto:hello@tandem.app', label: 'Contact' },
 ]
 
 export default function Footer() {
@@ -59,24 +59,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-      </div>
-
-      <div className="footer-notices">
-        <section id="privacy-policy" className="footer-notice" tabIndex={-1} aria-labelledby="privacy-heading">
-          <h2 id="privacy-heading">Privacy</h2>
-          <p>Full privacy policy coming soon. We never sell your data.</p>
-        </section>
-        <section id="terms" className="footer-notice" tabIndex={-1} aria-labelledby="terms-heading">
-          <h2 id="terms-heading">Terms</h2>
-          <p>Terms of service coming soon.</p>
-        </section>
-        <section id="contact" className="footer-notice" tabIndex={-1} aria-labelledby="contact-heading">
-          <h2 id="contact-heading">Contact</h2>
-          <p>
-            Reach us at{' '}
-            <a href="mailto:hello@tandem.app">hello@tandem.app</a>.
-          </p>
-        </section>
       </div>
 
       <p className="footer-copy">© {new Date().getFullYear()} Tandem. Stay connected. Keep going.</p>
