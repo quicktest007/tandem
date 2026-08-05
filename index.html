@@ -30,7 +30,7 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Lora:ital,wght@0,400..700;1,400..700&family=Work+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/index.css?v=no-trails-1" />
+    <link rel="stylesheet" href="./src/index.css?v=faq-split-1" />
     <style>
       /* Critical hero layout — keeps text over video even if CSS is stale */
       .hero.hero--cinema {
@@ -360,81 +360,94 @@
 
 
           <section id="faq" class="section faq-section" aria-labelledby="faq-heading">
-            <div class="container narrow reveal is-visible">
-              <div class="section-intro">
-                <p class="eyebrow">FAQ</p>
-                <h2 id="faq-heading">Questions,&nbsp;answered.</h2>
-              </div>
+            <div class="container faq-layout reveal is-visible">
+              <figure class="faq-visual">
+                <img
+                  src="./tandem.png"
+                  alt="Two people riding a tandem bicycle together along a scenic road."
+                  width="1024"
+                  height="555"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
 
-              <div class="faq-list">
-                <div class="faq-item is-open">
-                  <h3>
-                    <button
-                      type="button"
-                      id="faq-button-0"
-                      class="faq-trigger"
-                      aria-expanded="true"
-                      aria-controls="faq-panel-0"
-                    >
-                      <span>Do both people need the&nbsp;app?</span>
-                      <span class="faq-icon" aria-hidden="true">−</span>
-                    </button>
-                  </h3>
-                  <div
-                    id="faq-panel-0"
-                    role="region"
-                    aria-labelledby="faq-button-0"
-                    class="faq-panel"
-                  >
-                    <p>Yes. Each person has their own account and can participate in shared check-ins, encouragement, and&nbsp;progress.</p>
-                  </div>
+              <div class="faq-content">
+                <div class="section-intro">
+                  <p class="eyebrow">FAQ</p>
+                  <h2 id="faq-heading">Questions,&nbsp;answered.</h2>
                 </div>
 
-                <div class="faq-item">
-                  <h3>
-                    <button
-                      type="button"
-                      id="faq-button-1"
-                      class="faq-trigger"
-                      aria-expanded="false"
-                      aria-controls="faq-panel-1"
+                <div class="faq-list">
+                  <div class="faq-item is-open">
+                    <h3>
+                      <button
+                        type="button"
+                        id="faq-button-0"
+                        class="faq-trigger"
+                        aria-expanded="true"
+                        aria-controls="faq-panel-0"
+                      >
+                        <span>Do both people need the&nbsp;app?</span>
+                        <span class="faq-icon" aria-hidden="true">−</span>
+                      </button>
+                    </h3>
+                    <div
+                      id="faq-panel-0"
+                      role="region"
+                      aria-labelledby="faq-button-0"
+                      class="faq-panel"
                     >
-                      <span>Can I have more than one&nbsp;Tandem?</span>
-                      <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
-                  </h3>
-                  <div
-                    id="faq-panel-1"
-                    role="region"
-                    aria-labelledby="faq-button-1"
-                    class="faq-panel"
-                    hidden
-                  >
-                    <p>You can build more than one Tandem over time—with different people and different goals—even if you start with a single&nbsp;partner.</p>
+                      <p>Yes. Each person has their own account and can participate in shared check-ins, encouragement, and&nbsp;progress.</p>
+                    </div>
                   </div>
-                </div>
 
-                <div class="faq-item">
-                  <h3>
-                    <button
-                      type="button"
-                      id="faq-button-2"
-                      class="faq-trigger"
-                      aria-expanded="false"
-                      aria-controls="faq-panel-2"
+                  <div class="faq-item">
+                    <h3>
+                      <button
+                        type="button"
+                        id="faq-button-1"
+                        class="faq-trigger"
+                        aria-expanded="false"
+                        aria-controls="faq-panel-1"
+                      >
+                        <span>Can I have more than one&nbsp;Tandem?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                      </button>
+                    </h3>
+                    <div
+                      id="faq-panel-1"
+                      role="region"
+                      aria-labelledby="faq-button-1"
+                      class="faq-panel"
+                      hidden
                     >
-                      <span>Is Tandem for coaches or&nbsp;groups?</span>
-                      <span class="faq-icon" aria-hidden="true">+</span>
-                    </button>
-                  </h3>
-                  <div
-                    id="faq-panel-2"
-                    role="region"
-                    aria-labelledby="faq-button-2"
-                    class="faq-panel"
-                    hidden
-                  >
-                    <p>The initial experience is centered on two people, with room to grow into coaching and small-group features&nbsp;later.</p>
+                      <p>You can build more than one Tandem over time—with different people and different goals—even if you start with a single&nbsp;partner.</p>
+                    </div>
+                  </div>
+
+                  <div class="faq-item">
+                    <h3>
+                      <button
+                        type="button"
+                        id="faq-button-2"
+                        class="faq-trigger"
+                        aria-expanded="false"
+                        aria-controls="faq-panel-2"
+                      >
+                        <span>Is Tandem for coaches or&nbsp;groups?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                      </button>
+                    </h3>
+                    <div
+                      id="faq-panel-2"
+                      role="region"
+                      aria-labelledby="faq-button-2"
+                      class="faq-panel"
+                      hidden
+                    >
+                      <p>The initial experience is centered on two people, with room to grow into coaching and small-group features&nbsp;later.</p>
+                    </div>
                   </div>
                 </div>
               </div>
