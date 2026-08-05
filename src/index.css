@@ -313,11 +313,11 @@ blockquote,
 .header-shell {
   width: min(100% - 2rem, var(--container));
   margin: 0 auto;
-  padding: 0.85rem 1.35rem;
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.25rem;
   background: var(--cream);
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -331,8 +331,9 @@ blockquote,
   color: var(--ink);
   font-family: var(--display);
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 1.4rem;
   letter-spacing: 0.5px;
+  line-height: 1;
 }
 
 .header-logo .logo-mark { display: none; }
@@ -340,12 +341,12 @@ blockquote,
 .header-nav {
   display: none;
   align-items: center;
-  gap: 2rem;
+  gap: 2.25rem;
 }
 
 .header-nav a {
   text-decoration: none;
-  font-size: 0.9375rem;
+  font-size: 1.05rem;
   font-weight: 500;
   color: var(--ink);
 }
@@ -360,6 +361,10 @@ blockquote,
 .header-nav button.btn-primary:focus-visible {
   color: var(--ink-deep);
   background: var(--teal);
+  min-height: 3rem;
+  padding: 0.75rem 1.45rem;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
 }
 
 .mobile-menu-btn {

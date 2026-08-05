@@ -85,7 +85,7 @@ export default function Header() {
           {navLinks.map((link) => (
             <a key={link.href} href={link.href}>{link.label}</a>
           ))}
-          <button type="button" className="btn-primary btn-sm" onClick={showDemoNotice}>
+          <button type="button" className="btn-primary" onClick={showDemoNotice}>
             Download Now <span aria-hidden="true">→</span>
           </button>
         </nav>
