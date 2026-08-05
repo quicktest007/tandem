@@ -1,14 +1,18 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useId, useRef } from 'react'
 
-/** Vertical hand-sketched trail paths (viewBox 0 0 120 280). */
+/** Gentle horizontal S-curves, sketched feel (viewBox 0 0 800 120). */
 const PATHS = {
-  a: 'M61 6 C 68 24, 49 38, 56 54 C 67 78, 44 96, 53 122 C 66 152, 43 174, 58 202 C 72 228, 48 248, 62 274',
-  b: 'M48 8 C 38 30, 62 46, 52 68 C 38 96, 66 118, 54 146 C 40 176, 64 198, 50 226 C 36 248, 58 262, 46 276',
-  c: 'M74 5 C 86 26, 62 44, 78 66 C 94 94, 68 116, 82 142 C 98 170, 70 194, 84 220 C 96 244, 72 258, 80 276',
+  a: 'M36 78 C 130 28, 230 108, 340 58 C 450 12, 560 98, 668 48 C 720 28, 760 42, 772 52',
+  b: 'M28 42 C 140 96, 250 18, 360 72 C 470 122, 580 22, 690 68 C 740 88, 770 70, 780 58',
+  c: 'M40 64 C 150 18, 260 104, 380 52 C 500 4, 600 108, 710 44 C 750 24, 775 48, 786 60',
 }
+
+const SEEDS = { a: 3, b: 7, c: 11 }
 
 export default function TrailPath({ variant = 'a' }) {
   const ref = useRef(null)
+  const reactId = useId().replace(/:/g, '')
+  const filterId = `trail-rough-${variant}-${reactId}`
   const d = PATHS[variant] || PATHS.a
 
   useEffect(() => {
@@ -24,7 +28,7 @@ export default function TrailPath({ variant = 'a' }) {
       ([entry]) => {
         el.classList.toggle('is-visible', entry.isIntersecting)
       },
-      { threshold: 0.25, rootMargin: '-6% 0px -6% 0px' },
+      { threshold: 0.3, rootMargin: '-8% 0px -8% 0px' },
     )
 
     observer.observe(el)
@@ -38,12 +42,40 @@ export default function TrailPath({ variant = 'a' }) {
       aria-hidden="true"
     >
       <svg
-        viewBox="0 0 120 280"
-        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 800 120"
+        preserveAspectRatio="none"
         focusable="false"
       >
-        <path className="trail-path-ghost" pathLength="1" d={d} />
-        <path className="trail-path-line" pathLength="1" d={d} />
+        <defs>
+          <filter id={filterId} x="-4%" y="-40%" width="108%" height="180%">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.9"
+              numOctaves="2"
+              seed={SEEDS[variant] || 3}
+              result="noise"
+            />
+            <feDisplacementMap
+              in="SourceGraphic"
+              in2="noise"
+              scale="1.35"
+              xChannelSelector="R"
+              yChannelSelector="G"
+            />
+          </filter>
+        </defs>
+        <path
+          className="trail-path-ghost"
+          pathLength="1"
+          d={d}
+          filter={`url(#${filterId})`}
+        />
+        <path
+          className="trail-path-line"
+          pathLength="1"
+          d={d}
+          filter={`url(#${filterId})`}
+        />
       </svg>
     </div>
   )
