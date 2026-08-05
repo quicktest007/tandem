@@ -62,7 +62,7 @@ export default function DemoModal() {
           ref={closeRef}
           onClick={() => setOpen(false)}
         >
-          Got it
+          Got it <span aria-hidden="true">→</span>
         </button>
       </div>
     </div>

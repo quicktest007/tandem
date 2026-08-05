@@ -81,7 +81,7 @@ export default function Hero() {
           </p>
           <div className="hero-ctas">
             <button type="button" className="btn-hero-primary" onClick={showDemoNotice}>
-              Download Now
+              Download Now <span aria-hidden="true">→</span>
             </button>
           </div>
           <p className="hero-note">{noOrphan('Focus on what matters. Leave the noise behind.')}</p>

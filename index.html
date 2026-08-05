@@ -8,7 +8,7 @@
       name="description"
       content="Tandem helps you build better habits, reach meaningful goals, and stay consistent through private shared progress with someone you trust."
     />
-    <meta name="theme-color" content="#005898" />
+    <meta name="theme-color" content="#f7f3ea" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Tandem — Build Better Habits Together" />
     <meta
@@ -27,12 +27,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Lora:ital,wght@0,400..700;1,400..700&family=Work+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/index.css?v=features-rm-1" />
+    <link rel="stylesheet" href="./src/index.css?v=trailhead-1" />
     <style>
-      /* Critical hero layout — keeps text over video even if CSS CDN is stale */
+      /* Critical hero layout — keeps text over video even if CSS is stale */
       .hero.hero--cinema {
         position: relative !important;
         overflow: hidden !important;
@@ -40,9 +40,9 @@
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        padding: 3.5rem 0 3.75rem !important;
-        color: #fff !important;
-        background: #003d6b !important;
+        padding: 4.5rem 0 3.75rem !important;
+        color: oklch(97% 0.015 80) !important;
+        background: oklch(28% 0.02 80) !important;
       }
       .hero.hero--cinema .hero-media {
         position: absolute !important;
@@ -61,8 +61,8 @@
         position: absolute !important;
         inset: 0 !important;
         background:
-          linear-gradient(180deg, rgba(0,30,55,.45) 0%, rgba(0,30,55,.55) 55%, rgba(0,30,55,.62) 100%),
-          radial-gradient(ellipse at center, rgba(0,40,72,.35) 0%, rgba(0,40,72,.55) 100%) !important;
+          linear-gradient(180deg, rgba(35,28,22,.45) 0%, rgba(35,28,22,.55) 55%, rgba(35,28,22,.62) 100%),
+          radial-gradient(ellipse at center, rgba(35,28,22,.28) 0%, rgba(35,28,22,.52) 100%) !important;
         pointer-events: none !important;
       }
       .hero.hero--cinema .hero-shell {
@@ -79,13 +79,15 @@
         margin: 0 auto !important;
       }
       .hero.hero--cinema h1 {
-        color: #fff !important;
+        color: oklch(97% 0.015 80) !important;
         margin: 0 !important;
       }
-      .hero.hero--cinema .hero-eyebrow,
+      .hero.hero--cinema .hero-eyebrow {
+        color: oklch(72% 0.09 180) !important;
+      }
       .hero.hero--cinema .hero-sub,
       .hero.hero--cinema .hero-note {
-        color: rgba(245, 249, 252, 0.9) !important;
+        color: oklch(94% 0.015 80) !important;
       }
       .hero.hero--cinema .hero-sub {
         margin-left: auto !important;
@@ -98,28 +100,22 @@
         gap: 0.85rem !important;
         margin-top: 1.75rem !important;
       }
-      .hero.hero--cinema .btn-hero-primary,
-      .hero.hero--cinema .btn-hero-secondary {
+      .hero.hero--cinema .btn-hero-primary {
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
+        gap: 0.55rem !important;
         min-height: 3rem !important;
         padding: 0.85rem 1.45rem !important;
         border-radius: 999px !important;
         text-decoration: none !important;
         font: inherit !important;
-        font-weight: 700 !important;
+        font-weight: 500 !important;
         cursor: pointer !important;
-      }
-      .hero.hero--cinema .btn-hero-primary {
-        background: #fff !important;
-        color: #005898 !important;
-        border: 1px solid #fff !important;
-      }
-      .hero.hero--cinema .btn-hero-secondary {
-        background: transparent !important;
-        color: #fff !important;
-        border: 1.5px solid rgba(255,255,255,.7) !important;
+        background: oklch(72% 0.09 180) !important;
+        color: oklch(15% 0.01 80) !important;
+        border: 2px solid oklch(15% 0.01 80) !important;
+        box-shadow: 4px 4px 0 oklch(15% 0.01 80) !important;
       }
     </style>
   </head>
@@ -140,7 +136,7 @@
             <nav class="header-nav" aria-label="Main">
               <a href="#how-it-works">How It Works</a>
               <a href="#about">About</a>
-              <button type="button" class="btn-primary btn-sm js-demo-download">Download Now</button>
+              <button type="button" class="btn-primary btn-sm js-demo-download">Download Now <span aria-hidden="true">→</span></button>
             </nav>
 
             <button
@@ -167,7 +163,7 @@
           >
             <a href="#how-it-works">How It Works</a>
             <a href="#about">About</a>
-            <button type="button" class="btn-primary js-demo-download">Download Now</button>
+            <button type="button" class="btn-primary js-demo-download">Download Now <span aria-hidden="true">→</span></button>
           </nav>
         </header>
 
@@ -186,7 +182,7 @@
             <p id="demo-modal-desc" class="demo-modal-body">
               Tandem isn’t available to download yet. You’re exploring a preview of the&nbsp;experience.
             </p>
-            <button type="button" class="btn-primary" data-demo-close>Got&nbsp;it</button>
+            <button type="button" class="btn-primary" data-demo-close>Got&nbsp;it <span aria-hidden="true">→</span></button>
           </div>
         </div>
 
@@ -235,7 +231,7 @@
                   Real change doesn’t happen overnight. Tandem helps you and someone you trust build momentum through everyday&nbsp;progress.
                 </p>
                 <div class="hero-ctas">
-                  <button type="button" class="btn-hero-primary js-demo-download">Download Now</button>
+                  <button type="button" class="btn-hero-primary js-demo-download">Download Now <span aria-hidden="true">→</span></button>
                 </div>
                 <p class="hero-note">Focus on what matters. Leave the noise&nbsp;behind.</p>
               </div>
@@ -442,7 +438,7 @@
             <div class="cta-inner reveal is-visible">
               <h2 id="cta-heading">Your next goal needs a&nbsp;partner.</h2>
               <p>Start small, build momentum, and make progress with someone beside&nbsp;you.</p>
-              <button type="button" class="btn-cta-primary js-demo-download">Download&nbsp;Now</button>
+              <button type="button" class="btn-cta-primary js-demo-download">Download&nbsp;Now <span aria-hidden="true">→</span></button>
             </div>
             <button
               type="button"

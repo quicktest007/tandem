@@ -54,7 +54,7 @@ export default function CTASection() {
         <h2 id="cta-heading">{noOrphan('Your next goal needs a partner.')}</h2>
         <p>{noOrphan('Start small, build momentum, and make progress with someone beside you.')}</p>
         <button type="button" className="btn-cta-primary" onClick={showDemoNotice}>
-          Download Now
+          Download Now <span aria-hidden="true">→</span>
         </button>
       </div>
 

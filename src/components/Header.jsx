@@ -86,7 +86,7 @@ export default function Header() {
             <a key={link.href} href={link.href}>{link.label}</a>
           ))}
           <button type="button" className="btn-primary btn-sm" onClick={showDemoNotice}>
-            Download Now
+            Download Now <span aria-hidden="true">→</span>
           </button>
         </nav>
 
@@ -120,7 +120,7 @@ export default function Header() {
           <a key={link.href} href={link.href} onClick={close}>{link.label}</a>
         ))}
         <button type="button" className="btn-primary" onClick={onDownloadClick}>
-          Download Now
+          Download Now <span aria-hidden="true">→</span>
         </button>
       </nav>
     </header>
