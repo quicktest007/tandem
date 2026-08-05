@@ -30,7 +30,7 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/index.css?v=problem-photo-1" />
+    <link rel="stylesheet" href="./src/index.css?v=download-demo-1" />
     <style>
       /* Critical hero layout — keeps text over video even if CSS CDN is stale */
       .hero.hero--cinema {
@@ -107,7 +107,9 @@
         padding: 0.85rem 1.45rem !important;
         border-radius: 999px !important;
         text-decoration: none !important;
+        font: inherit !important;
         font-weight: 700 !important;
+        cursor: pointer !important;
       }
       .hero.hero--cinema .btn-hero-primary {
         background: #fff !important;
@@ -139,7 +141,7 @@
               <a href="#how-it-works">How It Works</a>
               <a href="#features">Features</a>
               <a href="#about">About</a>
-              <a href="#start" class="btn-primary btn-sm">Start Your Tandem</a>
+              <button type="button" class="btn-primary btn-sm js-demo-download">Download Now</button>
             </nav>
 
             <button
@@ -167,7 +169,7 @@
             <a href="#how-it-works">How It Works</a>
             <a href="#features">Features</a>
             <a href="#about">About</a>
-            <a href="#start" class="btn-primary">Start Your Tandem</a>
+            <button type="button" class="btn-primary js-demo-download">Download Now</button>
           </nav>
         </header>
 
@@ -216,7 +218,7 @@
                   Real change doesn’t happen overnight. Tandem helps you and someone you trust build momentum through everyday&nbsp;progress.
                 </p>
                 <div class="hero-ctas">
-                  <a href="#start" class="btn-hero-primary">Start Your Tandem</a>
+                  <button type="button" class="btn-hero-primary js-demo-download">Download Now</button>
                 </div>
                 <p class="hero-note">Focus on what matters. Leave the noise&nbsp;behind.</p>
               </div>
@@ -522,7 +524,7 @@
             <div class="cta-inner reveal is-visible">
               <h2 id="cta-heading">Your next goal needs a&nbsp;partner.</h2>
               <p>Start small, build momentum, and make progress with someone beside&nbsp;you.</p>
-              <a href="mailto:hello@tandem.app?subject=Start%20Your%20Tandem" class="btn-cta-primary">Start Your&nbsp;Tandem</a>
+              <button type="button" class="btn-cta-primary js-demo-download">Download&nbsp;Now</button>
             </div>
             <button
               type="button"
@@ -612,7 +614,7 @@
           if (open) {
             mobileNav.removeAttribute('hidden');
             document.body.style.overflow = 'hidden';
-            var firstLink = mobileNav.querySelector('a');
+            var firstLink = mobileNav.querySelector('a, button');
             if (firstLink) firstLink.focus();
           } else {
             mobileNav.setAttribute('hidden', '');
@@ -638,7 +640,7 @@
               return;
             }
             if (e.key !== 'Tab') return;
-            var focusable = [menuBtn].concat(Array.prototype.slice.call(mobileNav.querySelectorAll('a')));
+            var focusable = [menuBtn].concat(Array.prototype.slice.call(mobileNav.querySelectorAll('a, button')));
             var first = focusable[0];
             var last = focusable[focusable.length - 1];
             if (e.shiftKey && document.activeElement === first) {
@@ -779,6 +781,15 @@
           if (acceptBtn) acceptBtn.addEventListener('click', function () { dismissConsent('accepted'); });
           if (declineBtn) declineBtn.addEventListener('click', function () { dismissConsent('declined'); });
         }
+
+        document.querySelectorAll('.js-demo-download').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            if (menuBtn && mobileNav && menuBtn.getAttribute('aria-expanded') === 'true') {
+              setMenuOpen(false);
+            }
+            window.alert('Sorry, this is just a demo');
+          });
+        });
       })();
     </script>
 

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useReveal } from '../hooks/useReveal'
 import { noOrphan } from '../utils/noOrphan'
+import { showDemoNotice } from '../utils/showDemoNotice'
 
 export default function CTASection() {
   const ref = useReveal()
@@ -52,9 +53,9 @@ export default function CTASection() {
       <div className="cta-inner reveal" ref={ref}>
         <h2 id="cta-heading">{noOrphan('Your next goal needs a partner.')}</h2>
         <p>{noOrphan('Start small, build momentum, and make progress with someone beside you.')}</p>
-        <a href="mailto:hello@tandem.app?subject=Start%20Your%20Tandem" className="btn-cta-primary">
-          {noOrphan('Start Your Tandem')}
-        </a>
+        <button type="button" className="btn-cta-primary" onClick={showDemoNotice}>
+          Download Now
+        </button>
       </div>
 
       <button

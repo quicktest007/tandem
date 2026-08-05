@@ -129,8 +129,10 @@ blockquote,
   padding: 0.85rem 1.4rem;
   border-radius: 999px;
   text-decoration: none;
+  font: inherit;
   font-weight: 600;
   font-size: 0.95rem;
+  cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
@@ -313,13 +315,18 @@ blockquote,
 
 .header-nav a.btn-primary,
 .header-nav a.btn-primary:hover,
-.header-nav a.btn-primary:focus-visible {
+.header-nav a.btn-primary:focus-visible,
+.header-nav button.btn-primary,
+.header-nav button.btn-primary:hover,
+.header-nav button.btn-primary:focus-visible {
   color: #fff;
   background: var(--accent-btn);
 }
 
 .header-nav a.btn-primary:hover,
-.header-nav a.btn-primary:focus-visible {
+.header-nav a.btn-primary:focus-visible,
+.header-nav button.btn-primary:hover,
+.header-nav button.btn-primary:focus-visible {
   background: var(--accent-hover);
 }
 
@@ -358,14 +365,19 @@ blockquote,
 
 .mobile-nav a.btn-primary,
 .mobile-nav a.btn-primary:hover,
-.mobile-nav a.btn-primary:focus-visible {
+.mobile-nav a.btn-primary:focus-visible,
+.mobile-nav button.btn-primary,
+.mobile-nav button.btn-primary:hover,
+.mobile-nav button.btn-primary:focus-visible {
   color: #fff;
   background: var(--accent-btn);
   width: fit-content;
 }
 
 .mobile-nav a.btn-primary:hover,
-.mobile-nav a.btn-primary:focus-visible {
+.mobile-nav a.btn-primary:focus-visible,
+.mobile-nav button.btn-primary:hover,
+.mobile-nav button.btn-primary:focus-visible {
   background: var(--accent-hover);
 }
 
@@ -466,6 +478,8 @@ blockquote,
   justify-content: center;
   min-height: 3rem;
   padding: 0.85rem 1.45rem;
+  font: inherit;
+  cursor: pointer;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 700;
@@ -966,6 +980,8 @@ blockquote,
   margin-top: 1.75rem;
   min-height: 3.15rem;
   padding: 0.9rem 1.55rem;
+  font: inherit;
+  cursor: pointer;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 700;

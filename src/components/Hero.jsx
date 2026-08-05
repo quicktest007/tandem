@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useReveal } from '../hooks/useReveal'
 import { noOrphan } from '../utils/noOrphan'
+import { showDemoNotice } from '../utils/showDemoNotice'
 
 const base = import.meta.env.BASE_URL
 const playlist = [`${base}hero.mp4`, `${base}hero-2.mp4`]
@@ -79,7 +80,9 @@ export default function Hero() {
             {noOrphan('Real change doesn’t happen overnight. Tandem helps you and someone you trust build momentum through everyday progress.')}
           </p>
           <div className="hero-ctas">
-            <a href="#start" className="btn-hero-primary">Start Your Tandem</a>
+            <button type="button" className="btn-hero-primary" onClick={showDemoNotice}>
+              Download Now
+            </button>
           </div>
           <p className="hero-note">{noOrphan('Focus on what matters. Leave the noise behind.')}</p>
         </div>

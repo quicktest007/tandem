@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import Logo from './Logo'
+import { showDemoNotice } from '../utils/showDemoNotice'
 
 const navLinks = [
   { href: '#how-it-works', label: 'How It Works' },
@@ -29,7 +30,7 @@ export default function Header() {
     if (!menuOpen) return undefined
 
     const nav = mobileNavRef.current
-    const firstLink = nav?.querySelector('a')
+    const firstLink = nav?.querySelector('a, button')
     firstLink?.focus()
 
     const onKeyDown = (e) => {
@@ -43,7 +44,7 @@ export default function Header() {
 
       const focusable = [
         menuBtnRef.current,
-        ...nav.querySelectorAll('a'),
+        ...nav.querySelectorAll('a, button'),
       ].filter(Boolean)
 
       if (focusable.length === 0) return
@@ -67,6 +68,11 @@ export default function Header() {
 
   const close = () => setMenuOpen(false)
 
+  const onDownloadClick = (e) => {
+    close()
+    showDemoNotice(e)
+  }
+
   return (
     <header className={`header ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="header-inner">
@@ -80,7 +86,9 @@ export default function Header() {
           {navLinks.map((link) => (
             <a key={link.href} href={link.href}>{link.label}</a>
           ))}
-          <a href="#start" className="btn-primary btn-sm">Start Your Tandem</a>
+          <button type="button" className="btn-primary btn-sm" onClick={showDemoNotice}>
+            Download Now
+          </button>
         </nav>
 
         <button
@@ -112,7 +120,9 @@ export default function Header() {
         {navLinks.map((link) => (
           <a key={link.href} href={link.href} onClick={close}>{link.label}</a>
         ))}
-        <a href="#start" className="btn-primary" onClick={close}>Start Your Tandem</a>
+        <button type="button" className="btn-primary" onClick={onDownloadClick}>
+          Download Now
+        </button>
       </nav>
     </header>
   )
