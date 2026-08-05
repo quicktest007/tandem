@@ -14,6 +14,11 @@ export default function ProblemSection() {
           <p>
             {noOrphan('People set goals with good intentions. They download another app, create a plan, and feel motivated for a few days. Then life gets busy, momentum fades, and the goal quietly disappears.')}
           </p>
+          <p>
+            With <strong>Tandem</strong>, you can download an app and invite a partner to help you achieve your&nbsp;goal!
+            {' '}
+            {noOrphan('It’s proven that having someone help you with your habit helps you stay on track to reach your goal!')}
+          </p>
         </div>
 
         <figure className="problem-visual">
