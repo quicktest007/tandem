@@ -475,56 +475,89 @@ blockquote,
 
 .icon-lg { width: 1.5rem; height: 1.5rem; }
 
-/* Animated dotted trail between sections */
+/* Animated sketched trail between sections */
 .trail-path {
-  width: min(100% - 2rem, 46rem);
-  height: clamp(4.5rem, 10vw, 6.5rem);
-  margin: -0.35rem auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: clamp(7.5rem, 16vw, 11rem);
+  margin: -1.25rem auto;
   padding: 0;
   pointer-events: none;
   overflow: visible;
 }
 
+.trail-path--b {
+  justify-content: flex-start;
+  padding-left: clamp(12%, 18vw, 28%);
+}
+
+.trail-path--c {
+  justify-content: flex-end;
+  padding-right: clamp(12%, 18vw, 28%);
+}
+
 .trail-path svg {
   display: block;
-  width: 100%;
+  width: clamp(3.5rem, 8vw, 5rem);
   height: 100%;
   overflow: visible;
 }
 
+.trail-path-ghost,
 .trail-path-line {
   fill: none;
   stroke: var(--ink);
-  stroke-width: 2.75;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 0.012 0.03;
   stroke-dashoffset: 1;
-  opacity: 0.2;
+  opacity: 0;
   transition:
-    stroke-dashoffset 1.05s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.45s ease;
+    stroke-dashoffset 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease;
+}
+
+.trail-path-ghost {
+  stroke-width: 1.6;
+  stroke-dasharray: 0.01 0.035 0.006 0.028 0.014 0.04;
+  transform: translate(1.4px, 0.6px);
+  opacity: 0;
+}
+
+.trail-path-line {
+  stroke-width: 2.1;
+  stroke-dasharray: 0.007 0.026 0.012 0.032 0.005 0.024 0.01 0.03;
+}
+
+.trail-path.is-visible .trail-path-ghost {
+  stroke-dashoffset: 0;
+  opacity: 0.28;
 }
 
 .trail-path.is-visible .trail-path-line {
   stroke-dashoffset: 0;
-  opacity: 0.88;
+  opacity: 0.82;
 }
 
-.trail-path--b .trail-path-line {
+.trail-path--b .trail-path-line,
+.trail-path--b .trail-path-ghost {
   transition-delay: 0.05s;
 }
 
-.trail-path--c .trail-path-line {
+.trail-path--c .trail-path-line,
+.trail-path--c .trail-path-ghost {
   transition-delay: 0.08s;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .trail-path-ghost,
   .trail-path-line {
     stroke-dashoffset: 0;
-    opacity: 0.75;
     transition: none;
   }
+
+  .trail-path .trail-path-ghost { opacity: 0.25; }
+  .trail-path .trail-path-line { opacity: 0.75; }
 }
 
 /* Hero — full-bleed cinema with Trailhead CTAs */
