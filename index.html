@@ -30,7 +30,7 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/index.css?v=download-demo-1" />
+    <link rel="stylesheet" href="./src/index.css?v=demo-modal-1" />
     <style>
       /* Critical hero layout — keeps text over video even if CSS CDN is stale */
       .hero.hero--cinema {
@@ -172,6 +172,25 @@
             <button type="button" class="btn-primary js-demo-download">Download Now</button>
           </nav>
         </header>
+
+        <div
+          id="demo-modal"
+          class="demo-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="demo-modal-title"
+          aria-describedby="demo-modal-desc"
+          hidden
+        >
+          <div class="demo-modal-card">
+            <p class="demo-modal-eyebrow">Coming soon</p>
+            <h2 id="demo-modal-title">Sorry, this is just a&nbsp;demo</h2>
+            <p id="demo-modal-desc" class="demo-modal-body">
+              Tandem isn’t available to download yet. You’re exploring a preview of the&nbsp;experience.
+            </p>
+            <button type="button" class="btn-primary" data-demo-close>Got&nbsp;it</button>
+          </div>
+        </div>
 
         <div
           id="cookie-banner"
@@ -782,12 +801,47 @@
           if (declineBtn) declineBtn.addEventListener('click', function () { dismissConsent('declined'); });
         }
 
+        var demoModal = document.getElementById('demo-modal');
+        var demoLastFocus = null;
+
+        function hideDemoModal() {
+          if (!demoModal || demoModal.hasAttribute('hidden')) return;
+          demoModal.setAttribute('hidden', '');
+          document.body.classList.remove('has-demo-modal');
+          if (demoLastFocus && typeof demoLastFocus.focus === 'function') {
+            demoLastFocus.focus();
+          }
+          demoLastFocus = null;
+        }
+
+        function showDemoModal() {
+          if (!demoModal) return;
+          demoLastFocus = document.activeElement;
+          demoModal.removeAttribute('hidden');
+          document.body.classList.add('has-demo-modal');
+          var closeBtn = demoModal.querySelector('[data-demo-close]');
+          if (closeBtn) closeBtn.focus();
+        }
+
+        if (demoModal) {
+          demoModal.addEventListener('click', function (e) {
+            if (e.target === demoModal || e.target.closest('[data-demo-close]')) {
+              hideDemoModal();
+            }
+          });
+          window.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !demoModal.hasAttribute('hidden')) {
+              hideDemoModal();
+            }
+          });
+        }
+
         document.querySelectorAll('.js-demo-download').forEach(function (btn) {
           btn.addEventListener('click', function () {
             if (menuBtn && mobileNav && menuBtn.getAttribute('aria-expanded') === 'true') {
               setMenuOpen(false);
             }
-            window.alert('Sorry, this is just a demo');
+            showDemoModal();
           });
         });
       })();

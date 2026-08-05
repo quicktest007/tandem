@@ -8,6 +8,7 @@ import FAQ from './components/FAQ'
 import CTASection from './components/CTASection'
 import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
+import DemoModal from './components/DemoModal'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <CTASection />
       </main>
       <Footer />
+      <DemoModal />
     </div>
   )
 }

@@ -1,5 +1,5 @@
-/** Demo-only CTA — no real download yet. */
+/** Opens the in-site demo notice modal. */
 export function showDemoNotice(event) {
   event?.preventDefault?.()
-  window.alert('Sorry, this is just a demo')
+  window.dispatchEvent(new CustomEvent('tandem:demo-open'))
 }
