@@ -4,7 +4,6 @@ import ProblemSection from './components/ProblemSection'
 import HowItWorks from './components/HowItWorks'
 import Features from './components/Features'
 import WhyTandem from './components/WhyTandem'
-import BrandStatement from './components/BrandStatement'
 import FAQ from './components/FAQ'
 import CTASection from './components/CTASection'
 import Footer from './components/Footer'
@@ -22,7 +21,6 @@ function App() {
         <HowItWorks />
         <Features />
         <WhyTandem />
-        <BrandStatement />
         <FAQ />
         <CTASection />
       </main>

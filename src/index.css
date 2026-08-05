@@ -113,7 +113,6 @@ blockquote,
 .hero-sub,
 .hero-note,
 .hero-eyebrow,
-.brand-line,
 .section-intro p,
 .faq-panel p,
 .footer-brand p {
@@ -215,8 +214,7 @@ blockquote,
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal,
-  .brand-line {
+  .reveal {
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
@@ -905,71 +903,6 @@ blockquote,
 
 .compare-col.tone-accent li::before { background: var(--sky); }
 
-
-/* Brand statement */
-.brand-section {
-  background: linear-gradient(180deg, var(--bg), var(--bg-soft));
-}
-
-.brand-layout {
-  width: min(100% - 2.5rem, var(--container));
-  margin: 0 auto;
-  display: grid;
-  gap: 2.5rem;
-  align-items: center;
-}
-
-.brand-inner {
-  max-width: 36rem;
-}
-
-.brand-visual {
-  margin: 0;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  background: #d8eef8;
-  aspect-ratio: 3 / 4;
-  max-height: 36rem;
-}
-
-.brand-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-
-@media (min-width: 900px) {
-  .brand-layout {
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-    gap: 4rem;
-  }
-}
-
-.brand-line {
-  margin: 0 0 1rem;
-  font-family: var(--display);
-  font-size: clamp(1.6rem, 4.5vw, 2.75rem);
-  line-height: 1.15;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-}
-
-.brand-heading {
-  font-weight: 600;
-  color: var(--text);
-}
-
-.brand-line.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-.brand-end {
-  margin-top: 2rem;
-  color: var(--accent-btn);
-}
 
 /* FAQ */
 .faq-list {
