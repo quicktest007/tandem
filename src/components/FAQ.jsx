@@ -17,6 +17,10 @@ const faqs = [
     q: noOrphan('Is Tandem for coaches or groups?'),
     a: noOrphan('The initial experience is centered on two people, with room to grow into coaching and small-group features later.'),
   },
+  {
+    q: noOrphan('Tandem and privacy'),
+    a: noOrphan('Tandem never shares your data with third parties. Your data is only shared between you and your partner. We encrypt all data with the highest encryption.'),
+  },
 ]
 
 export default function FAQ() {
