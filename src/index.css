@@ -296,31 +296,33 @@ blockquote,
   border-radius: var(--radius-sm);
 }
 
-/* Header — Trailhead pill nav */
+/* Header — full-width bar */
 .header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: transparent;
-  padding: 0.85rem 0 0;
+  background: var(--cream);
+  border-bottom: 2px solid var(--ink);
+  padding: 0;
+  transition: box-shadow 0.2s ease;
 }
 
-.header.is-scrolled .header-shell {
+.header.is-scrolled {
   box-shadow: var(--shadow-soft);
 }
 
 .header-inner,
 .header-shell {
-  width: min(100% - 2rem, var(--container));
+  width: min(100% - 2.5rem, var(--container));
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 1.1rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
-  background: var(--cream);
-  border: 1px solid var(--line);
-  border-radius: 16px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
 }
 
 .header-logo {
@@ -386,12 +388,12 @@ blockquote,
   display: none;
   flex-direction: column;
   gap: 1rem;
-  width: min(100% - 2rem, var(--container));
-  margin: 0.65rem auto 0;
-  padding: 1.15rem 1.35rem 1.35rem;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--cream);
+  width: min(100% - 2.5rem, var(--container));
+  margin: 0 auto;
+  padding: 0 0 1.25rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .mobile-nav.is-open,
