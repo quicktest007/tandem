@@ -23,7 +23,7 @@ function App() {
         <HowItWorks />
         <TrailConnector direction="right-to-left" />
         <WhyTandem />
-        <TrailConnector direction="left-to-right" />
+        <TrailConnector direction="left-to-right" className="trail-connector--compact" />
         <FAQ />
         <TrailConnector direction="right-to-left" />
         <CTASection />

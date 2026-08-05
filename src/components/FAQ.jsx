@@ -28,8 +28,8 @@ export default function FAQ() {
   const ref = useReveal()
 
   return (
-    <section id="faq" className="section faq-section" aria-labelledby="faq-heading">
-      <div className="container faq-layout reveal" ref={ref}>
+    <section id="faq" className="faq-section" aria-labelledby="faq-heading">
+      <div className="faq-container faq-layout reveal" ref={ref}>
         <figure className="faq-visual">
           <img
             src={`${base}tandem.png`}
