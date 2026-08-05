@@ -1,6 +1,8 @@
 import { useReveal } from '../hooks/useReveal'
 import { noOrphan } from '../utils/noOrphan'
 
+const base = import.meta.env.BASE_URL
+
 const steps = [
   {
     title: noOrphan('It starts with purpose.'),
@@ -25,24 +27,37 @@ export default function HowItWorks() {
 
   return (
     <section id="how-it-works" className="section how-section" aria-labelledby="how-heading">
-      <div className="container reveal" ref={ref}>
-        <div className="section-intro">
-          <h2 id="how-heading">{noOrphan('Why Tandem works')}</h2>
-        </div>
+      <div className="how-section-bg" aria-hidden="true">
+        <img
+          src={`${base}tandem.png`}
+          alt=""
+          width={1024}
+          height={555}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
 
-        <ol className="why-flow">
-          {steps.map((step, i) => (
-            <li key={step.title} className="why-step">
-              <h3>{step.title}</h3>
-              <p>{step.body}</p>
-              {i < steps.length - 1 && (
-                <span className="why-arrow" aria-hidden="true">
-                  ↓
-                </span>
-              )}
-            </li>
-          ))}
-        </ol>
+      <div className="container reveal" ref={ref}>
+        <div className="how-panel">
+          <div className="section-intro">
+            <h2 id="how-heading">{noOrphan('Why Tandem works')}</h2>
+          </div>
+
+          <ol className="why-flow">
+            {steps.map((step, i) => (
+              <li key={step.title} className="why-step">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+                {i < steps.length - 1 && (
+                  <span className="why-arrow" aria-hidden="true">
+                    ↓
+                  </span>
+                )}
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   )
