@@ -1,6 +1,8 @@
 import { useReveal } from '../hooks/useReveal'
 import { noOrphan } from '../utils/noOrphan'
 
+const base = import.meta.env.BASE_URL
+
 export default function ProblemSection() {
   const ref = useReveal()
 
@@ -14,29 +16,16 @@ export default function ProblemSection() {
           </p>
         </div>
 
-        <div className="problem-visual" aria-hidden="true">
-          <div className="alone-card">
-            <p className="visual-label">{noOrphan('Going alone')}</p>
-            <div className="path-solo">
-              <span className="solo-avatar">You</span>
-              <span className="fade-trail" />
-            </div>
-            <p className="visual-caption">{noOrphan('Motivation fades. Progress gets quiet.')}</p>
-          </div>
-          <div className="together-card">
-            <p className="visual-label">{noOrphan('With Tandem')}</p>
-            <div className="path-pair">
-              <span className="pair-avatar pair-a sm">You</span>
-              <span className="shared-trail">
-                <span />
-                <span />
-                <span />
-              </span>
-              <span className="pair-avatar pair-b sm">Partner</span>
-            </div>
-            <p className="visual-caption">{noOrphan('Two paths. Side by side.')}</p>
-          </div>
-        </div>
+        <figure className="problem-visual">
+          <img
+            src={`${base}lifestyle-problem.jpg`}
+            alt="Someone reading a book on the floor beside a mug of hot cocoa."
+            width={1024}
+            height={682}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
       </div>
     </section>
   )

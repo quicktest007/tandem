@@ -579,82 +579,18 @@ blockquote,
 .problem-copy p + p { margin-top: 1rem; }
 
 .problem-visual {
-  display: grid;
-  gap: 1rem;
-}
-
-.alone-card,
-.together-card {
-  padding: 1.25rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: var(--bg-elevated);
-}
-
-.together-card {
-  background: linear-gradient(180deg, #fff, #eef8fb);
-  border-color: rgba(22, 165, 174, 0.28);
-}
-
-.visual-label {
-  margin: 0 0 1rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.path-solo,
-.path-pair {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  min-height: 3rem;
-}
-
-.solo-avatar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 3rem;
-  height: 2.25rem;
-  padding: 0 0.75rem;
-  border-radius: 999px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
   background: var(--bg-soft);
-  font-size: 0.8rem;
-  font-weight: 700;
+  aspect-ratio: 1024 / 682;
 }
 
-.fade-trail {
-  flex: 1;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(0, 88, 152, 0.28), transparent);
-}
-
-.shared-trail {
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--partner));
-  border-radius: 999px;
-}
-
-.shared-trail span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: white;
-  border: 2px solid var(--partner);
-}
-
-.visual-caption {
-  margin: 1rem 0 0;
-  font-size: 0.9rem;
-  color: var(--muted);
+.problem-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Why Tandem works */
