@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import Logo from './Logo'
+import WaveLink from './WaveLink'
 import { showDemoNotice } from '../utils/showDemoNotice'
 
 const navLinks = [
@@ -83,7 +84,7 @@ export default function Header() {
 
         <nav className="header-nav" aria-label="Main">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href}>{link.label}</a>
+            <WaveLink key={link.href} href={link.href} label={link.label} />
           ))}
           <button type="button" className="btn-primary" onClick={showDemoNotice}>
             Download Now <span aria-hidden="true">→</span>
@@ -117,7 +118,7 @@ export default function Header() {
         hidden={!menuOpen}
       >
         {navLinks.map((link) => (
-          <a key={link.href} href={link.href} onClick={close}>{link.label}</a>
+          <WaveLink key={link.href} href={link.href} label={link.label} onClick={close} />
         ))}
         <button type="button" className="btn-primary" onClick={onDownloadClick}>
           Download Now <span aria-hidden="true">→</span>

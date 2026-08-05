@@ -30,7 +30,7 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Lora:ital,wght@0,400..700;1,400..700&family=Work+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/index.css?v=trail-path-1" />
+    <link rel="stylesheet" href="./src/index.css?v=nav-wave-1" />
     <style>
       /* Critical hero layout — keeps text over video even if CSS is stale */
       .hero.hero--cinema {
@@ -134,8 +134,8 @@
             </a>
 
             <nav class="header-nav" aria-label="Main">
-              <a href="#how-it-works">How It Works</a>
-              <a href="#about">About</a>
+              <a href="#how-it-works" class="nav-wave js-wave-link">How It Works</a>
+              <a href="#about" class="nav-wave js-wave-link">About</a>
               <button type="button" class="btn-primary js-demo-download">Download Now <span aria-hidden="true">→</span></button>
             </nav>
 
@@ -161,8 +161,8 @@
             aria-label="Mobile navigation"
             hidden
           >
-            <a href="#how-it-works">How It Works</a>
-            <a href="#about">About</a>
+            <a href="#how-it-works" class="nav-wave js-wave-link">How It Works</a>
+            <a href="#about" class="nav-wave js-wave-link">About</a>
             <button type="button" class="btn-primary js-demo-download">Download Now <span aria-hidden="true">→</span></button>
           </nav>
         </header>
@@ -794,6 +794,32 @@
             trailPaths.forEach(function (el) { trailObserver.observe(el); });
           }
         }
+
+        document.querySelectorAll('.js-wave-link').forEach(function (link) {
+          if (link.dataset.waved === '1') return;
+          link.dataset.waved = '1';
+          var label = link.textContent.trim();
+          var letters = document.createElement('span');
+          letters.className = 'nav-wave-letters';
+          letters.setAttribute('aria-hidden', 'true');
+          Array.from(label).forEach(function (char, index) {
+            var span = document.createElement('span');
+            span.style.setProperty('--i', String(index));
+            if (char === ' ') {
+              span.className = 'is-space';
+              span.textContent = '\u00A0';
+            } else {
+              span.textContent = char;
+            }
+            letters.appendChild(span);
+          });
+          var sr = document.createElement('span');
+          sr.className = 'sr-only';
+          sr.textContent = label;
+          link.textContent = '';
+          link.appendChild(sr);
+          link.appendChild(letters);
+        });
       })();
     </script>
 

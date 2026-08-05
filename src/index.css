@@ -355,6 +355,55 @@ blockquote,
 
 .header-nav a:hover { color: var(--teal-deep); }
 
+.nav-wave {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-wave-letters {
+  display: inline-flex;
+  align-items: flex-end;
+  white-space: nowrap;
+}
+
+.nav-wave-letters span {
+  display: inline-block;
+  transform-origin: center bottom;
+  animation: nav-wave 1.7s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.07s);
+  will-change: transform;
+}
+
+.nav-wave-letters span.is-space {
+  width: 0.28em;
+  animation: none;
+}
+
+.nav-wave:hover .nav-wave-letters span,
+.nav-wave:focus-visible .nav-wave-letters span {
+  animation-duration: 1.05s;
+  color: var(--teal-deep);
+}
+
+@keyframes nav-wave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.28em);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-wave-letters span {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
 .header-nav a.btn-primary,
 .header-nav a.btn-primary:hover,
 .header-nav a.btn-primary:focus-visible,
