@@ -30,7 +30,7 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Lora:ital,wght@0,400..700;1,400..700&family=Work+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/index.css?v=header-full-1" />
+    <link rel="stylesheet" href="./src/index.css?v=trail-path-1" />
     <style>
       /* Critical hero layout — keeps text over video even if CSS is stale */
       .hero.hero--cinema {
@@ -248,6 +248,12 @@
             </button>
           </section>
 
+          <div class="trail-path trail-path--a" aria-hidden="true">
+            <svg viewBox="0 0 920 100" preserveAspectRatio="none" focusable="false">
+              <path class="trail-path-line" pathLength="1" d="M24 28 C 120 8, 200 72, 320 36 S 520 8, 640 40 S 780 88, 896 52"></path>
+            </svg>
+          </div>
+
           <section id="problem" class="section problem-section" aria-labelledby="problem-heading">
             <div class="container reveal is-visible">
               <div class="problem-copy">
@@ -269,6 +275,12 @@
               </figure>
             </div>
           </section>
+
+          <div class="trail-path trail-path--b" aria-hidden="true">
+            <svg viewBox="0 0 920 100" preserveAspectRatio="none" focusable="false">
+              <path class="trail-path-line" pathLength="1" d="M24 56 C 140 92, 240 12, 360 48 S 540 96, 680 28 S 820 8, 896 44"></path>
+            </svg>
+          </div>
 
           <section id="how-it-works" class="section how-section" aria-labelledby="how-heading">
             <div class="how-section-bg" aria-hidden="true">
@@ -312,6 +324,12 @@
             </div>
           </section>
 
+          <div class="trail-path trail-path--c" aria-hidden="true">
+            <svg viewBox="0 0 920 100" preserveAspectRatio="none" focusable="false">
+              <path class="trail-path-line" pathLength="1" d="M40 40 C 160 70, 280 10, 420 52 S 620 90, 760 24 S 860 36, 880 48"></path>
+            </svg>
+          </div>
+
           <section id="about" class="section why-section" aria-labelledby="why-heading">
             <div class="container reveal is-visible">
               <div class="section-intro">
@@ -350,6 +368,12 @@
               </div>
             </div>
           </section>
+
+          <div class="trail-path trail-path--a" aria-hidden="true">
+            <svg viewBox="0 0 920 100" preserveAspectRatio="none" focusable="false">
+              <path class="trail-path-line" pathLength="1" d="M24 28 C 120 8, 200 72, 320 36 S 520 8, 640 40 S 780 88, 896 52"></path>
+            </svg>
+          </div>
 
           <section id="faq" class="section faq-section" aria-labelledby="faq-heading">
             <div class="container narrow reveal is-visible">
@@ -432,6 +456,12 @@
               </div>
             </div>
           </section>
+
+          <div class="trail-path trail-path--b" aria-hidden="true">
+            <svg viewBox="0 0 920 100" preserveAspectRatio="none" focusable="false">
+              <path class="trail-path-line" pathLength="1" d="M24 56 C 140 92, 240 12, 360 48 S 540 96, 680 28 S 820 8, 896 44"></path>
+            </svg>
+          </div>
 
           <section id="start" class="section cta-section cta-section--cinema" aria-labelledby="cta-heading">
             <div class="cta-media" aria-hidden="true">
@@ -750,6 +780,20 @@
             showDemoModal();
           });
         });
+
+        var trailPaths = document.querySelectorAll('.trail-path');
+        if (trailPaths.length) {
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            trailPaths.forEach(function (el) { el.classList.add('is-visible'); });
+          } else {
+            var trailObserver = new IntersectionObserver(function (entries) {
+              entries.forEach(function (entry) {
+                entry.target.classList.toggle('is-visible', entry.isIntersecting);
+              });
+            }, { threshold: 0.35, rootMargin: '-8% 0px -8% 0px' });
+            trailPaths.forEach(function (el) { trailObserver.observe(el); });
+          }
+        }
       })();
     </script>
 
