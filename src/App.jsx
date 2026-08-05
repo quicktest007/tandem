@@ -8,7 +8,6 @@ import CTASection from './components/CTASection'
 import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
 import DemoModal from './components/DemoModal'
-import TrailPath from './components/TrailPath'
 
 function App() {
   return (
@@ -18,15 +17,10 @@ function App() {
       <CookieBanner />
       <main id="main-content" tabIndex={-1}>
         <Hero />
-        <TrailPath variant="a" />
         <ProblemSection />
-        <TrailPath variant="b" />
         <HowItWorks />
-        <TrailPath variant="c" />
         <WhyTandem />
-        <TrailPath variant="a" />
         <FAQ />
-        <TrailPath variant="b" />
         <CTASection />
       </main>
       <Footer />
