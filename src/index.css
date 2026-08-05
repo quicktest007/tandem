@@ -589,7 +589,8 @@ blockquote,
 .hero.hero--cinema .hero-note {
   margin: 1.15rem 0 0;
   font-family: var(--hand);
-  font-size: 1.25rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 500;
   color: oklch(90% 0.03 180);
 }
 
