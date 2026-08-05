@@ -8,6 +8,7 @@ import CTASection from './components/CTASection'
 import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
 import DemoModal from './components/DemoModal'
+import TrailConnector from './components/TrailConnector'
 
 function App() {
   return (
@@ -18,9 +19,13 @@ function App() {
       <main id="main-content" tabIndex={-1}>
         <Hero />
         <ProblemSection />
+        <TrailConnector direction="left-to-right" />
         <HowItWorks />
+        <TrailConnector direction="right-to-left" />
         <WhyTandem />
+        <TrailConnector direction="left-to-right" />
         <FAQ />
+        <TrailConnector direction="right-to-left" />
         <CTASection />
       </main>
       <Footer />
