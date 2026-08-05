@@ -2,7 +2,6 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import ProblemSection from './components/ProblemSection'
 import HowItWorks from './components/HowItWorks'
-import Features from './components/Features'
 import WhyTandem from './components/WhyTandem'
 import FAQ from './components/FAQ'
 import CTASection from './components/CTASection'
@@ -20,7 +19,6 @@ function App() {
         <Hero />
         <ProblemSection />
         <HowItWorks />
-        <Features />
         <WhyTandem />
         <FAQ />
         <CTASection />

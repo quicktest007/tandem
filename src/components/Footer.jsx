@@ -2,7 +2,6 @@ import Logo from './Logo'
 
 const productLinks = [
   { href: '#how-it-works', label: 'How It Works' },
-  { href: '#features', label: 'Features' },
   { href: '#about', label: 'About' },
 ]
 

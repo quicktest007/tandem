@@ -4,7 +4,6 @@ import { showDemoNotice } from '../utils/showDemoNotice'
 
 const navLinks = [
   { href: '#how-it-works', label: 'How It Works' },
-  { href: '#features', label: 'Features' },
   { href: '#about', label: 'About' },
 ]
 
